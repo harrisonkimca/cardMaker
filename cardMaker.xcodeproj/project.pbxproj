@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		88CA28291F3BB629002D21DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CA28281F3BB629002D21DB /* AppDelegate.swift */; };
+		88CA282B1F3BB629002D21DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CA282A1F3BB629002D21DB /* ViewController.swift */; };
+		88CA282E1F3BB629002D21DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CA282C1F3BB629002D21DB /* Main.storyboard */; };
+		88CA28311F3BB629002D21DB /* cardMaker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88CA282F1F3BB629002D21DB /* cardMaker.xcdatamodeld */; };
+		88CA28331F3BB629002D21DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CA28321F3BB629002D21DB /* Assets.xcassets */; };
+		88CA28361F3BB629002D21DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CA28341F3BB629002D21DB /* LaunchScreen.storyboard */; };
+		88CA28411F3BB629002D21DB /* cardMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CA28401F3BB629002D21DB /* cardMakerTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		88CA283D1F3BB629002D21DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88CA281D1F3BB628002D21DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88CA28241F3BB628002D21DB;
+			remoteInfo = cardMaker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		88CA28251F3BB628002D21DB /* cardMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cardMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88CA28281F3BB629002D21DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		88CA282A1F3BB629002D21DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		88CA282D1F3BB629002D21DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		88CA28301F3BB629002D21DB /* cardMaker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = cardMaker.xcdatamodel; sourceTree = "<group>"; };
+		88CA28321F3BB629002D21DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		88CA28351F3BB629002D21DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		88CA28371F3BB629002D21DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88CA283C1F3BB629002D21DB /* cardMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cardMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88CA28401F3BB629002D21DB /* cardMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardMakerTests.swift; sourceTree = "<group>"; };
+		88CA28421F3BB629002D21DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		88CA28221F3BB628002D21DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88CA28391F3BB629002D21DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		88CA281C1F3BB628002D21DB = {
+			isa = PBXGroup;
+			children = (
+				88CA28271F3BB628002D21DB /* cardMaker */,
+				88CA283F1F3BB629002D21DB /* cardMakerTests */,
+				88CA28261F3BB628002D21DB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		88CA28261F3BB628002D21DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88CA28251F3BB628002D21DB /* cardMaker.app */,
+				88CA283C1F3BB629002D21DB /* cardMakerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88CA28271F3BB628002D21DB /* cardMaker */ = {
+			isa = PBXGroup;
+			children = (
+				88CA28281F3BB629002D21DB /* AppDelegate.swift */,
+				88CA282A1F3BB629002D21DB /* ViewController.swift */,
+				88CA282C1F3BB629002D21DB /* Main.storyboard */,
+				88CA28321F3BB629002D21DB /* Assets.xcassets */,
+				88CA28341F3BB629002D21DB /* LaunchScreen.storyboard */,
+				88CA28371F3BB629002D21DB /* Info.plist */,
+				88CA282F1F3BB629002D21DB /* cardMaker.xcdatamodeld */,
+			);
+			path = cardMaker;
+			sourceTree = "<group>";
+		};
+		88CA283F1F3BB629002D21DB /* cardMakerTests */ = {
+			isa = PBXGroup;
+			children = (
+				88CA28401F3BB629002D21DB /* cardMakerTests.swift */,
+				88CA28421F3BB629002D21DB /* Info.plist */,
+			);
+			path = cardMakerTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		88CA28241F3BB628002D21DB /* cardMaker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88CA28451F3BB629002D21DB /* Build configuration list for PBXNativeTarget "cardMaker" */;
+			buildPhases = (
+				88CA28211F3BB628002D21DB /* Sources */,
+				88CA28221F3BB628002D21DB /* Frameworks */,
+				88CA28231F3BB628002D21DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = cardMaker;
+			productName = cardMaker;
+			productReference = 88CA28251F3BB628002D21DB /* cardMaker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		88CA283B1F3BB629002D21DB /* cardMakerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88CA28481F3BB629002D21DB /* Build configuration list for PBXNativeTarget "cardMakerTests" */;
+			buildPhases = (
+				88CA28381F3BB629002D21DB /* Sources */,
+				88CA28391F3BB629002D21DB /* Frameworks */,
+				88CA283A1F3BB629002D21DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88CA283E1F3BB629002D21DB /* PBXTargetDependency */,
+			);
+			name = cardMakerTests;
+			productName = cardMakerTests;
+			productReference = 88CA283C1F3BB629002D21DB /* cardMakerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		88CA281D1F3BB628002D21DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Seantastic31;
+				TargetAttributes = {
+					88CA28241F3BB628002D21DB = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					88CA283B1F3BB629002D21DB = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 88CA28241F3BB628002D21DB;
+					};
+				};
+			};
+			buildConfigurationList = 88CA28201F3BB628002D21DB /* Build configuration list for PBXProject "cardMaker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 88CA281C1F3BB628002D21DB;
+			productRefGroup = 88CA28261F3BB628002D21DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88CA28241F3BB628002D21DB /* cardMaker */,
+				88CA283B1F3BB629002D21DB /* cardMakerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		88CA28231F3BB628002D21DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88CA28361F3BB629002D21DB /* LaunchScreen.storyboard in Resources */,
+				88CA28331F3BB629002D21DB /* Assets.xcassets in Resources */,
+				88CA282E1F3BB629002D21DB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88CA283A1F3BB629002D21DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88CA28211F3BB628002D21DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88CA28311F3BB629002D21DB /* cardMaker.xcdatamodeld in Sources */,
+				88CA282B1F3BB629002D21DB /* ViewController.swift in Sources */,
+				88CA28291F3BB629002D21DB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88CA28381F3BB629002D21DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88CA28411F3BB629002D21DB /* cardMakerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		88CA283E1F3BB629002D21DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88CA28241F3BB628002D21DB /* cardMaker */;
+			targetProxy = 88CA283D1F3BB629002D21DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		88CA282C1F3BB629002D21DB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88CA282D1F3BB629002D21DB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		88CA28341F3BB629002D21DB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88CA28351F3BB629002D21DB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		88CA28431F3BB629002D21DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		88CA28441F3BB629002D21DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88CA28461F3BB629002D21DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = cardMaker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Lighthouse-Lab.cardMaker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		88CA28471F3BB629002D21DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = cardMaker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Lighthouse-Lab.cardMaker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		88CA28491F3BB629002D21DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = cardMakerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Lighthouse-Lab.cardMakerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cardMaker.app/cardMaker";
+			};
+			name = Debug;
+		};
+		88CA284A1F3BB629002D21DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = cardMakerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Lighthouse-Lab.cardMakerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cardMaker.app/cardMaker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88CA28201F3BB628002D21DB /* Build configuration list for PBXProject "cardMaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88CA28431F3BB629002D21DB /* Debug */,
+				88CA28441F3BB629002D21DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88CA28451F3BB629002D21DB /* Build configuration list for PBXNativeTarget "cardMaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88CA28461F3BB629002D21DB /* Debug */,
+				88CA28471F3BB629002D21DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		88CA28481F3BB629002D21DB /* Build configuration list for PBXNativeTarget "cardMakerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88CA28491F3BB629002D21DB /* Debug */,
+				88CA284A1F3BB629002D21DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		88CA282F1F3BB629002D21DB /* cardMaker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				88CA28301F3BB629002D21DB /* cardMaker.xcdatamodel */,
+			);
+			currentVersion = 88CA28301F3BB629002D21DB /* cardMaker.xcdatamodel */;
+			path = cardMaker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 88CA281D1F3BB628002D21DB /* Project object */;
+}
