@@ -16,7 +16,8 @@
 		88CA28331F3BB629002D21DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CA28321F3BB629002D21DB /* Assets.xcassets */; };
 		88CA28361F3BB629002D21DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CA28341F3BB629002D21DB /* LaunchScreen.storyboard */; };
 		88CA28411F3BB629002D21DB /* cardMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CA28401F3BB629002D21DB /* cardMakerTests.swift */; };
-		88CA284C1F3BB8FB002D21DB /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CA284B1F3BB8FB002D21DB /* CardViewController.swift */; };
+		ED6424D91F3E559C00D41841 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6424D81F3E559C00D41841 /* CardViewController.swift */; };
+		ED6424DB1F3E563000D41841 /* CardMaker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6424DA1F3E563000D41841 /* CardMaker.storyboard */; };
 		ED723B7B1F3E509D00900A7E /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED723B7A1F3E509D00900A7E /* SeedData.swift */; };
 		ED723B7D1F3E50B100900A7E /* TeamColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED723B7C1F3E50B100900A7E /* TeamColors.swift */; };
 		ED723B7F1F3E50BC00900A7E /* ShreveStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED723B7E1F3E50BC00900A7E /* ShreveStoryBoard.storyboard */; };
@@ -49,7 +50,8 @@
 		88CA283C1F3BB629002D21DB /* cardMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cardMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CA28401F3BB629002D21DB /* cardMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardMakerTests.swift; sourceTree = "<group>"; };
 		88CA28421F3BB629002D21DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88CA284B1F3BB8FB002D21DB /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardViewController.swift; path = cardMaker/CardViewController.swift; sourceTree = "<group>"; };
+		ED6424D81F3E559C00D41841 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		ED6424DA1F3E563000D41841 /* CardMaker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CardMaker.storyboard; sourceTree = "<group>"; };
 		ED723B7A1F3E509D00900A7E /* SeedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeedData.swift; path = cardMaker/SeedData.swift; sourceTree = "<group>"; };
 		ED723B7C1F3E50B100900A7E /* TeamColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamColors.swift; path = cardMaker/TeamColors.swift; sourceTree = "<group>"; };
 		ED723B7E1F3E50BC00900A7E /* ShreveStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ShreveStoryBoard.storyboard; path = cardMaker/ShreveStoryBoard.storyboard; sourceTree = "<group>"; };
@@ -87,7 +89,7 @@
 		888027281F3C22C7000CFA0D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				88CA284B1F3BB8FB002D21DB /* CardViewController.swift */,
+				ED6424D81F3E559C00D41841 /* CardViewController.swift */,
 				888027251F3BF1B0000CFA0D /* CardCollectionViewController.swift */,
 			);
 			name = Controller;
@@ -156,6 +158,7 @@
 		ED723B861F3E50FC00900A7E /* CardMaker */ = {
 			isa = PBXGroup;
 			children = (
+				ED6424DA1F3E563000D41841 /* CardMaker.storyboard */,
 				ED723B7E1F3E50BC00900A7E /* ShreveStoryBoard.storyboard */,
 				ED723B7A1F3E509D00900A7E /* SeedData.swift */,
 				ED723B7C1F3E50B100900A7E /* TeamColors.swift */,
@@ -252,6 +255,7 @@
 				ED723B7F1F3E50BC00900A7E /* ShreveStoryBoard.storyboard in Resources */,
 				88CA28361F3BB629002D21DB /* LaunchScreen.storyboard in Resources */,
 				88CA28331F3BB629002D21DB /* Assets.xcassets in Resources */,
+				ED6424DB1F3E563000D41841 /* CardMaker.storyboard in Resources */,
 				88CA282E1F3BB629002D21DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,13 +275,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				888027261F3BF1B0000CFA0D /* CardCollectionViewController.swift in Sources */,
-				88CA284C1F3BB8FB002D21DB /* CardViewController.swift in Sources */,
 				ED723B851F3E50EC00900A7E /* CardBuilderViewController.swift in Sources */,
 				ED723B7B1F3E509D00900A7E /* SeedData.swift in Sources */,
 				88CA28311F3BB629002D21DB /* cardMaker.xcdatamodeld in Sources */,
 				ED723B7D1F3E50B100900A7E /* TeamColors.swift in Sources */,
 				ED723B811F3E50CA00900A7E /* FrameCollectionViewCell.swift in Sources */,
 				88CA28291F3BB629002D21DB /* AppDelegate.swift in Sources */,
+				ED6424D91F3E559C00D41841 /* CardViewController.swift in Sources */,
 				888027241F3BEDC6000CFA0D /* CardCollectionViewCell.swift in Sources */,
 				888027221F3BE2F1000CFA0D /* Card.swift in Sources */,
 				ED723B831F3E50D000900A7E /* Frame.swift in Sources */,
