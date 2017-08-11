@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Cards-->
+        <scene sceneID="KZV-my-2Um">
+            <objects>
+                <collectionViewController id="vLe-dW-KtZ" customClass="CardCollectionViewController" customModule="cardMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="0cY-5T-aS7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VwE-tb-ko5">
+                            <size key="itemSize" width="90" height="90"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="IrW-zB-gXI" customClass="CardCollectionViewCell" customModule="cardMaker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="XMi-6Z-lNE">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="XMi-6Z-lNE" firstAttribute="leading" secondItem="IrW-zB-gXI" secondAttribute="leading" id="9lW-pk-CxJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="XMi-6Z-lNE" secondAttribute="bottom" id="Vm0-8a-jHa"/>
+                                    <constraint firstAttribute="trailing" secondItem="XMi-6Z-lNE" secondAttribute="trailing" id="hR1-Cz-S9w"/>
+                                    <constraint firstItem="XMi-6Z-lNE" firstAttribute="top" secondItem="IrW-zB-gXI" secondAttribute="top" id="uka-Xq-Dyf"/>
+                                </constraints>
+                                <size key="customSize" width="90" height="90"/>
+                                <connections>
+                                    <outlet property="photoImageView" destination="XMi-6Z-lNE" id="BPY-wH-8Oa"/>
+                                    <segue destination="aBc-7m-Jk4" kind="show" identifier="ShowDetail" id="feb-g8-okq">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="vLe-dW-KtZ" id="Qmd-dE-v9z"/>
+                            <outlet property="delegate" destination="vLe-dW-KtZ" id="Z2Z-cm-M7w"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="My Cards" id="oqP-6d-Vdw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4gt-2Y-BqO">
+                            <connections>
+                                <segue destination="NRF-14-6QY" kind="presentation" identifier="AddItem" id="xcs-Ve-ysd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jLf-W0-K4I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="190" y="132"/>
+        </scene>
+        <!--New Card-->
+        <scene sceneID="Tug-Ha-wSY">
+            <objects>
+                <viewController id="aBc-7m-Jk4" customClass="CardViewController" customModule="cardMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BOv-ZS-0dG"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Yz-RL-adW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5xe-jc-iIe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="lwh-cX-FJB">
+                                <rect key="frame" x="16" y="99" width="343" height="343"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lwh-cX-FJB" secondAttribute="height" multiplier="1:1" id="BAM-CG-5j5"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="78A-8G-6KI" appends="YES" id="dOu-af-ZXR"/>
+                                </connections>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ijT-xq-eQl">
+                                <rect key="frame" x="16" y="450" width="343" height="68"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter team name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ds-BC-tDe">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter player name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgR-QD-soH">
+                                        <rect key="frame" x="0.0" y="38" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lwh-cX-FJB" firstAttribute="top" secondItem="BOv-ZS-0dG" secondAttribute="bottom" constant="35" id="HFs-KF-DMO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ijT-xq-eQl" secondAttribute="trailing" id="Qqq-B7-4MZ"/>
+                            <constraint firstItem="lwh-cX-FJB" firstAttribute="leading" secondItem="5xe-jc-iIe" secondAttribute="leadingMargin" id="VSw-WJ-GTz"/>
+                            <constraint firstItem="ijT-xq-eQl" firstAttribute="leading" secondItem="5xe-jc-iIe" secondAttribute="leadingMargin" id="cIs-dS-sxh"/>
+                            <constraint firstItem="lwh-cX-FJB" firstAttribute="trailing" secondItem="5xe-jc-iIe" secondAttribute="trailingMargin" id="d17-8f-37T"/>
+                            <constraint firstItem="ijT-xq-eQl" firstAttribute="top" secondItem="lwh-cX-FJB" secondAttribute="bottom" constant="8" id="oOy-4b-jYw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Card" id="AX9-3J-nxd">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="sdh-4Q-93t">
+                            <connections>
+                                <action selector="cancel:" destination="aBc-7m-Jk4" id="pZp-lg-ZV2"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Pgu-wC-ipx">
+                            <connections>
+                                <segue destination="3af-Km-jey" kind="unwind" unwindAction="unwindToCardListWithSender:" id="HGP-ZH-AqD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="bgR-QD-soH" id="C2f-h5-imc"/>
+                        <outlet property="photoImageView" destination="lwh-cX-FJB" id="FfR-MK-xlk"/>
+                        <outlet property="saveButton" destination="Pgu-wC-ipx" id="X5b-4B-ym9"/>
+                        <outlet property="teamTextField" destination="6Ds-BC-tDe" id="ADJ-Oa-ZYr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Doa-cd-EaA" sceneMemberID="firstResponder"/>
+                <exit id="3af-Km-jey" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="78A-8G-6KI">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="aBc-7m-Jk4" id="cai-nP-aJV"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1818" y="132"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RWQ-WL-T7J">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o1v-tc-wnQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bJz-7a-uLv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vLe-dW-KtZ" kind="relationship" relationship="rootViewController" id="dp2-L0-CLo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0zD-Dz-ocD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-626.39999999999998" y="131.78410794602701"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="D0W-EQ-OWo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NRF-14-6QY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pxO-NA-pah">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aBc-7m-Jk4" kind="relationship" relationship="rootViewController" id="JVV-FY-uEJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EZW-xb-VrU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1001" y="506"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="defaultImage" width="540" height="540"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="JVV-FY-uEJ"/>
+    </inferredMetricsTieBreakers>
+</document>
