@@ -9,6 +9,7 @@
 import UIKit
 import os.log
 
+
 class CardViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: Properties
@@ -21,6 +22,7 @@ class CardViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         teamTextField.delegate = self
         nameTextField.delegate = self
