@@ -14,26 +14,26 @@
         <scene sceneID="Uli-It-9W1">
             <objects>
                 <collectionViewController id="aPZ-Og-hnh" customClass="CardCollectionViewController" customModule="cardMaker" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="nof-w3-hSS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" id="nof-w3-hSS">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9bI-0v-CcL">
-                            <size key="itemSize" width="90" height="90"/>
+                            <size key="itemSize" width="125" height="175"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="rkb-gQ-Z4w" customClass="CardCollectionViewCell" customModule="cardMaker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                <rect key="frame" x="0.0" y="0.0" width="125" height="175"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="125" height="175"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="Crg-WA-1zQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_6751" translatesAutoresizingMaskIntoConstraints="NO" id="Crg-WA-1zQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="175"/>
                                         </imageView>
                                     </subviews>
                                 </view>
@@ -43,7 +43,7 @@
                                     <constraint firstItem="Crg-WA-1zQ" firstAttribute="top" secondItem="rkb-gQ-Z4w" secondAttribute="top" id="aFD-CF-CuX"/>
                                     <constraint firstItem="Crg-WA-1zQ" firstAttribute="leading" secondItem="rkb-gQ-Z4w" secondAttribute="leading" id="dav-vB-Mgb"/>
                                 </constraints>
-                                <size key="customSize" width="90" height="90"/>
+                                <size key="customSize" width="125" height="175"/>
                                 <connections>
                                     <outlet property="photoImageView" destination="Crg-WA-1zQ" id="ssl-oR-SEi"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="4jq-lW-wnr"/>
@@ -55,6 +55,7 @@
                             <outlet property="delegate" destination="aPZ-Og-hnh" id="Yoe-Fa-Hb2"/>
                         </connections>
                     </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="My Cards" id="3tA-as-sDO">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="M32-2f-WVm">
                             <connections>
@@ -62,6 +63,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYd-dY-5vz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -76,13 +78,13 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleAspectFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Qda-x9-jRB" userLabel="CompositeView">
-                                <rect key="frame" x="62" y="84" width="250" height="350"/>
+                                <rect key="frame" x="62" y="20" width="250" height="350"/>
                                 <subviews>
-                                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card1" translatesAutoresizingMaskIntoConstraints="NO" id="hsW-uW-0fU" userLabel="basePhoto">
+                                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_6751" translatesAutoresizingMaskIntoConstraints="NO" id="hsW-uW-0fU" userLabel="basePhoto">
                                         <rect key="frame" x="25" y="25" width="200" height="300"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -90,27 +92,7 @@
                                             <constraint firstAttribute="width" constant="200" id="OcC-HD-hbm"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8vi-56-Y2d">
-                                        <rect key="frame" x="0.0" y="257" width="137.5" height="68"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter player name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HX0-jj-hS9">
-                                                <rect key="frame" x="0.0" y="0.0" width="137.5" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter team name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TIl-bO-uUR">
-                                                <rect key="frame" x="0.0" y="38" width="137.5" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                            </textField>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="HX0-jj-hS9" firstAttribute="top" secondItem="8vi-56-Y2d" secondAttribute="top" id="s2b-Wa-cN9"/>
-                                        </constraints>
-                                    </stackView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lighthouseFrame" translatesAutoresizingMaskIntoConstraints="NO" id="rfq-Yx-Au1" userLabel="FrameImage">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rfq-Yx-Au1" userLabel="FrameImage">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="350"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -118,13 +100,37 @@
                                             <constraint firstAttribute="height" constant="350" id="VnW-y6-qnx"/>
                                         </constraints>
                                     </imageView>
+                                    <stackView opaque="NO" tag="220" contentMode="scaleToFill" axis="vertical" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="8vi-56-Y2d">
+                                        <rect key="frame" x="0.0" y="25" width="250" height="300"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Enter player name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HX0-jj-hS9">
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="150"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
+                                                <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Enter team name" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TIl-bO-uUR">
+                                                <rect key="frame" x="0.0" y="270" width="250" height="30"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="21"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="HX0-jj-hS9" firstAttribute="top" secondItem="8vi-56-Y2d" secondAttribute="top" id="s2b-Wa-cN9"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="8Ch-A5-sgC"/>
+                                    <constraint firstItem="8vi-56-Y2d" firstAttribute="centerX" secondItem="Qda-x9-jRB" secondAttribute="centerX" id="EKY-SC-o1e"/>
                                     <constraint firstItem="hsW-uW-0fU" firstAttribute="centerX" secondItem="Qda-x9-jRB" secondAttribute="centerX" id="G6o-xs-mrb"/>
                                     <constraint firstAttribute="width" constant="250" id="Ps6-xY-NQw"/>
                                     <constraint firstItem="rfq-Yx-Au1" firstAttribute="leading" secondItem="TIl-bO-uUR" secondAttribute="leading" id="Yfg-ry-x87"/>
+                                    <constraint firstItem="8vi-56-Y2d" firstAttribute="centerY" secondItem="Qda-x9-jRB" secondAttribute="centerY" id="bu0-Ni-Yxu"/>
                                     <constraint firstItem="TIl-bO-uUR" firstAttribute="top" secondItem="rfq-Yx-Au1" secondAttribute="bottom" constant="-55" id="dmp-z9-nxg"/>
                                     <constraint firstItem="hsW-uW-0fU" firstAttribute="centerY" secondItem="Qda-x9-jRB" secondAttribute="centerY" id="kU6-5M-KVa"/>
                                     <constraint firstItem="rfq-Yx-Au1" firstAttribute="centerY" secondItem="Qda-x9-jRB" secondAttribute="centerY" id="r8T-1u-zep"/>
@@ -133,7 +139,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XSe-Uy-iI8" userLabel=" Frame Collection View Controller">
-                                <rect key="frame" x="16" y="449" width="343" height="85"/>
+                                <rect key="frame" x="16" y="385" width="343" height="85"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="VbV-NL-c6h"/>
@@ -250,7 +256,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="G6K-Ex-Hvq">
                             <connections>
                                 <action selector="saveButtonPressed:" destination="BYZ-38-t0r" id="2bl-Ey-UmU"/>
-                                <segue destination="vhP-zf-Atp" kind="unwind" unwindAction="unwindToCardListWithSender:" id="UJh-yH-BDX"/>
+                                <segue destination="vhP-zf-Atp" kind="unwind" unwindAction="unwindToCardListWithSender:" id="L1J-oS-cep"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -259,6 +265,8 @@
                         <outlet property="frameCollectionView" destination="XSe-Uy-iI8" id="xAk-Zw-peX"/>
                         <outlet property="frameImage" destination="rfq-Yx-Au1" id="fa3-yh-0z0"/>
                         <outlet property="nameTextField" destination="HX0-jj-hS9" id="3wS-Xl-pC0"/>
+                        <outlet property="pngView" destination="Qda-x9-jRB" id="xwO-o7-Ont"/>
+                        <outlet property="saveButton" destination="G6K-Ex-Hvq" id="k2d-t7-mXu"/>
                         <outlet property="teamTextField" destination="TIl-bO-uUR" id="Yyf-oq-S0v"/>
                     </connections>
                 </viewController>
@@ -308,49 +316,10 @@
             </objects>
             <point key="canvasLocation" x="1001" y="506"/>
         </scene>
-        <!--Card Builder View Controller-->
-        <scene sceneID="kJ6-RY-m3u">
-            <objects>
-                <viewController id="uyV-I2-kda" customClass="CardBuilderViewController" customModule="cardMaker" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FDS-XQ-AvS"/>
-                        <viewControllerLayoutGuide type="bottom" id="E6N-Bb-DOm"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gKr-Ce-6yf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2R2-o2-bf7">
-                                <rect key="frame" x="172" y="637" width="32" height="30"/>
-                                <state key="normal" title="save"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <constraints>
-                            <constraint firstItem="E6N-Bb-DOm" firstAttribute="top" secondItem="2R2-o2-bf7" secondAttribute="bottom" id="k8R-zs-yGC"/>
-                            <constraint firstItem="2R2-o2-bf7" firstAttribute="centerX" secondItem="gKr-Ce-6yf" secondAttribute="centerX" id="zGt-GJ-Q5l"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="RMi-KF-8JH">
-                        <barButtonItem key="leftBarButtonItem" title="edit" id="i9N-0J-7TL"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="DjV-WJ-NTs">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ziz-Td-6WG">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="cancel"/>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5rO-uj-3wE" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2911" y="132"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="IMG_6751" width="960" height="1280"/>
         <image name="LighthouseFrame2" width="350" height="450"/>
-        <image name="card1" width="85" height="120"/>
-        <image name="defaultImage" width="540" height="540"/>
         <image name="frametrans" width="340" height="448"/>
         <image name="lighthouseFrame" width="350" height="450"/>
     </resources>

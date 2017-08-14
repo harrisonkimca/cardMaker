@@ -24,6 +24,8 @@
 		ED723B811F3E50CA00900A7E /* FrameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED723B801F3E50CA00900A7E /* FrameCollectionViewCell.swift */; };
 		ED723B831F3E50D000900A7E /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED723B821F3E50D000900A7E /* Frame.swift */; };
 		ED723B851F3E50EC00900A7E /* CardBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED723B841F3E50EC00900A7E /* CardBuilderViewController.swift */; };
+		EDE569851F42298E006D59C4 /* UIView+asImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE569841F42298E006D59C4 /* UIView+asImage.swift */; };
+		EDE569871F423C7C006D59C4 /* UIImage+asImage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE569861F423C7C006D59C4 /* UIImage+asImage2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		ED723B801F3E50CA00900A7E /* FrameCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrameCollectionViewCell.swift; path = cardMaker/FrameCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED723B821F3E50D000900A7E /* Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Frame.swift; path = cardMaker/Frame.swift; sourceTree = "<group>"; };
 		ED723B841F3E50EC00900A7E /* CardBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBuilderViewController.swift; sourceTree = "<group>"; };
+		EDE569841F42298E006D59C4 /* UIView+asImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+asImage.swift"; sourceTree = "<group>"; };
+		EDE569861F423C7C006D59C4 /* UIImage+asImage2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+asImage2.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				ED6424D81F3E559C00D41841 /* CardViewController.swift */,
+				EDE569841F42298E006D59C4 /* UIView+asImage.swift */,
+				EDE569861F423C7C006D59C4 /* UIImage+asImage2.swift */,
 				888027251F3BF1B0000CFA0D /* CardCollectionViewController.swift */,
 			);
 			name = Controller;
@@ -282,7 +288,9 @@
 				ED723B7D1F3E50B100900A7E /* TeamColors.swift in Sources */,
 				ED723B811F3E50CA00900A7E /* FrameCollectionViewCell.swift in Sources */,
 				88CA28291F3BB629002D21DB /* AppDelegate.swift in Sources */,
+				EDE569871F423C7C006D59C4 /* UIImage+asImage2.swift in Sources */,
 				ED6424D91F3E559C00D41841 /* CardViewController.swift in Sources */,
+				EDE569851F42298E006D59C4 /* UIView+asImage.swift in Sources */,
 				888027241F3BEDC6000CFA0D /* CardCollectionViewCell.swift in Sources */,
 				888027221F3BE2F1000CFA0D /* Card.swift in Sources */,
 				ED723B831F3E50D000900A7E /* Frame.swift in Sources */,
