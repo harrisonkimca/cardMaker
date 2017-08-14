@@ -16,6 +16,10 @@
 		88CA28331F3BB629002D21DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CA28321F3BB629002D21DB /* Assets.xcassets */; };
 		88CA28361F3BB629002D21DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CA28341F3BB629002D21DB /* LaunchScreen.storyboard */; };
 		88CA28411F3BB629002D21DB /* cardMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CA28401F3BB629002D21DB /* cardMakerTests.swift */; };
+		88CA284C1F3BB8FB002D21DB /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CA284B1F3BB8FB002D21DB /* CardViewController.swift */; };
+		BBEC1F6C1F3E508400C0692D /* TisprCardStackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC1F691F3E508400C0692D /* TisprCardStackViewCell.swift */; };
+		BBEC1F6D1F3E508400C0692D /* TisprCardStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC1F6A1F3E508400C0692D /* TisprCardStackViewController.swift */; };
+		BBEC1F6E1F3E508400C0692D /* TisprCardStackViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC1F6B1F3E508400C0692D /* TisprCardStackViewLayout.swift */; };
 		ED6424D91F3E559C00D41841 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6424D81F3E559C00D41841 /* CardViewController.swift */; };
 		ED6424DB1F3E563000D41841 /* CardMaker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6424DA1F3E563000D41841 /* CardMaker.storyboard */; };
 		ED723B7B1F3E509D00900A7E /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED723B7A1F3E509D00900A7E /* SeedData.swift */; };
@@ -52,6 +56,10 @@
 		88CA283C1F3BB629002D21DB /* cardMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cardMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CA28401F3BB629002D21DB /* cardMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardMakerTests.swift; sourceTree = "<group>"; };
 		88CA28421F3BB629002D21DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88CA284B1F3BB8FB002D21DB /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardViewController.swift; path = cardMaker/CardViewController.swift; sourceTree = "<group>"; };
+		BBEC1F691F3E508400C0692D /* TisprCardStackViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewCell.swift; sourceTree = "<group>"; };
+		BBEC1F6A1F3E508400C0692D /* TisprCardStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewController.swift; sourceTree = "<group>"; };
+		BBEC1F6B1F3E508400C0692D /* TisprCardStackViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewLayout.swift; sourceTree = "<group>"; };
 		ED6424D81F3E559C00D41841 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		ED6424DA1F3E563000D41841 /* CardMaker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CardMaker.storyboard; sourceTree = "<group>"; };
 		ED723B7A1F3E509D00900A7E /* SeedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeedData.swift; path = cardMaker/SeedData.swift; sourceTree = "<group>"; };
@@ -93,6 +101,11 @@
 		888027281F3C22C7000CFA0D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				888027231F3BEDC6000CFA0D /* CardCollectionViewCell.swift */,
+				BBEC1F691F3E508400C0692D /* TisprCardStackViewCell.swift */,
+				BBEC1F6A1F3E508400C0692D /* TisprCardStackViewController.swift */,
+				BBEC1F6B1F3E508400C0692D /* TisprCardStackViewLayout.swift */,
+				88CA284B1F3BB8FB002D21DB /* CardViewController.swift */,
 				ED6424D81F3E559C00D41841 /* CardViewController.swift */,
 				EDE569841F42298E006D59C4 /* UIView+asImage.swift */,
 				EDE569861F423C7C006D59C4 /* UIImage+asImage2.swift */,
