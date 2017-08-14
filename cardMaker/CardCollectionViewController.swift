@@ -61,12 +61,10 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
 
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
         return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return cards.count
     }
 
@@ -81,8 +79,8 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
         
         let card = cards[indexPath.row]
         
-        cell.photoImageView.image = card.photo
-
+        cell.photoImageView.image = card.pngImage
+    
         return cell
     }
     
@@ -144,29 +142,29 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
 
     //MARK: Private Methods
     private func loadSampleCards() {
-        let photo1 = UIImage(named: "card1")
+        let photo1 = UIImage(named: "IMG_6751")
         let photo2 = UIImage(named: "card2")
         let photo3 = UIImage(named: "card3")
         let photo4 = UIImage(named: "card4")
         let photo5 = UIImage(named: "card5")
         
-        guard let card1 = Card(team: "Blue Jays", name: "Josh Donaldson", photo: photo1) else {
+        guard let card1 = Card(team: "Blue Jays", name: "Josh Donaldson", photo: photo1, frame: photo1, pngImage: photo1) else {
             fatalError("Unable to instantiate card1")
         }
         
-        guard let card2 = Card(team: "Blue Jays", name: "Jose Bautista", photo: photo2) else {
+        guard let card2 = Card(team: "Blue Jays", name: "Jose Bautista", photo: photo2, frame: nil, pngImage: nil) else {
             fatalError("Unable to instantiate card2")
         }
         
-        guard let card3 = Card(team: "Blue Jays", name: "Russel Martin", photo: photo3) else {
+        guard let card3 = Card(team: "Blue Jays", name: "Russel Martin", photo: photo3, frame: nil, pngImage: nil) else {
             fatalError("Unable to instantiate card3")
         }
         
-        guard let card4 = Card(team: "Chicago Cubs", name: "Kyle Schwarber", photo: photo4) else {
+        guard let card4 = Card(team: "Chicago Cubs", name: "Kyle Schwarber", photo: photo4, frame: nil, pngImage: nil) else {
             fatalError("Unable to instantiate card4")
         }
         
-        guard let card5 = Card(team: "Blue Jays", name: "Aaron Sanchez", photo: photo5) else {
+        guard let card5 = Card(team: "Blue Jays", name: "Aaron Sanchez", photo: photo5, frame: nil, pngImage: nil) else {
             fatalError("Unable to instantiate card5")
         }
         

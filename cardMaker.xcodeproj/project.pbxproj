@@ -16,10 +16,16 @@
 		88CA28331F3BB629002D21DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CA28321F3BB629002D21DB /* Assets.xcassets */; };
 		88CA28361F3BB629002D21DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CA28341F3BB629002D21DB /* LaunchScreen.storyboard */; };
 		88CA28411F3BB629002D21DB /* cardMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CA28401F3BB629002D21DB /* cardMakerTests.swift */; };
-		88CA284C1F3BB8FB002D21DB /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CA284B1F3BB8FB002D21DB /* CardViewController.swift */; };
-		BBEC1F6C1F3E508400C0692D /* TisprCardStackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC1F691F3E508400C0692D /* TisprCardStackViewCell.swift */; };
-		BBEC1F6D1F3E508400C0692D /* TisprCardStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC1F6A1F3E508400C0692D /* TisprCardStackViewController.swift */; };
-		BBEC1F6E1F3E508400C0692D /* TisprCardStackViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC1F6B1F3E508400C0692D /* TisprCardStackViewLayout.swift */; };
+		ED6424D91F3E559C00D41841 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6424D81F3E559C00D41841 /* CardViewController.swift */; };
+		ED6424DB1F3E563000D41841 /* CardMaker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6424DA1F3E563000D41841 /* CardMaker.storyboard */; };
+		ED723B7B1F3E509D00900A7E /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED723B7A1F3E509D00900A7E /* SeedData.swift */; };
+		ED723B7D1F3E50B100900A7E /* TeamColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED723B7C1F3E50B100900A7E /* TeamColors.swift */; };
+		ED723B7F1F3E50BC00900A7E /* ShreveStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED723B7E1F3E50BC00900A7E /* ShreveStoryBoard.storyboard */; };
+		ED723B811F3E50CA00900A7E /* FrameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED723B801F3E50CA00900A7E /* FrameCollectionViewCell.swift */; };
+		ED723B831F3E50D000900A7E /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED723B821F3E50D000900A7E /* Frame.swift */; };
+		ED723B851F3E50EC00900A7E /* CardBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED723B841F3E50EC00900A7E /* CardBuilderViewController.swift */; };
+		EDE569851F42298E006D59C4 /* UIView+asImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE569841F42298E006D59C4 /* UIView+asImage.swift */; };
+		EDE569871F423C7C006D59C4 /* UIImage+asImage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE569861F423C7C006D59C4 /* UIImage+asImage2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,10 +52,16 @@
 		88CA283C1F3BB629002D21DB /* cardMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cardMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CA28401F3BB629002D21DB /* cardMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardMakerTests.swift; sourceTree = "<group>"; };
 		88CA28421F3BB629002D21DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88CA284B1F3BB8FB002D21DB /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardViewController.swift; path = cardMaker/CardViewController.swift; sourceTree = "<group>"; };
-		BBEC1F691F3E508400C0692D /* TisprCardStackViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewCell.swift; sourceTree = "<group>"; };
-		BBEC1F6A1F3E508400C0692D /* TisprCardStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewController.swift; sourceTree = "<group>"; };
-		BBEC1F6B1F3E508400C0692D /* TisprCardStackViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewLayout.swift; sourceTree = "<group>"; };
+		ED6424D81F3E559C00D41841 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		ED6424DA1F3E563000D41841 /* CardMaker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CardMaker.storyboard; sourceTree = "<group>"; };
+		ED723B7A1F3E509D00900A7E /* SeedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeedData.swift; path = cardMaker/SeedData.swift; sourceTree = "<group>"; };
+		ED723B7C1F3E50B100900A7E /* TeamColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamColors.swift; path = cardMaker/TeamColors.swift; sourceTree = "<group>"; };
+		ED723B7E1F3E50BC00900A7E /* ShreveStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ShreveStoryBoard.storyboard; path = cardMaker/ShreveStoryBoard.storyboard; sourceTree = "<group>"; };
+		ED723B801F3E50CA00900A7E /* FrameCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrameCollectionViewCell.swift; path = cardMaker/FrameCollectionViewCell.swift; sourceTree = "<group>"; };
+		ED723B821F3E50D000900A7E /* Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Frame.swift; path = cardMaker/Frame.swift; sourceTree = "<group>"; };
+		ED723B841F3E50EC00900A7E /* CardBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBuilderViewController.swift; sourceTree = "<group>"; };
+		EDE569841F42298E006D59C4 /* UIView+asImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+asImage.swift"; sourceTree = "<group>"; };
+		EDE569861F423C7C006D59C4 /* UIImage+asImage2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+asImage2.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +93,9 @@
 		888027281F3C22C7000CFA0D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				888027231F3BEDC6000CFA0D /* CardCollectionViewCell.swift */,
-				BBEC1F691F3E508400C0692D /* TisprCardStackViewCell.swift */,
-				BBEC1F6A1F3E508400C0692D /* TisprCardStackViewController.swift */,
-				BBEC1F6B1F3E508400C0692D /* TisprCardStackViewLayout.swift */,
-				88CA284B1F3BB8FB002D21DB /* CardViewController.swift */,
+				ED6424D81F3E559C00D41841 /* CardViewController.swift */,
+				EDE569841F42298E006D59C4 /* UIView+asImage.swift */,
+				EDE569861F423C7C006D59C4 /* UIImage+asImage2.swift */,
 				888027251F3BF1B0000CFA0D /* CardCollectionViewController.swift */,
 			);
 			name = Controller;
@@ -111,6 +121,7 @@
 		88CA281C1F3BB628002D21DB = {
 			isa = PBXGroup;
 			children = (
+				ED723B861F3E50FC00900A7E /* CardMaker */,
 				8880272A1F3C22D8000CFA0D /* UI */,
 				888027291F3C22D2000CFA0D /* View */,
 				888027281F3C22C7000CFA0D /* Controller */,
@@ -147,6 +158,20 @@
 				88CA28421F3BB629002D21DB /* Info.plist */,
 			);
 			path = cardMakerTests;
+			sourceTree = "<group>";
+		};
+		ED723B861F3E50FC00900A7E /* CardMaker */ = {
+			isa = PBXGroup;
+			children = (
+				ED6424DA1F3E563000D41841 /* CardMaker.storyboard */,
+				ED723B7E1F3E50BC00900A7E /* ShreveStoryBoard.storyboard */,
+				ED723B7A1F3E509D00900A7E /* SeedData.swift */,
+				ED723B7C1F3E50B100900A7E /* TeamColors.swift */,
+				ED723B801F3E50CA00900A7E /* FrameCollectionViewCell.swift */,
+				ED723B821F3E50D000900A7E /* Frame.swift */,
+				ED723B841F3E50EC00900A7E /* CardBuilderViewController.swift */,
+			);
+			name = CardMaker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +224,7 @@
 				TargetAttributes = {
 					88CA28241F3BB628002D21DB = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 294FN9LFDB;
 						ProvisioningStyle = Automatic;
 					};
 					88CA283B1F3BB629002D21DB = {
@@ -232,8 +258,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED723B7F1F3E50BC00900A7E /* ShreveStoryBoard.storyboard in Resources */,
 				88CA28361F3BB629002D21DB /* LaunchScreen.storyboard in Resources */,
 				88CA28331F3BB629002D21DB /* Assets.xcassets in Resources */,
+				ED6424DB1F3E563000D41841 /* CardMaker.storyboard in Resources */,
 				88CA282E1F3BB629002D21DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,14 +281,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				888027261F3BF1B0000CFA0D /* CardCollectionViewController.swift in Sources */,
-				88CA284C1F3BB8FB002D21DB /* CardViewController.swift in Sources */,
+				ED723B851F3E50EC00900A7E /* CardBuilderViewController.swift in Sources */,
+				ED723B7B1F3E509D00900A7E /* SeedData.swift in Sources */,
 				88CA28311F3BB629002D21DB /* cardMaker.xcdatamodeld in Sources */,
+				ED723B7D1F3E50B100900A7E /* TeamColors.swift in Sources */,
+				ED723B811F3E50CA00900A7E /* FrameCollectionViewCell.swift in Sources */,
 				88CA28291F3BB629002D21DB /* AppDelegate.swift in Sources */,
+				EDE569871F423C7C006D59C4 /* UIImage+asImage2.swift in Sources */,
+				ED6424D91F3E559C00D41841 /* CardViewController.swift in Sources */,
+				EDE569851F42298E006D59C4 /* UIView+asImage.swift in Sources */,
 				888027241F3BEDC6000CFA0D /* CardCollectionViewCell.swift in Sources */,
 				BBEC1F6E1F3E508400C0692D /* TisprCardStackViewLayout.swift in Sources */,
 				BBEC1F6C1F3E508400C0692D /* TisprCardStackViewCell.swift in Sources */,
 				BBEC1F6D1F3E508400C0692D /* TisprCardStackViewController.swift in Sources */,
 				888027221F3BE2F1000CFA0D /* Card.swift in Sources */,
+				ED723B831F3E50D000900A7E /* Frame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +438,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 294FN9LFDB;
 				INFOPLIST_FILE = cardMaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Lighthouse-Lab.cardMaker";
@@ -415,6 +451,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 294FN9LFDB;
 				INFOPLIST_FILE = cardMaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Lighthouse-Lab.cardMaker";

@@ -9,21 +9,32 @@
 import UIKit
 import os.log
 
-
-class CardViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CardViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    // MARK: Properties
+    
+    // MARK: Card Detail View Properties
     @IBOutlet weak var teamTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var basePhoto: UIImageView!
+    
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    // MARK: Frame CollectionView Properties
+    @IBOutlet weak var frameCollectionView: UICollectionView!
+    
+    // MARL: Add frame image to large view
+    @IBOutlet weak var frameImage: UIImageView!
+    
+    @IBOutlet weak var pngView: UIView!
+    //MARK Generate Frame Data
+    var seedData: SeedData!
+    
     
     var card: Card?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         teamTextField.delegate = self
         nameTextField.delegate = self
         
@@ -31,12 +42,51 @@ class CardViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
             navigationItem.title = card.name
             teamTextField.text = card.team
             nameTextField.text = card.name
-            photoImageView.image = card.photo
+            basePhoto.image = card.photo
         }
+        
+        //MARK Frame Collection Data
+        seedData = SeedData()
+        
+        
         
         updateSaveButtonState()
     }
-
+    
+    // MARK: Frame CollectionView Data Source
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return seedData.frames.count
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"Cell", for: indexPath)
+        if let frameCell = cell as? FrameCollectionViewCell {
+            frameCell.frameCellImage.image
+                = seedData.frames[indexPath.row].frameImage
+            frameCell.backgroundView = UIImageView(image: card?.photo)
+            return frameCell
+            
+        }
+        
+        return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        frameImage.image = seedData.frames[indexPath.row].frameImage
+        card?.frame = frameImage.image
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     // MARK: UITextFieldDelegate
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
@@ -61,11 +111,13 @@ class CardViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard let selectedImage = info[UIImagePickerControllerOriginalImage] as?
             UIImage else {
-            fatalError("Expected a dictionary containing an image, but was provided the following: \(info) ")
+                fatalError("Expected a dictionary containing an image, but was provided the following: \(info) ")
         }
-        photoImageView.image = selectedImage
+        basePhoto.image = selectedImage
         dismiss(animated: true, completion: nil)
     }
+    
+    
     
     // MARK: Navigation
     @IBAction func cancel(_ sender: UIBarButtonItem) {
@@ -85,7 +137,7 @@ class CardViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
             
         else {
             
-            fatalError("The MealViewController is not inside a navigation controller")
+            fatalError("The CardViewController is not inside a navigation controller")
         }
     }
     
@@ -100,10 +152,16 @@ class CardViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         
         let team = teamTextField.text ?? ""
         let name = nameTextField.text ?? ""
-        let photo = photoImageView.image
+        let photo = basePhoto.image
+        let frame = frameImage.image
+//        let pngImage = pngView.asImage()
+        let pngImage = UIImage.init(view: pngView)
         
-        card = Card(team: team, name: name, photo: photo)
+        card = Card(team: team, name: name, photo: photo, frame: frame, pngImage: pngImage)
+        
+        
     }
+    
     
     // MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
@@ -116,9 +174,14 @@ class CardViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         present(imagePickerController, animated: true, completion: nil)
     }
     
+    
+    
+    
+    
+    
     //MARK: Private Methods
     private func updateSaveButtonState() {
-        // Disable the Save button if any of the texts fields are empty
+        //        Disable the Save button if any of the texts fields are empty
         let teamText = teamTextField.text ?? ""
         let nameText = nameTextField.text ?? ""
         saveButton.isEnabled = !teamText.isEmpty && !nameText.isEmpty

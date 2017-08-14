@@ -10,10 +10,11 @@ import UIKit
 import os.log
 
 class Card: NSObject, NSCoding {
-    
     var team: String
     var name: String
     var photo: UIImage?
+    var frame: UIImage?
+    var pngImage: UIImage?
     
     //MARK: Archiving Paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -24,9 +25,11 @@ class Card: NSObject, NSCoding {
         static let team = "team"
         static let name = "name"
         static let photo = "photo"
+        static let frame = "frame"
+        static let pngImage = "pngImage"
     }
 
-    init?(team: String, name: String, photo: UIImage?) {
+    init?(team: String, name: String, photo: UIImage?, frame: UIImage?, pngImage: UIImage?) {
         
         if name.isEmpty || team.isEmpty {
             return nil
@@ -43,6 +46,8 @@ class Card: NSObject, NSCoding {
         self.team = team
         self.name = name
         self.photo = photo
+        self.frame = frame
+        self.pngImage = pngImage
     }
     
     //MARK: NSCoding
@@ -51,6 +56,8 @@ class Card: NSObject, NSCoding {
         aCoder.encode(team, forKey: PropertyKey.team)
         aCoder.encode(name, forKey: PropertyKey.name)
         aCoder.encode(photo, forKey: PropertyKey.photo)
+        aCoder.encode(frame, forKey: PropertyKey.frame)
+        aCoder.encode(pngImage, forKey: PropertyKey.pngImage)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -70,6 +77,16 @@ class Card: NSObject, NSCoding {
             return nil
         }
         
-        self.init(team: team, name: name, photo: photo)
+        guard let frame = aDecoder.decodeObject(forKey: PropertyKey.frame) as? UIImage else {
+            os_log("Unable to decode the frame image for Card object", log: OSLog.default, type: .debug)
+            return nil
+        }
+        
+        guard let pngImage = aDecoder.decodeObject(forKey: PropertyKey.pngImage) as? UIImage else {
+            os_log("Unable to decode the frame image for Card object", log: OSLog.default, type: .debug)
+            return nil
+        }
+        
+        self.init(team: team, name: name, photo: photo, frame: frame, pngImage: pngImage)
     }
 }
