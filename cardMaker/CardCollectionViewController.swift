@@ -9,10 +9,23 @@
 import UIKit
 import os.log
 
-class CardCollectionViewController: UICollectionViewController {
+
+
+
+class CardCollectionViewController:  TisprCardStackViewController, TisprCardStackViewControllerDelegate {
     
     //MARK: Properties
     var cards = [Card]()
+    
+    fileprivate let colors = [UIColor(red: 45.0/255.0, green: 62.0/255.0, blue: 79.0/255.0, alpha: 1.0),
+                              UIColor(red: 48.0/255.0, green: 173.0/255.0, blue: 99.0/255.0, alpha: 1.0),
+                              UIColor(red: 141.0/255.0, green: 72.0/255.0, blue: 171.0/255.0, alpha: 1.0),
+                              UIColor(red: 241.0/255.0, green: 155.0/255.0, blue: 44.0/255.0, alpha: 1.0),
+                              UIColor(red: 234.0/255.0, green: 78.0/255.0, blue: 131.0/255.0, alpha: 1.0),
+                              UIColor(red: 80.0/255.0, green: 170.0/255.0, blue: 241.0/255.0, alpha: 1.0)
+    ]
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +36,29 @@ class CardCollectionViewController: UICollectionViewController {
         else {
             loadSampleCards()
         }
+  
+        //set animation speed
+        setAnimationSpeed(0.85)
+        
+        //set size of cards
+        let size = CGSize(width: view.bounds.width - 40, height: 2*view.bounds.height/3)
+        setCardSize(size)
+        
+        cardStackDelegate = self
+        
+        //configuration of stacks
+        layout.topStackMaximumSize = 4
+        layout.bottomStackMaximumSize = 30
+        layout.bottomStackCardHeight = 45
     }
     
+    //method to add new card
+    @IBAction func addNewCards(_ sender: AnyObject) {
+        //countOfCards += 1
+        newCardWasAdded()
+    }
+    
+
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -34,7 +68,7 @@ class CardCollectionViewController: UICollectionViewController {
         return cards.count
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> CardCollectionViewCell {
         
         let reuseIdentifier = "Cell"
         
@@ -151,5 +185,17 @@ class CardCollectionViewController: UICollectionViewController {
     private func loadCards() -> [Card]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Card.ArchiveURL.path) as?
             [Card]
+    }
+    
+    @IBAction func moveUP(_ sender: AnyObject) {
+        moveCardUp()
+    }
+    
+    @IBAction func moveCardDown(_ sender: AnyObject) {
+        moveCardDown()
+    }
+    
+    func cardDidChangeState(_ cardIndex: Int) {
+        print("card with index - \(cardIndex) changed position")
     }
 }

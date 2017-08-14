@@ -104,7 +104,6 @@
 		888027291F3C22D2000CFA0D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				888027231F3BEDC6000CFA0D /* CardCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -292,6 +291,9 @@
 				ED6424D91F3E559C00D41841 /* CardViewController.swift in Sources */,
 				EDE569851F42298E006D59C4 /* UIView+asImage.swift in Sources */,
 				888027241F3BEDC6000CFA0D /* CardCollectionViewCell.swift in Sources */,
+				BBEC1F6E1F3E508400C0692D /* TisprCardStackViewLayout.swift in Sources */,
+				BBEC1F6C1F3E508400C0692D /* TisprCardStackViewCell.swift in Sources */,
+				BBEC1F6D1F3E508400C0692D /* TisprCardStackViewController.swift in Sources */,
 				888027221F3BE2F1000CFA0D /* Card.swift in Sources */,
 				ED723B831F3E50D000900A7E /* Frame.swift in Sources */,
 			);
