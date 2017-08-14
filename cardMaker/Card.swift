@@ -14,6 +14,7 @@ class Card: NSObject, NSCoding {
     var team: String
     var name: String
     var photo: UIImage?
+    var frame: UIImage?
     
     //MARK: Archiving Paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -24,9 +25,10 @@ class Card: NSObject, NSCoding {
         static let team = "team"
         static let name = "name"
         static let photo = "photo"
+        static let frame = "frame"
     }
 
-    init?(team: String, name: String, photo: UIImage?) {
+    init?(team: String, name: String, photo: UIImage?, frame: UIImage?) {
         
         if name.isEmpty || team.isEmpty {
             return nil
@@ -70,6 +72,11 @@ class Card: NSObject, NSCoding {
             return nil
         }
         
-        self.init(team: team, name: name, photo: photo)
+        guard let frame = aDecoder.decodeObject(forKey: PropertyKey.frame) as? UIImage else {
+            os_log("Unable to decode the frame image for Card object", log: OSLog.default, type: .debug)
+            return nil
+        }
+        
+        self.init(team: team, name: name, photo: photo, frame: frame)
     }
 }

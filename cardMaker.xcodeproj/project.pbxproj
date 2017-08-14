@@ -219,6 +219,7 @@
 				TargetAttributes = {
 					88CA28241F3BB628002D21DB = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 294FN9LFDB;
 						ProvisioningStyle = Automatic;
 					};
 					88CA283B1F3BB629002D21DB = {
@@ -427,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 294FN9LFDB;
 				INFOPLIST_FILE = cardMaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Lighthouse-Lab.cardMaker";
@@ -439,6 +441,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 294FN9LFDB;
 				INFOPLIST_FILE = cardMaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Lighthouse-Lab.cardMaker";

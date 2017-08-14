@@ -17,14 +17,14 @@ UICollectionViewDataSource, UICollectionViewDelegate {
     // MARK: Properties
     @IBOutlet weak var teamTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var saveButton: UIBarButtonItem!
+//    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var basePhoto: UIImageView!
     
-    // MARK: Frame CollectionView Properties
-    @IBOutlet weak var compositeFrame: UIImageView!
+// MARK: Frame CollectionView Properties
     @IBOutlet weak var frameCollectionView: UICollectionView!
+    @IBOutlet weak var frameImage: UIImageView!
     
-    // MARK: Overlay imageView, HOOK UP to frame image from cell
+// MARK: Overlay imageView, HOOK UP to frame image from cell
 //    @IBOutlet weak var compositeFrame: UIImageView!
 
     //MARK Generate Frame Data
@@ -43,7 +43,7 @@ UICollectionViewDataSource, UICollectionViewDelegate {
             navigationItem.title = card.name
             teamTextField.text = card.team
             nameTextField.text = card.name
-            photoImageView.image = card.photo
+            basePhoto.image = card.photo
         }
 
         //MARK Frame Collection Data
@@ -66,10 +66,7 @@ UICollectionViewDataSource, UICollectionViewDelegate {
         if let frameCell = cell as? FrameCollectionViewCell {
             frameCell.frameCellImage.image
                 = seedData.frames[indexPath.row].frameImage
-            
-            
-//MARK TODO - replace steve with harrison's data to hook up selected backgroung image 
-            frameCell.backgroundView = UIImageView(image: UIImage(named:"Steve"))
+            frameCell.backgroundView = UIImageView(image: card?.photo)
             return frameCell
             
         }
@@ -79,8 +76,8 @@ UICollectionViewDataSource, UICollectionViewDelegate {
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        compositeFrame.image = seedData.frames[indexPath.row].frameImage
+
+        frameImage.image = seedData.frames[indexPath.row].frameImage
         
         //TODO: Write function to set elements of CompositeView
         //        if let newCard = seedData.frames[indexPath.row] as? Card{
@@ -112,6 +109,8 @@ UICollectionViewDataSource, UICollectionViewDelegate {
         navigationItem.title = textField.text
     }
     
+    
+    
     //MARK: UIImagePickerControllerdelegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
@@ -122,9 +121,11 @@ UICollectionViewDataSource, UICollectionViewDelegate {
             UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info) ")
         }
-        photoImageView.image = selectedImage
+        basePhoto.image = selectedImage
         dismiss(animated: true, completion: nil)
     }
+    
+    
     
     // MARK: Navigation
     @IBAction func cancel(_ sender: UIBarButtonItem) {
@@ -159,10 +160,14 @@ UICollectionViewDataSource, UICollectionViewDelegate {
         
         let team = teamTextField.text ?? ""
         let name = nameTextField.text ?? ""
-        let photo = photoImageView.image
+        let photo = basePhoto.image
+        let frame = frameImage.image
         
-        card = Card(team: team, name: name, photo: photo)
+        card = Card(team: team, name: name, photo: photo, frame: frame)
+        
+        
     }
+
     
     // MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
@@ -175,9 +180,15 @@ UICollectionViewDataSource, UICollectionViewDelegate {
         present(imagePickerController, animated: true, completion: nil)
     }
     
+    @IBAction func saveButton(_ sender: UIBarButtonItem) {    }
+
+    
+    
+    
+    
     //MARK: Private Methods
     private func updateSaveButtonState() {
-        // Disable the Save button if any of the texts fields are empty
+//        Disable the Save button if any of the texts fields are empty
         let teamText = teamTextField.text ?? ""
         let nameText = nameTextField.text ?? ""
         saveButton.isEnabled = !teamText.isEmpty && !nameText.isEmpty
