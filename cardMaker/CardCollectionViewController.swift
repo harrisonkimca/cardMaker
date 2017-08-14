@@ -16,6 +16,7 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
     
     //MARK: Properties
     var cards = [Card]()
+    var currentCard: Card? = nil
     
     fileprivate let colors = [UIColor(red: 45.0/255.0, green: 62.0/255.0, blue: 79.0/255.0, alpha: 1.0),
                               UIColor(red: 48.0/255.0, green: 173.0/255.0, blue: 99.0/255.0, alpha: 1.0),
@@ -78,7 +79,7 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
         }
         
         let card = cards[indexPath.row]
-        
+        currentCard = card
         cell.photoImageView.image = card.pngImage
     
         return cell
@@ -140,6 +141,34 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
             }
     }
 
+    
+    @IBAction func actionButtonTapped(_ sender: Any) {
+        
+        // image to share
+    
+        let image: UIImage = currentCard!.pngImage!
+        
+        // set up activity view controller
+        let imageToShare = [ image ]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = [ UIActivityType.airDrop ]
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
     //MARK: Private Methods
     private func loadSampleCards() {
         let photo1 = UIImage(named: "IMG_6751")

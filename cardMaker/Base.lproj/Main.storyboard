@@ -57,6 +57,11 @@
                     </collectionView>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="My Cards" id="3tA-as-sDO">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="VdT-Fe-g2y">
+                            <connections>
+                                <action selector="actionButtonTapped:" destination="aPZ-Og-hnh" id="1kA-yW-6Qx"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="M32-2f-WVm">
                             <connections>
                                 <segue destination="pRK-fv-yRJ" kind="presentation" identifier="AddItem" id="a3H-g9-0s0"/>
@@ -95,10 +100,14 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rfq-Yx-Au1" userLabel="FrameImage">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="350"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="Azn-7O-oOU"/>
                                             <constraint firstAttribute="height" constant="350" id="VnW-y6-qnx"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="fvL-gB-SUs" appends="YES" id="mU5-1O-WIT"/>
+                                        </connections>
                                     </imageView>
                                     <stackView opaque="NO" tag="220" contentMode="scaleToFill" axis="vertical" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="8vi-56-Y2d">
                                         <rect key="frame" x="0.0" y="25" width="250" height="300"/>
