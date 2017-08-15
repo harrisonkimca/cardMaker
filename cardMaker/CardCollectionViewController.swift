@@ -9,7 +9,6 @@
 import UIKit
 import os.log
 
-// Testing the branch
 
 
 class CardCollectionViewController:  TisprCardStackViewController, TisprCardStackViewControllerDelegate {
@@ -160,14 +159,7 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
         self.present(activityViewController, animated: true, completion: nil)
     }
         
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     //MARK: Private Methods
     private func loadSampleCards() {
