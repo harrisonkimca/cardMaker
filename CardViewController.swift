@@ -8,8 +8,10 @@
 
 import UIKit
 import os.log
+import ImagePicker
 
-class CardViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+
+class CardViewController: UIViewController, UITextFieldDelegate, ImagePickerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
     
     // MARK: Card Detail View Properties
@@ -32,6 +34,10 @@ class CardViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     
     var card: Card?
     
+    // MARK: Button for the ImagePicker
+    lazy var button: UIButton = self.makeButton()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,10 +55,71 @@ class CardViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         seedData = SeedData()
         
         
+        // MARK : ImagePicker
+        view.backgroundColor = UIColor.white
+        view.addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addConstraint(
+            NSLayoutConstraint(item: button, attribute: .centerX,
+                               relatedBy: .equal, toItem: view,
+                               attribute: .centerX, multiplier: 1,
+                               constant: 0))
+        
+        view.addConstraint(
+            NSLayoutConstraint(item: button, attribute: .centerY,
+                               relatedBy: .equal, toItem: view,
+                               attribute: .centerY, multiplier: 1,
+                               constant: 0))
+        
+        
         
         updateSaveButtonState()
     }
     
+    // MARK : Make a button for the ImagePicker
+    func makeButton() -> UIButton {
+        let button = UIButton()
+        button.setTitle("Select a picture", for: .normal)
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.addTarget(self, action: #selector(buttonTouched(button:)), for: .touchUpInside)
+        
+        return button
+    }
+    
+    func buttonTouched(button: UIButton) {
+        var config = Configuration()
+        config.doneButtonTitle = "Finish"
+        config.noImagesTitle = "Sorry! There are no images here!"
+        config.recordLocation = false
+        //config.allowVideoSelection = true
+        
+        let imagePicker = ImagePickerController()
+        imagePicker.configuration = config
+        imagePicker.delegate = self
+        imagePicker.imageLimit = 1
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    // MARK: - ImagePickerDelegate
+    
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        guard images.count > 0 else { return }
+        
+        
+    }
+    
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        imagePicker.dismiss(animated: true, completion: nil)
+        guard images.count > 0 else { return }
+        
+        basePhoto.image = images[0]
+    }
+
     // MARK: Frame CollectionView Data Source
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return seedData.frames.count
@@ -72,20 +139,12 @@ class CardViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         return cell
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         frameImage.image = seedData.frames[indexPath.row].frameImage
         card?.frame = frameImage.image
         
     }
-    
-    
-    
-    
-    
-    
-    
     
     // MARK: UITextFieldDelegate
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -154,7 +213,7 @@ class CardViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         let name = nameTextField.text ?? ""
         let photo = basePhoto.image
         let frame = frameImage.image
-//        let pngImage = pngView.asImage()
+ //       let pngImage = pngView.asImage()
         let pngImage = UIImage.init(view: pngView)
         
         card = Card(team: team, name: name, photo: photo, frame: frame, pngImage: pngImage)
@@ -163,21 +222,20 @@ class CardViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     }
     
     
-    // MARK: Actions
-    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
-        
-        teamTextField.resignFirstResponder()
-        nameTextField.resignFirstResponder()
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.sourceType = .photoLibrary
-        imagePickerController.delegate = self
-        present(imagePickerController, animated: true, completion: nil)
-    }
-    
-    
-    
-    
-    
+//    // MARK: Actions
+//    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+//        
+//        teamTextField.resignFirstResponder()
+//        nameTextField.resignFirstResponder()
+//        let imagePickerController = UIImagePickerController()
+//        imagePickerController.sourceType = .photoLibrary
+//        imagePickerController.delegate = self
+//        present(imagePickerController, animated: true, completion: nil)
+//    }
+//    
+//    
+//    
+
     
     //MARK: Private Methods
     private func updateSaveButtonState() {

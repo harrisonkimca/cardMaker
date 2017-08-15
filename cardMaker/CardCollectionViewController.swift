@@ -11,7 +11,6 @@ import os.log
 
 
 
-
 class CardCollectionViewController:  TisprCardStackViewController, TisprCardStackViewControllerDelegate {
     
     //MARK: Properties
@@ -160,14 +159,7 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
         self.present(activityViewController, animated: true, completion: nil)
     }
         
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     //MARK: Private Methods
     private func loadSampleCards() {
