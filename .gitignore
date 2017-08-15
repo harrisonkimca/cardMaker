@@ -1,8 +1,11 @@
 
-re contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+tignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
 ## Build generated
 build/
 DerivedData/
+
+
 ## Various settings
 *.pbxuser
 !default.pbxuser
@@ -13,10 +16,13 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
+
 ## Other
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint
+
 # CocoaPods
 Pods
+
 
