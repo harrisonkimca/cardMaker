@@ -89,13 +89,17 @@
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Qda-x9-jRB" userLabel="CompositeView">
                                 <rect key="frame" x="62" y="84" width="250" height="350"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_6751" translatesAutoresizingMaskIntoConstraints="NO" id="hsW-uW-0fU" userLabel="basePhoto">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="hsW-uW-0fU" userLabel="basePhoto">
                                         <rect key="frame" x="25" y="25" width="200" height="300"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="300" id="GZG-il-hNj"/>
                                             <constraint firstAttribute="width" constant="200" id="OcC-HD-hbm"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="fAm-I1-Gun" appends="YES" id="EQA-uL-ZND"/>
+                                            <outletCollection property="gestureRecognizers" destination="I9f-jw-gHC" appends="YES" id="Xzu-uc-9u3"/>
+                                        </connections>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rfq-Yx-Au1" userLabel="FrameImage">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="350"/>
@@ -286,6 +290,16 @@
                         <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="hyP-4Y-epR"/>
                     </connections>
                 </tapGestureRecognizer>
+                <pinchGestureRecognizer id="fAm-I1-Gun">
+                    <connections>
+                        <action selector="basePhotoPinchGesture:" destination="BYZ-38-t0r" id="ibB-li-zFc"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="I9f-jw-gHC">
+                    <connections>
+                        <action selector="basePhotoPanGesture:" destination="BYZ-38-t0r" id="doQ-EV-xBt"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1842" y="-44"/>
         </scene>
@@ -329,6 +343,7 @@
     <resources>
         <image name="IMG_6751" width="960" height="1280"/>
         <image name="LighthouseFrame2" width="350" height="450"/>
+        <image name="defaultImage" width="540" height="540"/>
         <image name="frametrans" width="340" height="448"/>
         <image name="lighthouseFrame" width="350" height="450"/>
     </resources>

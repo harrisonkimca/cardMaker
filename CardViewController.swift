@@ -236,6 +236,19 @@ class CardViewController: UIViewController, UITextFieldDelegate, ImagePickerDele
 //    
 //    
 
+    // MARK: Gestures to change *basePhoto* postiion and scale
+    
+    @IBAction func basePhotoPanGesture(_ sender: Any) {
+        
+        
+        
+    }
+    
+    @IBAction func basePhotoPinchGesture(_ sender: Any) {
+    }
+    
+    
+    
     
     //MARK: Private Methods
     private func updateSaveButtonState() {
