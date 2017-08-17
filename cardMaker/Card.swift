@@ -10,8 +10,8 @@ import UIKit
 import os.log
 
 class Card: NSObject, NSCoding {
-    var team: String
-    var name: String
+    var team: String?
+    var name: String?
     var photo: UIImage?
     var frame: UIImage?
     var pngImage: UIImage?
@@ -31,9 +31,9 @@ class Card: NSObject, NSCoding {
 
     init?(team: String, name: String, photo: UIImage?, frame: UIImage?, pngImage: UIImage?) {
         
-        if name.isEmpty || team.isEmpty {
-            return nil
-        }
+//        if name.isEmpty || team.isEmpty {
+//            return nil
+//        }
 
         guard !name.isEmpty else {
             return nil

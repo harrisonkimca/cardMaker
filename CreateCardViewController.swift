@@ -22,17 +22,26 @@ class CardViewController: UIViewController, UITextFieldDelegate, ImagePickerDele
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    // MARK: Frame CollectionView Properties
+    // MARK: Frame CollectionView & Frame for mainDisplay
     @IBOutlet weak var frameCollectionView: UICollectionView!
-    
-    // MARL: Add frame image to large view
     @IBOutlet weak var frameImage: UIImageView!
     
+    // MARK: View from which png snapshot will be created
     @IBOutlet weak var pngView: UIView!
+    
+    
+    // MARK: basePhoto properties for gesture recognizer
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var imageViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewTrailingConstraint: NSLayoutConstraint!
+    
+    
     //MARK Generate Frame Data
     var seedData: SeedData!
     
-    
+
     var card: Card?
     
     // MARK: Button for the ImagePicker
@@ -77,6 +86,24 @@ class CardViewController: UIViewController, UITextFieldDelegate, ImagePickerDele
         
         updateSaveButtonState()
     }
+    
+<
+    
+    // MARK: Calculate Zoom Scale for baseImage
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        updateMinZoomScaleForSize(view.bounds.size)
+    }
+    
+    fileprivate func updateMinZoomScaleForSize(_ size: CGSize) {
+        let widthScale = scrollView.frame.size.width / basePhoto.bounds.width
+        let heightScale = scrollView.frame.height / basePhoto.bounds.height
+        let minScale = min(widthScale, heightScale)
+        
+        scrollView.minimumZoomScale = minScale
+        scrollView.zoomScale = minScale
+    }
+    
     
     // MARK : Make a button for the ImagePicker
     func makeButton() -> UIButton {
@@ -208,13 +235,14 @@ class CardViewController: UIViewController, UITextFieldDelegate, ImagePickerDele
         let name = nameTextField.text ?? ""
         let photo = basePhoto.image
         let frame = frameImage.image
-        //       let pngImage = pngView.asImage()
+//       let pngImage = pngView.asImage()
         let pngImage = UIImage.init(view: pngView)
         
         card = Card(team: team, name: name, photo: photo, frame: frame, pngImage: pngImage)
     }
 
     
+
     //MARK: Private Methods
     private func updateSaveButtonState() {
         //        Disable the Save button if any of the texts fields are empty
@@ -222,4 +250,34 @@ class CardViewController: UIViewController, UITextFieldDelegate, ImagePickerDele
         let nameText = nameTextField.text ?? ""
         saveButton.isEnabled = !teamText.isEmpty && !nameText.isEmpty
     }
+
+    
+}
+
+
+//MARK: PhotoZoom Extension for basePhoto
+extension CardViewController: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return basePhoto
+    }
+    
+//    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+//        updateConstraintsForSize(view.bounds.size)
+//    }
+//    
+//    fileprivate func updateConstraintsForSize(_ size: CGSize) {
+//        
+//        let yOffset = max(0, (size.height - basePhoto.frame.height) / 2 - 100)
+//        imageViewTopConstraint.constant = yOffset
+//        imageViewBottomConstraint.constant = yOffset
+//        
+//        let xOffset = max(0, (size.width - basePhoto.frame.width) / 2)
+//        imageViewLeadingConstraint.constant = xOffset
+//        imageViewTrailingConstraint.constant = xOffset
+//        
+//        view.layoutIfNeeded()
+//    }
+
+    
+
 }
