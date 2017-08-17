@@ -41,6 +41,7 @@ class CardViewController: UIViewController, UITextFieldDelegate, ImagePickerDele
     //MARK Generate Frame Data
     var seedData: SeedData!
     
+
     var card: Card?
     
     // MARK: Button for the ImagePicker
@@ -86,6 +87,7 @@ class CardViewController: UIViewController, UITextFieldDelegate, ImagePickerDele
         updateSaveButtonState()
     }
     
+<
     
     // MARK: Calculate Zoom Scale for baseImage
     override func viewWillLayoutSubviews() {
@@ -101,11 +103,6 @@ class CardViewController: UIViewController, UITextFieldDelegate, ImagePickerDele
         scrollView.minimumZoomScale = minScale
         scrollView.zoomScale = minScale
     }
-    
-    
-    
-    
-    
     
     
     // MARK : Make a button for the ImagePicker
@@ -245,8 +242,7 @@ class CardViewController: UIViewController, UITextFieldDelegate, ImagePickerDele
     }
 
     
-    
-    
+
     //MARK: Private Methods
     private func updateSaveButtonState() {
         //        Disable the Save button if any of the texts fields are empty
@@ -254,6 +250,7 @@ class CardViewController: UIViewController, UITextFieldDelegate, ImagePickerDele
         let nameText = nameTextField.text ?? ""
         saveButton.isEnabled = !teamText.isEmpty && !nameText.isEmpty
     }
+
     
 }
 
@@ -282,4 +279,5 @@ extension CardViewController: UIScrollViewDelegate {
 //    }
 
     
+
 }
