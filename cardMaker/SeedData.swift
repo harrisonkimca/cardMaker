@@ -10,13 +10,13 @@ import UIKit
 
 class SeedData: NSObject {
 
-    var frames:[Frame]
+    var frames:[Frame] = []
     let myImage = UIImage(named: "LighthouseFrame2")
     let myImage2 = UIImage(named: "lighthouseFrame")
     let myImage3 = UIImage(named: "frametrans")
     
     override init() {
-        self.frames = [Frame]()
+//        self.frames = [Frame]()
         super.init()
         
         setUpOverlays()

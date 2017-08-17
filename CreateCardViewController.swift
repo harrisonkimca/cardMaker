@@ -10,6 +10,7 @@ import UIKit
 import os.log
 import ImagePicker
 
+// rename this class
 
 class CardViewController: UIViewController, UITextFieldDelegate, ImagePickerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -229,41 +230,19 @@ class CardViewController: UIViewController, UITextFieldDelegate, ImagePickerDele
             fatalError("The CardViewController is not inside a navigation controller")
         }
     }
+
+    // make a save action
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        super.prepare(for: segue, sender: sender)
-        
-        guard let button = sender as? UIBarButtonItem, button === saveButton else {
-            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
-            return
-        }
-        
+    @IBAction func save() {
         let team = teamTextField.text ?? ""
         let name = nameTextField.text ?? ""
         let photo = basePhoto.image
         let frame = frameImage.image
+//       let pngImage = pngView.asImage()
         let pngImage = UIImage.init(view: pngView)
         
         card = Card(team: team, name: name, photo: photo, frame: frame, pngImage: pngImage)
-        
-        
     }
-    
-    
-//    // MARK: Actions
-//    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
-//        
-//        teamTextField.resignFirstResponder()
-//        nameTextField.resignFirstResponder()
-//        let imagePickerController = UIImagePickerController()
-//        imagePickerController.sourceType = .photoLibrary
-//        imagePickerController.delegate = self
-//        present(imagePickerController, animated: true, completion: nil)
-//    }
-//    
-//    
-//    
 
     
     

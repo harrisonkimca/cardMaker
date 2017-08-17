@@ -262,7 +262,7 @@ open class TisprCardStackViewLayout: UICollectionViewLayout, UIGestureRecognizer
             break
         }
     }
-    
+ // crashes when no cards, also when touch is not on card 
     internal func handlePan(_ sender: UIPanGestureRecognizer) {
         if (sender.state == .began) {
             let initialPanPoint = sender.location(in: collectionView)
