@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		68F0696BF484C76F4C7DCEE0 /* Pods_cardMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A38422C4039722E7EF04AA2 /* Pods_cardMaker.framework */; };
-		7520D8C345FB02CCDD6D2036 /* Pods_cardMakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0769AB7E09E22045B8DAE9 /* Pods_cardMakerTests.framework */; };
 		888027221F3BE2F1000CFA0D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888027211F3BE2F1000CFA0D /* Card.swift */; };
 		888027241F3BEDC6000CFA0D /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888027231F3BEDC6000CFA0D /* CardCollectionViewCell.swift */; };
 		888027261F3BF1B0000CFA0D /* CardCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888027251F3BF1B0000CFA0D /* CardCollectionViewController.swift */; };
@@ -46,9 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C0769AB7E09E22045B8DAE9 /* Pods_cardMakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cardMakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C8244BC04E91FDB522AA137 /* Pods-cardMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cardMaker.release.xcconfig"; path = "Pods/Target Support Files/Pods-cardMaker/Pods-cardMaker.release.xcconfig"; sourceTree = "<group>"; };
-		821C552D315BF60C4C815E9A /* Pods-cardMakerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cardMakerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cardMakerTests/Pods-cardMakerTests.release.xcconfig"; sourceTree = "<group>"; };
 		888027211F3BE2F1000CFA0D /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Card.swift; path = cardMaker/Card.swift; sourceTree = "<group>"; };
 		888027231F3BEDC6000CFA0D /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardCollectionViewCell.swift; path = cardMaker/CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		888027251F3BF1B0000CFA0D /* CardCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardCollectionViewController.swift; path = cardMaker/CardCollectionViewController.swift; sourceTree = "<group>"; };
@@ -62,13 +57,11 @@
 		88CA283C1F3BB629002D21DB /* cardMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cardMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CA28401F3BB629002D21DB /* cardMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardMakerTests.swift; sourceTree = "<group>"; };
 		88CA28421F3BB629002D21DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A38422C4039722E7EF04AA2 /* Pods_cardMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cardMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE551F91F436E960084A873 /* DetailedCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedCardViewController.swift; sourceTree = "<group>"; };
 		BBE5521A1F46338D0084A873 /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		BBEC1F691F3E508400C0692D /* TisprCardStackViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewCell.swift; sourceTree = "<group>"; };
 		BBEC1F6A1F3E508400C0692D /* TisprCardStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewController.swift; sourceTree = "<group>"; };
 		BBEC1F6B1F3E508400C0692D /* TisprCardStackViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewLayout.swift; sourceTree = "<group>"; };
-		D31862789B2CE6ACF95C5F21 /* Pods-cardMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cardMaker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cardMaker/Pods-cardMaker.debug.xcconfig"; sourceTree = "<group>"; };
 		ED6424D81F3E559C00D41841 /* CreateCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCardViewController.swift; sourceTree = "<group>"; };
 		ED6424DA1F3E563000D41841 /* CardMaker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CardMaker.storyboard; sourceTree = "<group>"; };
 		ED723B7A1F3E509D00900A7E /* SeedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeedData.swift; path = cardMaker/SeedData.swift; sourceTree = "<group>"; };
@@ -79,7 +72,6 @@
 		ED723B841F3E50EC00900A7E /* CardBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBuilderViewController.swift; sourceTree = "<group>"; };
 		EDE569841F42298E006D59C4 /* UIView+asImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+asImage.swift"; sourceTree = "<group>"; };
 		EDE569861F423C7C006D59C4 /* UIImage+asImage2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+asImage2.swift"; sourceTree = "<group>"; };
-		F3237BA97481A45302BB4ECB /* Pods-cardMakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cardMakerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cardMakerTests/Pods-cardMakerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +79,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68F0696BF484C76F4C7DCEE0 /* Pods_cardMaker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,33 +86,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7520D8C345FB02CCDD6D2036 /* Pods_cardMakerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B1B9C888C8B47C6BA728F01 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D31862789B2CE6ACF95C5F21 /* Pods-cardMaker.debug.xcconfig */,
-				0C8244BC04E91FDB522AA137 /* Pods-cardMaker.release.xcconfig */,
-				F3237BA97481A45302BB4ECB /* Pods-cardMakerTests.debug.xcconfig */,
-				821C552D315BF60C4C815E9A /* Pods-cardMakerTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		7454A39B638C4F9593E00210 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9A38422C4039722E7EF04AA2 /* Pods_cardMaker.framework */,
-				0C0769AB7E09E22045B8DAE9 /* Pods_cardMakerTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		888027271F3C22B7000CFA0D /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,8 +143,6 @@
 				88CA28271F3BB628002D21DB /* cardMaker */,
 				88CA283F1F3BB629002D21DB /* cardMakerTests */,
 				88CA28261F3BB628002D21DB /* Products */,
-				1B1B9C888C8B47C6BA728F01 /* Pods */,
-				7454A39B638C4F9593E00210 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -237,12 +205,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88CA28451F3BB629002D21DB /* Build configuration list for PBXNativeTarget "cardMaker" */;
 			buildPhases = (
-				DFB9E1C380AD5CC2275AD8CA /* [CP] Check Pods Manifest.lock */,
 				88CA28211F3BB628002D21DB /* Sources */,
 				88CA28221F3BB628002D21DB /* Frameworks */,
 				88CA28231F3BB628002D21DB /* Resources */,
-				ADDBCDD7CD459F6260C0F297 /* [CP] Embed Pods Frameworks */,
-				BCBCC76A1B7708E5834328C5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,12 +222,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88CA28481F3BB629002D21DB /* Build configuration list for PBXNativeTarget "cardMakerTests" */;
 			buildPhases = (
-				6BA022A6AE9ADF4C1667DF59 /* [CP] Check Pods Manifest.lock */,
 				88CA28381F3BB629002D21DB /* Sources */,
 				88CA28391F3BB629002D21DB /* Frameworks */,
 				88CA283A1F3BB629002D21DB /* Resources */,
-				ABB328D28569FC8144761897 /* [CP] Embed Pods Frameworks */,
-				009B1469AD0CA2B5C01A603D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -336,108 +298,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		009B1469AD0CA2B5C01A603D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cardMakerTests/Pods-cardMakerTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6BA022A6AE9ADF4C1667DF59 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-cardMakerTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ABB328D28569FC8144761897 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cardMakerTests/Pods-cardMakerTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ADDBCDD7CD459F6260C0F297 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-cardMaker/Pods-cardMaker-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cardMaker/Pods-cardMaker-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BCBCC76A1B7708E5834328C5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cardMaker/Pods-cardMaker-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DFB9E1C380AD5CC2275AD8CA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-cardMaker-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		88CA28211F3BB628002D21DB /* Sources */ = {
@@ -602,7 +462,6 @@
 		};
 		88CA28461F3BB629002D21DB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D31862789B2CE6ACF95C5F21 /* Pods-cardMaker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 294FN9LFDB;
@@ -616,7 +475,6 @@
 		};
 		88CA28471F3BB629002D21DB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C8244BC04E91FDB522AA137 /* Pods-cardMaker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 294FN9LFDB;
@@ -630,7 +488,6 @@
 		};
 		88CA28491F3BB629002D21DB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3237BA97481A45302BB4ECB /* Pods-cardMakerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -645,7 +502,6 @@
 		};
 		88CA284A1F3BB629002D21DB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 821C552D315BF60C4C815E9A /* Pods-cardMakerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
