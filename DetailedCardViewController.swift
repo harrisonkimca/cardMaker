@@ -19,6 +19,7 @@ class DetailedCardViewController: UIViewController {
     var isFrontVisible = true
     var card : Card?
     var frontImage : UIImage?
+    var backImage : UIImage?
     var currentCard: Card? = nil
     
     
@@ -26,6 +27,10 @@ class DetailedCardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        frontImage = card?.pngImage
+        frontImageView.image = frontImage
+
+        //backImage = card?.
         
         deleteButton.layer.cornerRadius = 5
         deleteButton.layer.borderWidth = 1
@@ -56,16 +61,14 @@ class DetailedCardViewController: UIViewController {
     
     func flipLeft(_ sender: Any) {
         
-        frontImage = UIImage(named: "baseball")
-        
         var option: UIViewAnimationOptions = .transitionFlipFromRight
         if ( self.isFrontVisible) {
             self.isFrontVisible = false
-            self.frontImageView.image = frontImage
+            self.frontImageView.image = backImage
             option = .transitionFlipFromRight
         } else {
             self.isFrontVisible = true
-            self.frontImageView.image = UIImage.init(named: "front")
+            self.frontImageView.image = frontImage
             option = .transitionFlipFromLeft
         }
         
@@ -75,16 +78,14 @@ class DetailedCardViewController: UIViewController {
     
     func flipRight(_ sender: Any) {
         
-        frontImage = UIImage(named: "baseball")
-        
         var option: UIViewAnimationOptions = .transitionFlipFromLeft
         if ( self.isFrontVisible) {
             self.isFrontVisible = false
-            self.frontImageView.image = frontImage
+            self.frontImageView.image = backImage
             option = .transitionFlipFromLeft
         } else {
             self.isFrontVisible = true
-            self.frontImageView.image = UIImage.init(named: "front")
+            self.frontImageView.image = frontImage
             option = .transitionFlipFromRight
         }
         
