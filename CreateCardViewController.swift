@@ -261,7 +261,7 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
 
 
 //MARK: PhotoZoom Extension for basePhoto
-extension CardViewController: UIScrollViewDelegate {
+extension CreateCardViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return basePhoto
     }
