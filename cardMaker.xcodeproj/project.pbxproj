@@ -24,10 +24,8 @@
 		BBEC1F6D1F3E508400C0692D /* TisprCardStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC1F6A1F3E508400C0692D /* TisprCardStackViewController.swift */; };
 		BBEC1F6E1F3E508400C0692D /* TisprCardStackViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC1F6B1F3E508400C0692D /* TisprCardStackViewLayout.swift */; };
 		ED6424D91F3E559C00D41841 /* CreateCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6424D81F3E559C00D41841 /* CreateCardViewController.swift */; };
-		ED6424DB1F3E563000D41841 /* CardMaker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6424DA1F3E563000D41841 /* CardMaker.storyboard */; };
 		ED723B7B1F3E509D00900A7E /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED723B7A1F3E509D00900A7E /* SeedData.swift */; };
 		ED723B7D1F3E50B100900A7E /* TeamColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED723B7C1F3E50B100900A7E /* TeamColors.swift */; };
-		ED723B7F1F3E50BC00900A7E /* ShreveStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED723B7E1F3E50BC00900A7E /* ShreveStoryBoard.storyboard */; };
 		ED723B811F3E50CA00900A7E /* FrameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED723B801F3E50CA00900A7E /* FrameCollectionViewCell.swift */; };
 		ED723B831F3E50D000900A7E /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED723B821F3E50D000900A7E /* Frame.swift */; };
 		ED723B851F3E50EC00900A7E /* CardBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED723B841F3E50EC00900A7E /* CardBuilderViewController.swift */; };
@@ -71,10 +69,8 @@
 		C93E0C2C6F3F3C869CF7FC11 /* Pods-cardMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cardMaker.release.xcconfig"; path = "Pods/Target Support Files/Pods-cardMaker/Pods-cardMaker.release.xcconfig"; sourceTree = "<group>"; };
 		CCA6F7CC4F206862F7B4046F /* Pods-cardMakerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cardMakerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cardMakerTests/Pods-cardMakerTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED6424D81F3E559C00D41841 /* CreateCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCardViewController.swift; sourceTree = "<group>"; };
-		ED6424DA1F3E563000D41841 /* CardMaker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CardMaker.storyboard; sourceTree = "<group>"; };
 		ED723B7A1F3E509D00900A7E /* SeedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeedData.swift; path = cardMaker/SeedData.swift; sourceTree = "<group>"; };
 		ED723B7C1F3E50B100900A7E /* TeamColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamColors.swift; path = cardMaker/TeamColors.swift; sourceTree = "<group>"; };
-		ED723B7E1F3E50BC00900A7E /* ShreveStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ShreveStoryBoard.storyboard; path = cardMaker/ShreveStoryBoard.storyboard; sourceTree = "<group>"; };
 		ED723B801F3E50CA00900A7E /* FrameCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrameCollectionViewCell.swift; path = cardMaker/FrameCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED723B821F3E50D000900A7E /* Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Frame.swift; path = cardMaker/Frame.swift; sourceTree = "<group>"; };
 		ED723B841F3E50EC00900A7E /* CardBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBuilderViewController.swift; sourceTree = "<group>"; };
@@ -219,8 +215,6 @@
 		ED723B861F3E50FC00900A7E /* CardMaker */ = {
 			isa = PBXGroup;
 			children = (
-				ED6424DA1F3E563000D41841 /* CardMaker.storyboard */,
-				ED723B7E1F3E50BC00900A7E /* ShreveStoryBoard.storyboard */,
 				ED723B7A1F3E509D00900A7E /* SeedData.swift */,
 				ED723B7C1F3E50B100900A7E /* TeamColors.swift */,
 				ED723B801F3E50CA00900A7E /* FrameCollectionViewCell.swift */,
@@ -320,10 +314,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED723B7F1F3E50BC00900A7E /* ShreveStoryBoard.storyboard in Resources */,
 				88CA28361F3BB629002D21DB /* LaunchScreen.storyboard in Resources */,
 				88CA28331F3BB629002D21DB /* Assets.xcassets in Resources */,
-				ED6424DB1F3E563000D41841 /* CardMaker.storyboard in Resources */,
 				88CA282E1F3BB629002D21DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,7 +375,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		910C073326AE490E6B3998BA /* [CP] Check Pods Manifest.lock */ = {
@@ -401,7 +393,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A93B9EDF06A97DF96E213697 /* [CP] Embed Pods Frameworks */ = {

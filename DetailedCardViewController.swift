@@ -130,69 +130,13 @@ class DetailedCardViewController: UIViewController {
         
     }
     
+    
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        
-////        super.prepare(for: UIStoryboardSegue, sender: sender)
+//        super.prepare(for: segue, sender: sender)
 //        
-//        let card = self.card
 //        
-//    }
-    
-    
-    //
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //
-    //        super.prepare(for: segue, sender: sender)
-    //
-    //        guard let button = sender as? UIBarButtonItem, button === deleteButton else {
-    //            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
-    //            return
-    //        }
-    //
-    //        }
-    //
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        super.prepare(for: segue, sender: sender)
-        
-                switch (segue.identifier ?? "") {
-                    
-
-                case "ShowEdit":
-                                os_log("editing a card", log: OSLog.default, type: .debug)
-                    
-                                guard let cardDetailViewController = segue.destination as? CreateCardViewController else {
-                                    fatalError("Unexpected destination: \(segue.destination)")
-                                }
-                    
-//                                guard let selectedCardCell = sender as? editButton else {
-//                                    fatalError("Unexpected sender: \(String(describing: sender))")
-//                                }
-                    
-//                                guard let indexPath = collectionView?.indexPath(for: selectedCardCell) else {
-//                                    fatalError("The selected cell is not being displayed by the table")
-//                                }
-                    
-                                let selectedCard = card
-                                cardDetailViewController.card = selectedCard
-                                
-                            default:
-                                fatalError("Unexpected segue identifier; \(String(describing: segue.identifier))")
-                            }
-
-    
-    
-    }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+//                                destinationViewController.card = card
+//        
+//                            }
 }
