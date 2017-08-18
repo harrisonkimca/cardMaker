@@ -19,6 +19,7 @@
 		88CA28361F3BB629002D21DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CA28341F3BB629002D21DB /* LaunchScreen.storyboard */; };
 		88CA28411F3BB629002D21DB /* cardMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CA28401F3BB629002D21DB /* cardMakerTests.swift */; };
 		BBE551FA1F436E960084A873 /* DetailedCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE551F91F436E960084A873 /* DetailedCardViewController.swift */; };
+		BBE5521B1F46338D0084A873 /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE5521A1F46338D0084A873 /* FrontViewController.swift */; };
 		BBEC1F6C1F3E508400C0692D /* TisprCardStackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC1F691F3E508400C0692D /* TisprCardStackViewCell.swift */; };
 		BBEC1F6D1F3E508400C0692D /* TisprCardStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC1F6A1F3E508400C0692D /* TisprCardStackViewController.swift */; };
 		BBEC1F6E1F3E508400C0692D /* TisprCardStackViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC1F6B1F3E508400C0692D /* TisprCardStackViewLayout.swift */; };
@@ -63,6 +64,7 @@
 		88CA28421F3BB629002D21DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A38422C4039722E7EF04AA2 /* Pods_cardMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cardMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE551F91F436E960084A873 /* DetailedCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedCardViewController.swift; sourceTree = "<group>"; };
+		BBE5521A1F46338D0084A873 /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		BBEC1F691F3E508400C0692D /* TisprCardStackViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewCell.swift; sourceTree = "<group>"; };
 		BBEC1F6A1F3E508400C0692D /* TisprCardStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewController.swift; sourceTree = "<group>"; };
 		BBEC1F6B1F3E508400C0692D /* TisprCardStackViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewLayout.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				BBE551FB1F449ED90084A873 /* TisprCard */,
+				BBE5521A1F46338D0084A873 /* FrontViewController.swift */,
 				888027231F3BEDC6000CFA0D /* CardCollectionViewCell.swift */,
 				888027251F3BF1B0000CFA0D /* CardCollectionViewController.swift */,
 				ED6424D81F3E559C00D41841 /* CreateCardViewController.swift */,
@@ -441,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBE5521B1F46338D0084A873 /* FrontViewController.swift in Sources */,
 				888027261F3BF1B0000CFA0D /* CardCollectionViewController.swift in Sources */,
 				ED723B851F3E50EC00900A7E /* CardBuilderViewController.swift in Sources */,
 				ED723B7B1F3E509D00900A7E /* SeedData.swift in Sources */,

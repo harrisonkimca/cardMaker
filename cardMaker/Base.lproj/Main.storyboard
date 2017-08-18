@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rJR-ae-Caf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NeZ-9x-jGv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,7 +14,7 @@
         <scene sceneID="Uli-It-9W1">
             <objects>
                 <collectionViewController id="aPZ-Og-hnh" customClass="CardCollectionViewController" customModule="cardMaker" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" id="nof-w3-hSS">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" dataMode="prototypes" id="nof-w3-hSS">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.91550356149673462" green="0.95379704236984253" blue="0.97492867708206177" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,7 +46,7 @@
                                 <size key="customSize" width="125" height="175"/>
                                 <connections>
                                     <outlet property="photoImageView" destination="Crg-WA-1zQ" id="ssl-oR-SEi"/>
-                                    <segue destination="X3l-Wm-FqZ" kind="show" identifier="ShowDetail" id="M2A-KI-vuD"/>
+                                    <segue destination="X3l-Wm-FqZ" kind="show" identifier="ShowDetail" id="58r-EO-hJD"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -67,12 +67,12 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYd-dY-5vz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="190" y="132"/>
+            <point key="canvasLocation" x="190" y="543"/>
         </scene>
         <!--New Card-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CardViewController" customModule="cardMaker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CreateCardViewController" customModule="cardMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -282,25 +282,98 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1468" y="-246"/>
+            <point key="canvasLocation" x="1255" y="-224"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="AmN-bu-Qz5">
+        <!--Front View Controller-->
+        <scene sceneID="zuS-ed-2av">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rJR-ae-Caf" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KHP-fA-fqU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                <viewController id="kKc-rc-cDd" customClass="FrontViewController" customModule="cardMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PZw-u5-Qwh"/>
+                        <viewControllerLayoutGuide type="bottom" id="fM7-hb-VxH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Yg-Iy-UCL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frontpage" translatesAutoresizingMaskIntoConstraints="NO" id="Msf-Ur-gpj">
+                                <rect key="frame" x="63" y="143" width="249" height="202"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPg-ib-fNu">
+                                <rect key="frame" x="63" y="368" width="249" height="171"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M29-ky-pbt">
+                                        <rect key="frame" x="8" y="8" width="233" height="155"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06z-Xa-3NB">
+                                                <rect key="frame" x="55" y="33" width="123" height="30"/>
+                                                <color key="backgroundColor" red="0.91550356149673462" green="0.95379704236984253" blue="0.97492867708206177" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="AsQ-Og-Svr"/>
+                                                </constraints>
+                                                <state key="normal" title="Add New Card">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="NewCard" id="hRo-Ew-Vdw"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xr-rG-XDQ">
+                                                <rect key="frame" x="55" y="92" width="123" height="30"/>
+                                                <color key="backgroundColor" red="0.91550356149673462" green="0.95379704236984253" blue="0.97492867708206177" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="eqH-I9-Zqs"/>
+                                                </constraints>
+                                                <state key="normal" title="View Cards">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="aPZ-Og-hnh" kind="show" identifier="viewCards" id="8HY-PB-wIW"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="0Xr-rG-XDQ" firstAttribute="leading" secondItem="M29-ky-pbt" secondAttribute="leading" constant="55" id="13u-3X-1XK"/>
+                                            <constraint firstAttribute="bottom" secondItem="0Xr-rG-XDQ" secondAttribute="bottom" constant="33" id="1Yw-8g-1MI"/>
+                                            <constraint firstItem="06z-Xa-3NB" firstAttribute="leading" secondItem="M29-ky-pbt" secondAttribute="leading" constant="55" id="CAc-ru-jeg"/>
+                                            <constraint firstItem="06z-Xa-3NB" firstAttribute="top" secondItem="M29-ky-pbt" secondAttribute="top" constant="33" id="GSE-SQ-mNC"/>
+                                            <constraint firstItem="0Xr-rG-XDQ" firstAttribute="top" secondItem="06z-Xa-3NB" secondAttribute="bottom" constant="29" id="UQR-EX-xSZ"/>
+                                            <constraint firstItem="0Xr-rG-XDQ" firstAttribute="top" secondItem="06z-Xa-3NB" secondAttribute="bottom" constant="29" id="WBe-sj-mjz"/>
+                                            <constraint firstAttribute="trailing" secondItem="06z-Xa-3NB" secondAttribute="trailing" constant="55" id="dDk-UN-Tmj"/>
+                                            <constraint firstAttribute="trailing" secondItem="0Xr-rG-XDQ" secondAttribute="trailing" constant="55" id="xfU-e1-eHy"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.095477811992168427" green="0.09596850723028183" blue="0.57220560312271118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="M29-ky-pbt" firstAttribute="top" secondItem="bPg-ib-fNu" secondAttribute="top" constant="8" id="Gm5-OA-0Rc"/>
+                                    <constraint firstAttribute="bottom" secondItem="M29-ky-pbt" secondAttribute="bottom" constant="8" id="Mug-wG-wGZ"/>
+                                    <constraint firstItem="M29-ky-pbt" firstAttribute="leading" secondItem="bPg-ib-fNu" secondAttribute="leading" constant="8" id="TZB-4j-NZF"/>
+                                    <constraint firstAttribute="trailing" secondItem="M29-ky-pbt" secondAttribute="trailing" constant="8" id="y9a-hU-qgK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Msf-Ur-gpj" firstAttribute="trailing" secondItem="bPg-ib-fNu" secondAttribute="trailing" id="4G7-AV-yKY"/>
+                            <constraint firstItem="Msf-Ur-gpj" firstAttribute="leading" secondItem="bPg-ib-fNu" secondAttribute="leading" id="9j4-CE-7vh"/>
+                            <constraint firstItem="fM7-hb-VxH" firstAttribute="top" secondItem="bPg-ib-fNu" secondAttribute="bottom" constant="128" id="OQ9-Y0-DTb"/>
+                            <constraint firstItem="Msf-Ur-gpj" firstAttribute="centerX" secondItem="5Yg-Iy-UCL" secondAttribute="centerX" id="QgO-pR-EiP"/>
+                            <constraint firstItem="bPg-ib-fNu" firstAttribute="top" secondItem="Msf-Ur-gpj" secondAttribute="bottom" constant="23" id="hlO-pF-dFF"/>
+                            <constraint firstItem="Msf-Ur-gpj" firstAttribute="top" secondItem="PZw-u5-Qwh" secondAttribute="bottom" constant="79" id="rKH-wP-mXx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="uYC-Y1-rDE"/>
                     <connections>
-                        <segue destination="aPZ-Og-hnh" kind="relationship" relationship="rootViewController" id="wvR-PM-zzl"/>
+                        <outlet property="MyView" destination="M29-ky-pbt" id="WL9-S0-Cn5"/>
+                        <outlet property="addNewCardButton" destination="06z-Xa-3NB" id="RNZ-ew-csI"/>
+                        <outlet property="shadowView" destination="bPg-ib-fNu" id="U8e-q5-69k"/>
+                        <outlet property="viewCardsButton" destination="0Xr-rG-XDQ" id="v41-AE-5JQ"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mwN-c9-kp3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gCC-PM-8UV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-626.39999999999998" y="131.78410794602701"/>
+            <point key="canvasLocation" x="-682.39999999999998" y="-224.4377811094453"/>
         </scene>
         <!--Detailed Card View Controller-->
         <scene sceneID="VIR-wp-VLI">
@@ -324,14 +397,6 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="451" id="cBr-Pg-3FO"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNB-Ix-sPg">
-                                        <rect key="frame" x="305" y="440" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="flip"/>
-                                        <connections>
-                                            <action selector="flipButtonTapped:" destination="X3l-Wm-FqZ" eventType="touchUpInside" id="XRT-AU-gFJ"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <constraints>
@@ -367,6 +432,9 @@
                                         <state key="normal" title="EDIT">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="ShowEdit" id="43f-f9-ToT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTY-Nb-qBt">
                                         <rect key="frame" x="281" y="14" width="60" height="38"/>
@@ -420,7 +488,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x7p-EI-d39" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="yrg-4x-Wfk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1468" y="449.32533733133437"/>
+            <point key="canvasLocation" x="190" y="1281"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8vl-CK-Exo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NeZ-9x-jGv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2IL-Gu-SQd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kKc-rc-cDd" kind="relationship" relationship="rootViewController" id="OwW-fm-Nql"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8CH-hN-nqi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1740" y="-224"/>
         </scene>
     </scenes>
     <resources>
@@ -428,6 +514,10 @@
         <image name="LighthouseFrame2" width="350" height="450"/>
         <image name="card2" width="85" height="120"/>
         <image name="frametrans" width="340" height="448"/>
+        <image name="frontpage" width="249" height="202"/>
         <image name="lighthouseFrame" width="350" height="450"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="43f-f9-ToT"/>
+    </inferredMetricsTieBreakers>
 </document>

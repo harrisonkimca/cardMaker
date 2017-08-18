@@ -112,27 +112,27 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
 //            
 //        case "ShowDetail":
 //            os_log("deleting a card", log: OSLog.default, type: .debug)
-////
-////            guard let cardDetailViewController = segue.destination as? DetailedCardViewController else {
-////                fatalError("Unexpected destination: \(segue.destination)")
-////            }
-////            
-////            guard let selectedCardCell = sender as? CardCollectionViewCell else {
-////                fatalError("Unexpected sender: \(String(describing: sender))")
-////            }
-////            
-////            guard let indexPath = collectionView?.indexPath(for: selectedCardCell) else {
-////                fatalError("The selected cell is not being displayed by the table")
-////            }
-////            
-////            let selectedCard = cards[indexPath.row]
-////            cardDetailViewController.card = selectedCard
-////            
+//
+//            guard let cardDetailViewController = segue.destination as? DetailedCardViewController else {
+//                fatalError("Unexpected destination: \(segue.destination)")
+//            }
+//            
+//            guard let selectedCardCell = sender as? CardCollectionViewCell else {
+//                fatalError("Unexpected sender: \(String(describing: sender))")
+//            }
+//            
+//            guard let indexPath = collectionView?.indexPath(for: selectedCardCell) else {
+//                fatalError("The selected cell is not being displayed by the table")
+//            }
+//            
+//            let selectedCard = cards[indexPath.row]
+//            cardDetailViewController.card = selectedCard
+//            
 //        default:
 //            fatalError("Unexpected segue identifier; \(String(describing: segue.identifier))")
 //        }
 //    }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         super.prepare(for: segue, sender: sender)
@@ -169,7 +169,7 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
     @IBAction func unwindToCardList(sender: UIStoryboardSegue) {
         //If sender is cardViewcontroller
         if let sourceViewController = sender.source as?
-            CardViewController, let card = sourceViewController.card {
+            CreateCardViewController, let card = sourceViewController.card {
             
             //            if let selectedIndexPaths = collectionView?.indexPathsForSelectedItems,
             //                let indexPath = selectedIndexPaths.first {
@@ -261,18 +261,6 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
             os_log("Failed to save cards...", log: OSLog.default, type: .error)
         }
     }
-    //
-    //    private func deleteCards(){
-    //        let isDeleted = NSKeyedUnarchiver.unarchiveObject(withFile: Card.ArchiveURL.path)
-    //
-    //        if (isDeleted != nil) {
-    //            os_log("Cards successfully deleted", log: OSLog.default, type: .debug)
-    //        }
-    //        else {
-    //            os_log("Failed to delete cards...", log: OSLog.default, type: .error)
-    //        }
-    //
-    //}
     
     private func loadCards() -> [Card]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Card.ArchiveURL.path) as?
