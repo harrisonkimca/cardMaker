@@ -87,7 +87,7 @@ class CardViewController: UIViewController, UITextFieldDelegate, ImagePickerDele
         updateSaveButtonState()
     }
     
-<
+
     
     // MARK: Calculate Zoom Scale for baseImage
     override func viewWillLayoutSubviews() {
@@ -229,17 +229,22 @@ class CardViewController: UIViewController, UITextFieldDelegate, ImagePickerDele
     }
 
     // make a save action
-    
-    @IBAction func save() {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let team = teamTextField.text ?? ""
         let name = nameTextField.text ?? ""
         let photo = basePhoto.image
         let frame = frameImage.image
-//       let pngImage = pngView.asImage()
         let pngImage = UIImage.init(view: pngView)
         
         card = Card(team: team, name: name, photo: photo, frame: frame, pngImage: pngImage)
+        
+        super.prepare(for: segue, sender: sender)
+        
     }
+    
+
+    
+
 
     
 
