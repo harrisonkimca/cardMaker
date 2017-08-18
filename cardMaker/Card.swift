@@ -15,6 +15,12 @@ class Card: NSObject, NSCoding {
     var photo: UIImage?
     var frame: UIImage?
     var pngImage: UIImage?
+    var backpngImage: UIImage?
+    var position: String?
+    var battingDirection: String?
+    var throwingHand: String?
+    var additionalInfo: String?
+    
     
     //MARK: Archiving Paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -35,13 +41,13 @@ class Card: NSObject, NSCoding {
 //            return nil
 //        }
 
-        guard !name.isEmpty else {
-            return nil
-        }
-        
-        guard !team.isEmpty else {
-            return nil
-        }
+//        guard !name.isEmpty else {
+//            return nil
+//        }
+//        
+//        guard !team.isEmpty else {
+//            return nil
+//        }
         
         self.team = team
         self.name = name
