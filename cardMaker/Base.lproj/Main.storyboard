@@ -14,7 +14,7 @@
         <scene sceneID="Uli-It-9W1">
             <objects>
                 <collectionViewController id="aPZ-Og-hnh" customClass="CardCollectionViewController" customModule="cardMaker" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" dataMode="prototypes" id="nof-w3-hSS">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" id="nof-w3-hSS">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.91550356149673462" green="0.95379704236984253" blue="0.97492867708206177" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -69,21 +69,20 @@
             </objects>
             <point key="canvasLocation" x="190" y="543"/>
         </scene>
-        <!--Card View Controller-->
+        <!--New Card-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-
                 <viewController id="BYZ-38-t0r" customClass="CreateCardViewController" customModule="cardMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleAspectFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Qda-x9-jRB" userLabel="CompositeView">
-                                <rect key="frame" x="62" y="84" width="250" height="350"/>
+                                <rect key="frame" x="62" y="20" width="250" height="350"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bez-Uc-Bud">
                                         <rect key="frame" x="25" y="25" width="200" height="275"/>
@@ -160,7 +159,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XSe-Uy-iI8" userLabel=" Frame Collection View Controller">
-                                <rect key="frame" x="16" y="449" width="343" height="85"/>
+                                <rect key="frame" x="16" y="385" width="343" height="85"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="VbV-NL-c6h"/>
@@ -374,15 +373,25 @@
                                     <constraint firstAttribute="trailing" secondItem="M29-ky-pbt" secondAttribute="trailing" constant="8" id="y9a-hU-qgK"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Maker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdI-lM-Ms5">
+                                <rect key="frame" x="79" y="307" width="220" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="0.095477811992168427" green="0.09596850723028183" blue="0.57220560312271118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Msf-Ur-gpj" firstAttribute="trailing" secondItem="bPg-ib-fNu" secondAttribute="trailing" id="4G7-AV-yKY"/>
                             <constraint firstItem="Msf-Ur-gpj" firstAttribute="leading" secondItem="bPg-ib-fNu" secondAttribute="leading" id="9j4-CE-7vh"/>
+                            <constraint firstItem="XdI-lM-Ms5" firstAttribute="leading" secondItem="5Yg-Iy-UCL" secondAttribute="leadingMargin" constant="63" id="Jjv-Uj-nXc"/>
                             <constraint firstItem="fM7-hb-VxH" firstAttribute="top" secondItem="bPg-ib-fNu" secondAttribute="bottom" constant="128" id="OQ9-Y0-DTb"/>
                             <constraint firstItem="Msf-Ur-gpj" firstAttribute="centerX" secondItem="5Yg-Iy-UCL" secondAttribute="centerX" id="QgO-pR-EiP"/>
+                            <constraint firstItem="bPg-ib-fNu" firstAttribute="top" secondItem="XdI-lM-Ms5" secondAttribute="bottom" constant="32" id="f3i-EE-Gvp"/>
                             <constraint firstItem="bPg-ib-fNu" firstAttribute="top" secondItem="Msf-Ur-gpj" secondAttribute="bottom" constant="23" id="hlO-pF-dFF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XdI-lM-Ms5" secondAttribute="trailing" constant="60" id="jw3-SV-QAF"/>
                             <constraint firstItem="Msf-Ur-gpj" firstAttribute="top" secondItem="PZw-u5-Qwh" secondAttribute="bottom" constant="79" id="rKH-wP-mXx"/>
+                            <constraint firstItem="XdI-lM-Ms5" firstAttribute="top" secondItem="PZw-u5-Qwh" secondAttribute="bottom" constant="243" id="xkF-R2-NW7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uYC-Y1-rDE"/>
@@ -412,7 +421,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3aM-0j-jyV">
                                 <rect key="frame" x="16" y="30" width="343" height="470"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card2" translatesAutoresizingMaskIntoConstraints="NO" id="ulN-9w-g5i">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ulN-9w-g5i">
                                         <rect key="frame" x="8" y="8" width="327" height="451"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="451" id="0eS-Il-RlH"/>
@@ -468,8 +477,8 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="deleteButton:" destination="X3l-Wm-FqZ" eventType="editingDidEnd" id="SJb-Zg-ac3"/>
                                             <action selector="deleteButton:" destination="X3l-Wm-FqZ" eventType="touchUpInside" id="YwY-ek-lml"/>
+                                            <action selector="deleteButton:" destination="X3l-Wm-FqZ" eventType="editingDidEnd" id="rTy-Ud-HE1"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -534,7 +543,6 @@
     <resources>
         <image name="IMG_6751" width="960" height="1280"/>
         <image name="LighthouseFrame2" width="350" height="450"/>
-        <image name="card2" width="85" height="120"/>
         <image name="frametrans" width="340" height="448"/>
         <image name="frontpage" width="249" height="202"/>
         <image name="lighthouseFrame" width="350" height="450"/>
