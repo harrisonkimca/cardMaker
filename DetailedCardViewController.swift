@@ -38,7 +38,14 @@ class DetailedCardViewController: UIViewController {
         shareButton.layer.cornerRadius = 5
         shareButton.layer.borderWidth = 1
         shareButton.layer.borderColor = UIColor.white.cgColor
-        // Do any additional setup after loading the view.
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(flipLeft(_:)))
+        swipeLeft.direction = .left
+        self.view.addGestureRecognizer(swipeLeft)
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(flipRight(_:)))
+        swipeRight.direction = .right
+        self.view.addGestureRecognizer(swipeRight)
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,9 +54,9 @@ class DetailedCardViewController: UIViewController {
     }
     
     
-    @IBAction func flipButtonTapped(_ sender: Any) {
+    func flipLeft(_ sender: Any) {
         
-        frontImage = card?.pngImage
+        frontImage = UIImage(named: "baseball")
         
         var option: UIViewAnimationOptions = .transitionFlipFromRight
         if ( self.isFrontVisible) {
@@ -58,7 +65,7 @@ class DetailedCardViewController: UIViewController {
             option = .transitionFlipFromRight
         } else {
             self.isFrontVisible = true
-            self.frontImageView.image = UIImage.init(named: "card2")
+            self.frontImageView.image = UIImage.init(named: "front")
             option = .transitionFlipFromLeft
         }
         
@@ -66,6 +73,25 @@ class DetailedCardViewController: UIViewController {
     }
     
     
+    func flipRight(_ sender: Any) {
+        
+        frontImage = UIImage(named: "baseball")
+        
+        var option: UIViewAnimationOptions = .transitionFlipFromLeft
+        if ( self.isFrontVisible) {
+            self.isFrontVisible = false
+            self.frontImageView.image = frontImage
+            option = .transitionFlipFromLeft
+        } else {
+            self.isFrontVisible = true
+            self.frontImageView.image = UIImage.init(named: "front")
+            option = .transitionFlipFromRight
+        }
+        
+        UIView.transition(with: self.frontImageView, duration: 0.8, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+    }
+    
+ 
     @IBAction func ActionButtonTapped(_ sender: UIButton) {
         // image to share
         
@@ -125,11 +151,38 @@ class DetailedCardViewController: UIViewController {
     //        }
     //
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        super.prepare(for: segue, sender: sender)
+        
+                switch (segue.identifier ?? "") {
+                    
+
+                case "ShowEdit":
+                                os_log("editing a card", log: OSLog.default, type: .debug)
+                    
+                                guard let cardDetailViewController = segue.destination as? CreateCardViewController else {
+                                    fatalError("Unexpected destination: \(segue.destination)")
+                                }
+                    
+//                                guard let selectedCardCell = sender as? editButton else {
+//                                    fatalError("Unexpected sender: \(String(describing: sender))")
+//                                }
+                    
+//                                guard let indexPath = collectionView?.indexPath(for: selectedCardCell) else {
+//                                    fatalError("The selected cell is not being displayed by the table")
+//                                }
+                    
+                                let selectedCard = card
+                                cardDetailViewController.card = selectedCard
+                                
+                            default:
+                                fatalError("Unexpected segue identifier; \(String(describing: segue.identifier))")
+                            }
+
     
     
-    
-    
-    
+    }
     
     /*
      // MARK: - Navigation
