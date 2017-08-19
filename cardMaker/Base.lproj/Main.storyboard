@@ -115,7 +115,7 @@
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gCz-gz-XoK">
-                                        <rect key="frame" x="25" y="261" width="200" height="64"/>
+                                        <rect key="frame" x="25" y="269" width="200" height="56"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Enter player name" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="HX0-jj-hS9">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="34"/>
@@ -124,8 +124,8 @@
                                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="28"/>
                                                 <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Enter team name" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TIl-bO-uUR">
-                                                <rect key="frame" x="0.0" y="34" width="200" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Enter team name" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TIl-bO-uUR">
+                                                <rect key="frame" x="0.0" y="34" width="200" height="22"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="21"/>
@@ -304,6 +304,24 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1255" y="-224"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ArX-qc-F1q">
+            <objects>
+                <viewController id="Iyw-MX-i29" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x38-Br-s1P"/>
+                        <viewControllerLayoutGuide type="bottom" id="GWd-Fy-L5h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ogE-ch-Nzg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wj2-ap-fUv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1982" y="-222"/>
         </scene>
         <!--Front View Controller-->
         <scene sceneID="zuS-ed-2av">

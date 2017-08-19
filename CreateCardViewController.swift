@@ -129,22 +129,21 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         
         present(imagePicker, animated: true, completion: nil)
     }
-    // MARK: - ImagePickerDelegate
     
+    
+    // MARK: - ImagePickerDelegate
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         guard images.count > 0 else { return }
-        
-        
     }
     
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         imagePicker.dismiss(animated: true, completion: nil)
         guard images.count > 0 else { return }
-        
+
         basePhoto.image = images[0]
     }
 
@@ -161,23 +160,19 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
                 = seedData.frames[indexPath.row].frameImage
             frameCell.backgroundView = UIImageView(image: card?.photo)
             return frameCell
-            
         }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         frameImage.image = seedData.frames[indexPath.row].frameImage
         card?.frame = frameImage.image
-        
     }
     
     // MARK: UITextFieldDelegate
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        saveButton.isEnabled = false
+//        saveButton.isEnabled = false
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -186,7 +181,7 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
-        updateSaveButtonState()
+//        updateSaveButtonState()
         navigationItem.title = textField.text
     }
     
@@ -228,8 +223,13 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         }
     }
 
-    // make a save action
+    // MARK: Prepare for segue & save data
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // This prevents default text from being printed on a card
+        
+        if (teamTextField.text?.isEmpty)! { teamTextField.text = " " }
+        if (nameTextField.text?.isEmpty)! { nameTextField.text = " " }
+        
         let team = teamTextField.text ?? ""
         let name = nameTextField.text ?? ""
         let photo = basePhoto.image
@@ -237,23 +237,17 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         let pngImage = UIImage.init(view: pngView)
         
         card = Card(team: team, name: name, photo: photo, frame: frame, pngImage: pngImage)
-        
         super.prepare(for: segue, sender: sender)
         
     }
     
 
-    
-
-
-    
-
     //MARK: Private Methods
     private func updateSaveButtonState() {
         //        Disable the Save button if any of the texts fields are empty
-        let teamText = teamTextField.text ?? ""
-        let nameText = nameTextField.text ?? ""
-        saveButton.isEnabled = !teamText.isEmpty && !nameText.isEmpty
+//        let teamText = teamTextField.text ?? ""
+//        let nameText = nameTextField.text ?? ""
+        saveButton.isEnabled = true
     }
 
     
