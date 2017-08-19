@@ -20,6 +20,7 @@ class Card: NSObject, NSCoding {
     var battingDirection: String?
     var throwingHand: String?
     var additionalInfo: String?
+    var newCard = true
     
     
     //MARK: Archiving Paths

@@ -143,7 +143,7 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
             os_log("Adding a new card", log: OSLog.default, type: .debug)
             
         case "ShowDetail":
-            os_log("deleting a card", log: OSLog.default, type: .debug)
+            os_log("Segue to ShowDetail", log: OSLog.default, type: .debug)
 
             guard let cardDetailViewController = segue.destination as? DetailedCardViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
@@ -170,19 +170,15 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
         //If sender is cardViewcontroller
         if let sourceViewController = sender.source as?
             CreateCardViewController, let card = sourceViewController.card {
-            
-            //            if let selectedIndexPaths = collectionView?.indexPathsForSelectedItems,
-            //                let indexPath = selectedIndexPaths.first {
-            //
-            //                cards[indexPath.row] = card
-            //                collectionView?.reloadItems(at: [indexPath])
-            //            }
-            //            else {
-            let newIndexPath = IndexPath(row: cards.count, section: 0)
-            
-            cards.append(card)
-            
-            collectionView?.insertItems(at: [newIndexPath])
+
+//not working maybe new card has already been created?
+            if let index = cards.index(of: card){ cards[index] = card
+            }else{
+//            let newIndexPath = IndexPath(row: cards.count, section: 0)
+                cards.insert(card, at: 0)
+            }
+             collectionView?.reloadData()
+//            collectionView?.insertItems(at: [newIndexPath])
             //            }
             
             saveCards()

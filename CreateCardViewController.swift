@@ -172,7 +172,7 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
     
     // MARK: UITextFieldDelegate
     func textFieldDidBeginEditing(_ textField: UITextField) {
-//        saveButton.isEnabled = false
+        saveButton.isEnabled = false
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -181,7 +181,7 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
-//        updateSaveButtonState()
+        updateSaveButtonState()
         navigationItem.title = textField.text
     }
     
@@ -198,8 +198,6 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         basePhoto.image = selectedImage
         dismiss(animated: true, completion: nil)
     }
-    
-    //
     
     // MARK: Navigation
     @IBAction func cancel(_ sender: UIBarButtonItem) {
@@ -226,10 +224,16 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
     // MARK: Prepare for segue & save data
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // This prevents default text from being printed on a card
-        
         if (teamTextField.text?.isEmpty)! { teamTextField.text = " " }
         if (nameTextField.text?.isEmpty)! { nameTextField.text = " " }
-        
+
+        if (self.card != nil) {
+            self.card?.team = teamTextField.text ?? ""
+            self.card?.name = nameTextField.text ?? ""
+            self.card?.photo = basePhoto.image
+            self.card?.frame = frameImage.image
+            self.card?.pngImage = UIImage.init(view: pngView)
+        } else {
         let team = teamTextField.text ?? ""
         let name = nameTextField.text ?? ""
         let photo = basePhoto.image
@@ -237,6 +241,7 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         let pngImage = UIImage.init(view: pngView)
         
         card = Card(team: team, name: name, photo: photo, frame: frame, pngImage: pngImage)
+        }
         super.prepare(for: segue, sender: sender)
         
     }
