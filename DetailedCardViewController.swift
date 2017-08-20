@@ -140,7 +140,10 @@ class DetailedCardViewController: UIViewController {
             self.card?.newCard = false
             let selectedCard = self.card
             createCardViewController.card = selectedCard
-            
+          
+        case "unwindToCardListWithSender":
+            os_log("unwindToCardListWithSender called heading to CardCollectionVIew", log: OSLog.default, type: .debug)
+
         default:
             fatalError("Unexpected segue identifier; \(String(describing: segue.identifier))")
         }
