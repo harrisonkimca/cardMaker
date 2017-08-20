@@ -128,7 +128,7 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
              collectionView?.reloadData()
 
             
-            saveCards()
+ //           saveCards()
             
         }
         //if sender is detailedCardViewController
@@ -137,7 +137,7 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
         let indexToRemove = cards.index(of: card)
         cards.remove(at: indexToRemove!)
         collectionView?.reloadData()
-        saveCards()
+ //       saveCards()
     }
     }
     
