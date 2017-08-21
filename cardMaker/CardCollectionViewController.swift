@@ -82,57 +82,7 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
         return cell
     }
     
-    // MARK: - Navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        super.prepare(for: segue, sender: sender)
-//        
-//        switch (segue.identifier ?? "") {
-//            
-//        case "AddItem":
-//            os_log("Adding a new card", log: OSLog.default, type: .debug)
-//            
-//            guard let cardDetailViewController = segue.destination as? DetailedCardViewController else {
-//                fatalError("Unexpected destination: \(segue.destination)")
-//            }
-//            
-//            guard let selectedCardCell = sender as? CardCollectionViewCell else {
-//                fatalError("Unexpected sender: \(String(describing: sender))")
-//            }
-//            
-//            guard let indexPath = collectionView?.indexPath(for: selectedCardCell) else {
-//                fatalError("The selected cell is not being displayed by the table")
-//            }
-//            
-//            let selectedCard = cards[indexPath.row]
-//            cardDetailViewController.card = selectedCard
-//            
-//
-//            
-//            
-//        case "ShowDetail":
-//            os_log("deleting a card", log: OSLog.default, type: .debug)
-//
-//            guard let cardDetailViewController = segue.destination as? DetailedCardViewController else {
-//                fatalError("Unexpected destination: \(segue.destination)")
-//            }
-//            
-//            guard let selectedCardCell = sender as? CardCollectionViewCell else {
-//                fatalError("Unexpected sender: \(String(describing: sender))")
-//            }
-//            
-//            guard let indexPath = collectionView?.indexPath(for: selectedCardCell) else {
-//                fatalError("The selected cell is not being displayed by the table")
-//            }
-//            
-//            let selectedCard = cards[indexPath.row]
-//            cardDetailViewController.card = selectedCard
-//            
-//        default:
-//            fatalError("Unexpected segue identifier; \(String(describing: segue.identifier))")
-//        }
-//    }
-
+    // MARK: prepare(for segue)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         super.prepare(for: segue, sender: sender)
@@ -143,8 +93,8 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
             os_log("Adding a new card", log: OSLog.default, type: .debug)
             
         case "ShowDetail":
-            os_log("deleting a card", log: OSLog.default, type: .debug)
-
+            os_log("Segue to ShowDetail", log: OSLog.default, type: .debug)
+            
             guard let cardDetailViewController = segue.destination as? DetailedCardViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
@@ -164,26 +114,19 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
             fatalError("Unexpected segue identifier; \(String(describing: segue.identifier))")
         }
     }
-
-    //MARK: Actions
+    
+    //MARK: UNwind to CardList gets index path if card has been editied so it can replace the old version in the array
     @IBAction func unwindToCardList(sender: UIStoryboardSegue) {
+        
         //If sender is cardViewcontroller
         if let sourceViewController = sender.source as?
             CreateCardViewController, let card = sourceViewController.card {
+            if let index = cards.index(of: card){ cards[index] = card
+            }else{
+                cards.insert(card, at: 0)
+            }
+            collectionView?.reloadData()
             
-            //            if let selectedIndexPaths = collectionView?.indexPathsForSelectedItems,
-            //                let indexPath = selectedIndexPaths.first {
-            //
-            //                cards[indexPath.row] = card
-            //                collectionView?.reloadItems(at: [indexPath])
-            //            }
-            //            else {
-            let newIndexPath = IndexPath(row: cards.count, section: 0)
-            
-            cards.append(card)
-            
-            collectionView?.insertItems(at: [newIndexPath])
-            //            }
             
             saveCards()
             
@@ -191,65 +134,14 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
         //if sender is detailedCardViewController
         if let sourceViewController = sender.source as?
             DetailedCardViewController, let card = sourceViewController.card {
-        let indexToRemove = cards.index(of: card)
-        cards.remove(at: indexToRemove!)
-        collectionView?.reloadData()
-        saveCards()
+            let indexToRemove = cards.index(of: card)
+            cards.remove(at: indexToRemove!)
+            collectionView?.reloadData()
+            saveCards()
+        }
     }
-    }
-    
-    //    // MARK : Sharing the image
-    //    @IBAction func actionButtonTapped(_ sender: Any) {
-    //
-    //        // image to share
-    //
-    //        let image: UIImage = currentCard!.pngImage!
-    //
-    //        // set up activity view controller
-    //        let imageToShare = [ image ]
-    //        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
-    //        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
-    //
-    //        // exclude some activity types from the list (optional)
-    //        activityViewController.excludedActivityTypes = [ UIActivityType.airDrop ]
-    //
-    //        // present the view controller
-    //        self.present(activityViewController, animated: true, completion: nil)
-    //    }
-    //
     
     
-    //MARK: Private Methods
-    //    private func loadSampleCards() {
-    //        let photo1 = UIImage(named: "IMG_6751")
-    //        let photo2 = UIImage(named: "card2")
-    //        let photo3 = UIImage(named: "card3")
-    //        let photo4 = UIImage(named: "card4")
-    //        let photo5 = UIImage(named: "card5")
-    //
-    //        guard let card1 = Card(team: "Blue Jays", name: "Josh Donaldson", photo: photo1, frame: photo1, pngImage: photo1) else {
-    //            fatalError("Unable to instantiate card1")
-    //        }
-    //
-    //        guard let card2 = Card(team: "Blue Jays", name: "Jose Bautista", photo: photo2, frame: nil, pngImage: nil) else {
-    //            fatalError("Unable to instantiate card2")
-    //        }
-    //
-    //        guard let card3 = Card(team: "Blue Jays", name: "Russel Martin", photo: photo3, frame: nil, pngImage: nil) else {
-    //            fatalError("Unable to instantiate card3")
-    //        }
-    //
-    //        guard let card4 = Card(team: "Chicago Cubs", name: "Kyle Schwarber", photo: photo4, frame: nil, pngImage: nil) else {
-    //            fatalError("Unable to instantiate card4")
-    //        }
-    //
-    //        guard let card5 = Card(team: "Blue Jays", name: "Aaron Sanchez", photo: photo5, frame: nil, pngImage: nil) else {
-    //            fatalError("Unable to instantiate card5")
-    //        }
-    //
-    //        cards += [card1, card2, card3, card4, card5]
-    //    }
-    //
     private func saveCards() {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(cards, toFile: Card.ArchiveURL.path)
         

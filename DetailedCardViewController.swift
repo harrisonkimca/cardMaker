@@ -29,7 +29,7 @@ class DetailedCardViewController: UIViewController {
         
         frontImage = card?.pngImage
         frontImageView.image = frontImage
-
+        
         //backImage = card?.
         
         deleteButton.layer.cornerRadius = 5
@@ -92,7 +92,7 @@ class DetailedCardViewController: UIViewController {
         UIView.transition(with: self.frontImageView, duration: 0.8, options: .transitionFlipFromLeft, animations: nil, completion: nil)
     }
     
- 
+    
     @IBAction func ActionButtonTapped(_ sender: UIButton) {
         // image to share
         
@@ -126,17 +126,29 @@ class DetailedCardViewController: UIViewController {
         
         // Show the alert
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
         
-        
+        switch (segue.identifier ?? "") {
+        case "ShowEdit":
+            os_log("segue to edit", log: OSLog.default, type: .debug)
+            guard let createCardViewController = segue.destination as? CreateCardViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            self.card?.newCard = false
+            let selectedCard = self.card
+            createCardViewController.card = selectedCard
+          
+        case "unwindToCardListWithSender":
+            os_log("unwindToCardListWithSender called heading to CardCollectionVIew", log: OSLog.default, type: .debug)
+
+        default:
+            fatalError("Unexpected segue identifier; \(String(describing: segue.identifier))")
+        }
     }
     
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        super.prepare(for: segue, sender: sender)
-//        
-//        
-//                                destinationViewController.card = card
-//        
-//                            }
+    
 }
