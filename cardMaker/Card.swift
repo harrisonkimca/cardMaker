@@ -20,10 +20,6 @@ class Card: NSObject, NSCoding {
     var battingDirection: String?
     var throwingHand: String?
     var additionalInfo: String?
-
-    var newCard = true
-
-    
     
     //MARK: Archiving Paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -58,6 +54,26 @@ class Card: NSObject, NSCoding {
         self.frame = frame
         self.pngImage = pngImage
     }
+    
+    
+//    init(with card: Card) {
+//        
+//        self.team = card.team
+//        name: String?
+//        photo: UIImage?
+//        frame: UIImage?
+//        pngImage: UIImage?
+//        backpngImage: UIImage?
+//        position: String?
+//        battingDirection: String?
+//        throwingHand: String?
+//        additionalInfo: String?
+//        
+//                
+//   }
+    
+    
+    
     
     //MARK: NSCoding
     func encode(with aCoder: NSCoder) {
