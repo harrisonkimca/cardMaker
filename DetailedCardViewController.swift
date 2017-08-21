@@ -137,7 +137,6 @@ class DetailedCardViewController: UIViewController {
             guard let createCardViewController = segue.destination as? CreateCardViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            self.card?.newCard = false
             let selectedCard = self.card
             createCardViewController.card = selectedCard
           

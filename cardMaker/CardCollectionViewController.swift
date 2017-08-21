@@ -120,7 +120,9 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
             CreateCardViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-                backViewController.card = sourceViewController.card
+            
+            backViewController.card = Card.init(team: (sourceViewController.card?.team)!, name: (sourceViewController.card?.name)!, photo: sourceViewController.card?.photo, frame: sourceViewController.card?.frame, pngImage: sourceViewController.card?.pngImage)
+            
             
             
         default:

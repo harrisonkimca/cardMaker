@@ -50,6 +50,11 @@ class BackViewController: UIViewController {
         let bats = batsTextField.text
         let throwingHand = throwsTextField.text
         let info = infoTextView.text
+        let photo = card?.photo
+        let frame = card?.frame
+        let pngImage = card?.pngImage
+        
+        card = Card(team: team!, name: name!, photo: photo!, frame: frame!, pngImage: pngImage!)
         
         self.card?.name = name
         self.card?.team = team
