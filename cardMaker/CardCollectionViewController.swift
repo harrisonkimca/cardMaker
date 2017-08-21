@@ -82,7 +82,7 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
         return cell
     }
     
-// MARK: prepare(for segue)
+    // MARK: prepare(for segue)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         super.prepare(for: segue, sender: sender)
@@ -94,7 +94,7 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
             
         case "ShowDetail":
             os_log("Segue to ShowDetail", log: OSLog.default, type: .debug)
-
+            
             guard let cardDetailViewController = segue.destination as? DetailedCardViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
@@ -114,7 +114,7 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
             fatalError("Unexpected segue identifier; \(String(describing: segue.identifier))")
         }
     }
-
+    
     //MARK: UNwind to CardList gets index path if card has been editied so it can replace the old version in the array
     @IBAction func unwindToCardList(sender: UIStoryboardSegue) {
         
@@ -125,20 +125,20 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
             }else{
                 cards.insert(card, at: 0)
             }
-             collectionView?.reloadData()
-
+            collectionView?.reloadData()
             
- //           saveCards()
+            
+            saveCards()
             
         }
         //if sender is detailedCardViewController
         if let sourceViewController = sender.source as?
             DetailedCardViewController, let card = sourceViewController.card {
-        let indexToRemove = cards.index(of: card)
-        cards.remove(at: indexToRemove!)
-        collectionView?.reloadData()
- //       saveCards()
-    }
+            let indexToRemove = cards.index(of: card)
+            cards.remove(at: indexToRemove!)
+            collectionView?.reloadData()
+            saveCards()
+        }
     }
     
     

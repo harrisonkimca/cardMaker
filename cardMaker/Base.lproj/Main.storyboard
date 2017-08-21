@@ -90,6 +90,9 @@
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_6751" translatesAutoresizingMaskIntoConstraints="NO" id="hsW-uW-0fU" userLabel="basePhoto">
                                                 <rect key="frame" x="0.0" y="0.0" width="960" height="1280"/>
                                                 <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="izF-xX-95E" appends="YES" id="WHX-bq-7Y2"/>
+                                                </connections>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -311,6 +314,11 @@
                         <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="hyP-4Y-epR"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="izF-xX-95E">
+                    <connections>
+                        <action selector="basePhotoTapped:" destination="BYZ-38-t0r" id="kbG-fA-SqG"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1253.5999999999999" y="-224.4377811094453"/>
         </scene>
@@ -330,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wj2-ap-fUv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1982" y="-222"/>
+            <point key="canvasLocation" x="2513" y="-243"/>
         </scene>
         <!--Front View Controller-->
         <scene sceneID="zuS-ed-2av">

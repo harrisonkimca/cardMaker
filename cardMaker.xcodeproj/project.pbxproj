@@ -130,13 +130,13 @@
 			children = (
 				ED6424D81F3E559C00D41841 /* CreateCardViewController.swift */,
 				888027251F3BF1B0000CFA0D /* CardCollectionViewController.swift */,
+				888027231F3BEDC6000CFA0D /* CardCollectionViewCell.swift */,
 				BBE551F91F436E960084A873 /* DetailedCardViewController.swift */,
 				EDC0529C1F47B45000975E20 /* BackViewController.swift */,
-				888027231F3BEDC6000CFA0D /* CardCollectionViewCell.swift */,
 				BBE5521A1F46338D0084A873 /* FrontViewController.swift */,
+				BBE551FB1F449ED90084A873 /* TisprCard */,
 				EDE569841F42298E006D59C4 /* UIView+asImage.swift */,
 				EDE569861F423C7C006D59C4 /* UIImage+asImage2.swift */,
-				BBE551FB1F449ED90084A873 /* TisprCard */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
