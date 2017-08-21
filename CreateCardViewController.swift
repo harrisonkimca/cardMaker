@@ -61,12 +61,12 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
             basePhoto.image = card.photo
         }
         
-        //MARK Frame Collection Data
+        //MARK: Frame Collection Data
         seedData = SeedData()
         
         
-        // MARK : ImagePicker
-        view.backgroundColor = UIColor.white
+        // MARK: Select Images Button (ImagePicker)
+//        view.backgroundColor = UIColor.white
         view.addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
         
@@ -129,22 +129,21 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         
         present(imagePicker, animated: true, completion: nil)
     }
-    // MARK: - ImagePickerDelegate
     
+    
+    // MARK: - ImagePickerDelegate
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         guard images.count > 0 else { return }
-        
-        
     }
     
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         imagePicker.dismiss(animated: true, completion: nil)
         guard images.count > 0 else { return }
-        
+
         basePhoto.image = images[0]
     }
 
@@ -161,22 +160,18 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
                 = seedData.frames[indexPath.row].frameImage
             frameCell.backgroundView = UIImageView(image: card?.photo)
             return frameCell
-            
         }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         frameImage.image = seedData.frames[indexPath.row].frameImage
         card?.frame = frameImage.image
-        
     }
     
     // MARK: UITextFieldDelegate
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        
         saveButton.isEnabled = false
     }
     
@@ -204,8 +199,6 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         dismiss(animated: true, completion: nil)
     }
     
-    //
-    
     // MARK: Navigation
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         
@@ -228,32 +221,50 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         }
     }
 
-    // make a save action
+    // MARK: Prepare for segue & save data
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // This prevents default text from being printed on a card
+        if (teamTextField.text?.isEmpty)! { teamTextField.text = " " }
+        if (nameTextField.text?.isEmpty)! { nameTextField.text = " " }
+
+        if (self.card != nil) {
+            self.card?.team = teamTextField.text ?? ""
+            self.card?.name = nameTextField.text ?? ""
+            self.card?.photo = basePhoto.image
+            self.card?.frame = frameImage.image
+            self.card?.pngImage = UIImage.init(view: pngView)
+        } else {
         let team = teamTextField.text ?? ""
         let name = nameTextField.text ?? ""
         let photo = basePhoto.image
         let frame = frameImage.image
         let pngImage = UIImage.init(view: pngView)
+
         
+            
         card = Card(team: team, name: name, photo: photo, frame: frame, pngImage: pngImage)
+        }
+        
+        
         
         super.prepare(for: segue, sender: sender)
         
     }
     
-
     
-
-
+    
+    
+    
+    
+    
     
 
     //MARK: Private Methods
     private func updateSaveButtonState() {
         //        Disable the Save button if any of the texts fields are empty
-        let teamText = teamTextField.text ?? ""
-        let nameText = nameTextField.text ?? ""
-        saveButton.isEnabled = !teamText.isEmpty && !nameText.isEmpty
+//        let teamText = teamTextField.text ?? ""
+//        let nameText = nameTextField.text ?? ""
+        saveButton.isEnabled = true
     }
 
     
