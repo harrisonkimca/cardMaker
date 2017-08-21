@@ -18,6 +18,7 @@
 		88CA28361F3BB629002D21DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CA28341F3BB629002D21DB /* LaunchScreen.storyboard */; };
 		88CA28411F3BB629002D21DB /* cardMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CA28401F3BB629002D21DB /* cardMakerTests.swift */; };
 		BACC09FBF214BB1C00534486 /* Pods_cardMakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B9DB3379965D4AA0E80507 /* Pods_cardMakerTests.framework */; };
+		BBAD0F191F4B740C00BCF569 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD0F181F4B740C00BCF569 /* SweetAlert.swift */; };
 		BBE551FA1F436E960084A873 /* DetailedCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE551F91F436E960084A873 /* DetailedCardViewController.swift */; };
 		BBE5521B1F46338D0084A873 /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE5521A1F46338D0084A873 /* FrontViewController.swift */; };
 		BBEC1F6C1F3E508400C0692D /* TisprCardStackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC1F691F3E508400C0692D /* TisprCardStackViewCell.swift */; };
@@ -61,6 +62,7 @@
 		88CA28421F3BB629002D21DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0B9DB3379965D4AA0E80507 /* Pods_cardMakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cardMakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3DA6C94A35E23E29E9F711F /* Pods-cardMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cardMaker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cardMaker/Pods-cardMaker.debug.xcconfig"; sourceTree = "<group>"; };
+		BBAD0F181F4B740C00BCF569 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
 		BBE551F91F436E960084A873 /* DetailedCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedCardViewController.swift; sourceTree = "<group>"; };
 		BBE5521A1F46338D0084A873 /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		BBEC1F691F3E508400C0692D /* TisprCardStackViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewCell.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		ED723B861F3E50FC00900A7E /* CardMaker */ = {
 			isa = PBXGroup;
 			children = (
+				BBAD0F181F4B740C00BCF569 /* SweetAlert.swift */,
 				ED723B7A1F3E509D00900A7E /* SeedData.swift */,
 				ED723B7C1F3E50B100900A7E /* TeamColors.swift */,
 				ED723B801F3E50CA00900A7E /* FrameCollectionViewCell.swift */,
@@ -375,7 +378,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		910C073326AE490E6B3998BA /* [CP] Check Pods Manifest.lock */ = {
@@ -393,7 +396,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A93B9EDF06A97DF96E213697 /* [CP] Embed Pods Frameworks */ = {
@@ -404,10 +407,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-cardMaker/Pods-cardMaker-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -453,6 +458,7 @@
 				BBEC1F6D1F3E508400C0692D /* TisprCardStackViewController.swift in Sources */,
 				888027221F3BE2F1000CFA0D /* Card.swift in Sources */,
 				ED723B831F3E50D000900A7E /* Frame.swift in Sources */,
+				BBAD0F191F4B740C00BCF569 /* SweetAlert.swift in Sources */,
 				BBE551FA1F436E960084A873 /* DetailedCardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

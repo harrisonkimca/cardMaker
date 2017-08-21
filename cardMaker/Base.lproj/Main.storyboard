@@ -14,7 +14,7 @@
         <scene sceneID="Uli-It-9W1">
             <objects>
                 <collectionViewController id="aPZ-Og-hnh" customClass="CardCollectionViewController" customModule="cardMaker" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" id="nof-w3-hSS">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" dataMode="prototypes" id="nof-w3-hSS">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.91550356149673462" green="0.95379704236984253" blue="0.97492867708206177" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -548,6 +548,6 @@
         <image name="lighthouseFrame" width="350" height="450"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="43f-f9-ToT"/>
+        <segue reference="qhf-E0-htY"/>
     </inferredMetricsTieBreakers>
 </document>
