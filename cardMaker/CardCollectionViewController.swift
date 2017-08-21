@@ -110,6 +110,19 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
             let selectedCard = cards[indexPath.row]
             cardDetailViewController.card = selectedCard
             
+            
+        case "backCardEntry":
+            guard let backViewController = segue.destination as? BackViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let sourceViewController = sender as?
+            CreateCardViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+                backViewController.card = sourceViewController.card
+            
+            
         default:
             fatalError("Unexpected segue identifier; \(String(describing: segue.identifier))")
         }

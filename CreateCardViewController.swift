@@ -61,12 +61,12 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
             basePhoto.image = card.photo
         }
         
-        //MARK Frame Collection Data
+        //MARK: Frame Collection Data
         seedData = SeedData()
         
         
-        // MARK : ImagePicker
-        view.backgroundColor = UIColor.white
+        // MARK: Select Images Button (ImagePicker)
+//        view.backgroundColor = UIColor.white
         view.addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
         
@@ -245,6 +245,13 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         super.prepare(for: segue, sender: sender)
         
     }
+    
+    
+    
+    
+    
+    
+    
     
 
     //MARK: Private Methods
