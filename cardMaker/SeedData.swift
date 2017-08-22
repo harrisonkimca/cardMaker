@@ -11,10 +11,10 @@ import UIKit
 class SeedData: NSObject {
 
     var frames:[Frame] = []
-    let myImage = UIImage(named: "CMFrameBlueBorder2x")
+    let myImage = UIImage(named: "CMFrameRedBorder2x")
     let myImage2 = UIImage(named: "CMFrameRedBorder2x")
-    let myImage3 = UIImage(named: "frametrans")
-    let myImage4 = UIImage(named: "CMFrameWhiteBorder")
+    let myImage3 = UIImage(named: "CMFrameRedBorder2x")
+    let myImage4 = UIImage(named: "CMFrameRedBorder2x")
     
     override init() {
 //        self.frames = [Frame]()

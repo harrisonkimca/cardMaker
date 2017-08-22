@@ -121,9 +121,12 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             
-            backViewController.card = Card.init(team: (sourceViewController.card?.team)!, name: (sourceViewController.card?.name)!, photo: sourceViewController.card?.photo, frame: sourceViewController.card?.frame, pngImage: sourceViewController.card?.pngImage)
+// Not sure this is necesary: (discovered when changing Card's optional in backview controller
             
+  backViewController.card = Card.init(team: (sourceViewController.card?.team)!, name: (sourceViewController.card?.name)!, photo: sourceViewController.card?.photo, frame: sourceViewController.card?.frame, pngImage: sourceViewController.card?.pngImage)
             
+// Replaced it with this item:
+//            backViewController.card = sourceViewController.card!
             
         default:
             fatalError("Unexpected segue identifier; \(String(describing: segue.identifier))")

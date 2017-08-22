@@ -14,7 +14,7 @@
         <scene sceneID="Uli-It-9W1">
             <objects>
                 <collectionViewController id="aPZ-Og-hnh" customClass="CardCollectionViewController" customModule="cardMaker" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" dataMode="prototypes" id="nof-w3-hSS">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" id="nof-w3-hSS">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.91550356149673462" green="0.95379704236984253" blue="0.97492867708206177" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -67,7 +67,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYd-dY-5vz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="226" y="-224"/>
+            <point key="canvasLocation" x="-41" y="-224"/>
         </scene>
         <!--New Card-->
         <scene sceneID="tne-QT-ifu">
@@ -116,13 +116,16 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="dlB-5o-az8"/>
                                         </constraints>
-                                        <blurEffect style="regular"/>
+                                        <vibrancyEffect>
+                                            <blurEffect style="prominent"/>
+                                        </vibrancyEffect>
                                     </visualEffectView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="enter team" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="TIl-bO-uUR">
-                                        <rect key="frame" x="20" y="384" width="285" height="46"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="enter team" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="TIl-bO-uUR">
+                                        <rect key="frame" x="20" y="375" width="285" height="55"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Palatino-BoldItalic" family="Palatino" pointSize="41"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="50"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CMFrameBlueBorder2x" translatesAutoresizingMaskIntoConstraints="NO" id="rfq-Yx-Au1" userLabel="FrameImage">
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="455"/>
@@ -136,13 +139,13 @@
                                             <outletCollection property="gestureRecognizers" destination="fvL-gB-SUs" appends="YES" id="mU5-1O-WIT"/>
                                         </connections>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter player name" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="41" translatesAutoresizingMaskIntoConstraints="NO" id="HX0-jj-hS9">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter player name" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="HX0-jj-hS9">
                                         <rect key="frame" x="57" y="3" width="249" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="28"/>
-                                        <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -203,63 +206,6 @@
                                         <connections>
                                             <outlet property="FrameCellImage" destination="mfK-Y4-7PD" id="IrM-57-pkN"/>
                                         </connections>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eE0-Za-Qjm">
-                                        <rect key="frame" x="67" y="2.5" width="55" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="55" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frametrans" translatesAutoresizingMaskIntoConstraints="NO" id="KpW-t0-zNG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="80"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="KpW-t0-zNG" secondAttribute="trailing" id="4nZ-4d-UMv"/>
-                                            <constraint firstAttribute="bottom" secondItem="KpW-t0-zNG" secondAttribute="bottom" id="FGo-4q-FjL"/>
-                                            <constraint firstItem="KpW-t0-zNG" firstAttribute="top" secondItem="eE0-Za-Qjm" secondAttribute="top" id="NOc-4t-UYM"/>
-                                            <constraint firstItem="KpW-t0-zNG" firstAttribute="leading" secondItem="eE0-Za-Qjm" secondAttribute="leading" id="anG-hI-hyt"/>
-                                        </constraints>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EYS-Jg-pRH">
-                                        <rect key="frame" x="134" y="2.5" width="55" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="55" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lighthouseFrame" translatesAutoresizingMaskIntoConstraints="NO" id="9vB-em-DAG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="80"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="9vB-em-DAG" firstAttribute="leading" secondItem="EYS-Jg-pRH" secondAttribute="leading" id="5rY-1J-Zvn"/>
-                                            <constraint firstItem="9vB-em-DAG" firstAttribute="top" secondItem="EYS-Jg-pRH" secondAttribute="top" id="6Lw-8R-Hhn"/>
-                                            <constraint firstAttribute="bottom" secondItem="9vB-em-DAG" secondAttribute="bottom" id="gVO-oP-jbu"/>
-                                            <constraint firstAttribute="trailing" secondItem="9vB-em-DAG" secondAttribute="trailing" id="wh0-4t-Ov1"/>
-                                        </constraints>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RBy-jP-0ae">
-                                        <rect key="frame" x="201" y="2.5" width="55" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="55" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frametrans" translatesAutoresizingMaskIntoConstraints="NO" id="iHv-eO-V8p">
-                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="80"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="iHv-eO-V8p" firstAttribute="leading" secondItem="RBy-jP-0ae" secondAttribute="leading" id="AYU-2u-Xm6"/>
-                                            <constraint firstAttribute="trailing" secondItem="iHv-eO-V8p" secondAttribute="trailing" id="Wpo-Ff-Zgn"/>
-                                            <constraint firstAttribute="bottom" secondItem="iHv-eO-V8p" secondAttribute="bottom" id="XtG-MB-LOy"/>
-                                            <constraint firstItem="iHv-eO-V8p" firstAttribute="top" secondItem="RBy-jP-0ae" secondAttribute="top" id="nye-4A-qTs"/>
-                                        </constraints>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -336,7 +282,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1464.8" y="-224.4377811094453"/>
+            <point key="canvasLocation" x="735" y="-224"/>
         </scene>
         <!--Back View Controller-->
         <scene sceneID="ArX-qc-F1q">
@@ -424,9 +370,6 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="180" id="2oq-4O-uEU"/>
                                                                 </constraints>
-                                                                <connections>
-                                                                    <segue destination="gsy-zH-m8l" kind="embed" id="JNH-FG-Aet"/>
-                                                                </connections>
                                                             </containerView>
                                                         </subviews>
                                                         <constraints>
@@ -436,35 +379,35 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="jzV-OO-1N9">
                                                         <rect key="frame" x="80" y="0.0" width="190" height="400"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eaQ-a4-QRb">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eaQ-a4-QRb">
                                                                 <rect key="frame" x="0.0" y="0.0" width="190" height="16"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                             </textField>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="123-U0-bNm">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="123-U0-bNm">
                                                                 <rect key="frame" x="0.0" y="36.5" width="190" height="16"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
                                                             </textField>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ygb-UY-Ue4">
                                                                 <rect key="frame" x="0.0" y="73" width="190" height="16"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
                                                             </textField>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ByX-FV-Gwc">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ByX-FV-Gwc">
                                                                 <rect key="frame" x="0.0" y="109" width="190" height="16"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
                                                             </textField>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mB1-sQ-0N5">
                                                                 <rect key="frame" x="0.0" y="145.5" width="190" height="16"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
                                                             </textField>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="t1T-zB-6B3">
                                                                 <rect key="frame" x="0.0" y="182" width="190" height="218"/>
@@ -473,7 +416,7 @@
                                                                     <constraint firstAttribute="height" constant="218" id="hB0-xW-BOf"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="yes"/>
                                                             </textView>
                                                         </subviews>
                                                         <constraints>
@@ -538,63 +481,6 @@
                                                     <outlet property="FrameCellImage" destination="KBh-s0-8ws" id="A0g-S8-cKM"/>
                                                 </connections>
                                             </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7D6-6b-5Mb">
-                                                <rect key="frame" x="67" y="2.5" width="55" height="80"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="80"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frametrans" translatesAutoresizingMaskIntoConstraints="NO" id="XZF-cJ-dlk">
-                                                            <rect key="frame" x="0.0" y="0.0" width="55" height="80"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                </view>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="XZF-cJ-dlk" secondAttribute="trailing" id="C8R-NA-tGC"/>
-                                                    <constraint firstAttribute="bottom" secondItem="XZF-cJ-dlk" secondAttribute="bottom" id="Jag-4v-C7J"/>
-                                                    <constraint firstItem="XZF-cJ-dlk" firstAttribute="top" secondItem="7D6-6b-5Mb" secondAttribute="top" id="SN4-02-lo0"/>
-                                                    <constraint firstItem="XZF-cJ-dlk" firstAttribute="leading" secondItem="7D6-6b-5Mb" secondAttribute="leading" id="VEL-R0-Fec"/>
-                                                </constraints>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Kb4-qb-sOT">
-                                                <rect key="frame" x="134" y="2.5" width="55" height="80"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="80"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lighthouseFrame" translatesAutoresizingMaskIntoConstraints="NO" id="0p5-Vn-FD2">
-                                                            <rect key="frame" x="0.0" y="0.0" width="55" height="80"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                </view>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="0p5-Vn-FD2" secondAttribute="trailing" id="Lvz-3S-8eV"/>
-                                                    <constraint firstAttribute="bottom" secondItem="0p5-Vn-FD2" secondAttribute="bottom" id="eOE-9Q-7c4"/>
-                                                    <constraint firstItem="0p5-Vn-FD2" firstAttribute="leading" secondItem="Kb4-qb-sOT" secondAttribute="leading" id="fDT-ZQ-3hO"/>
-                                                    <constraint firstItem="0p5-Vn-FD2" firstAttribute="top" secondItem="Kb4-qb-sOT" secondAttribute="top" id="yeh-wD-WIW"/>
-                                                </constraints>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0lT-xg-JiA">
-                                                <rect key="frame" x="201" y="2.5" width="55" height="80"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="80"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frametrans" translatesAutoresizingMaskIntoConstraints="NO" id="mwU-PY-zrM">
-                                                            <rect key="frame" x="0.0" y="0.0" width="55" height="80"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                </view>
-                                                <constraints>
-                                                    <constraint firstItem="mwU-PY-zrM" firstAttribute="leading" secondItem="0lT-xg-JiA" secondAttribute="leading" id="5ZL-L5-CwK"/>
-                                                    <constraint firstAttribute="bottom" secondItem="mwU-PY-zrM" secondAttribute="bottom" id="Zcs-b4-TVr"/>
-                                                    <constraint firstItem="mwU-PY-zrM" firstAttribute="top" secondItem="0lT-xg-JiA" secondAttribute="top" id="dOk-Qr-7Yg"/>
-                                                    <constraint firstAttribute="trailing" secondItem="mwU-PY-zrM" secondAttribute="trailing" id="qNc-Sc-1wC"/>
-                                                </constraints>
-                                            </collectionViewCell>
                                         </cells>
                                         <connections>
                                             <outlet property="dataSource" destination="BYZ-38-t0r" id="1cp-Wo-5eV"/>
@@ -639,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wj2-ap-fUv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2573.5999999999999" y="-224.4377811094453"/>
+            <point key="canvasLocation" x="1490" y="-224"/>
         </scene>
         <!--Front View Controller-->
         <scene sceneID="zuS-ed-2av">
@@ -834,7 +720,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x7p-EI-d39" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="yrg-4x-Wfk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="225" y="601"/>
+            <point key="canvasLocation" x="-42" y="525"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8vl-CK-Exo">
@@ -854,23 +740,6 @@
             </objects>
             <point key="canvasLocation" x="-1740" y="-224"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="ycO-k4-igZ">
-            <objects>
-                <viewController id="gsy-zH-m8l" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="GHY-tK-eNE"/>
-                        <viewControllerLayoutGuide type="bottom" id="GO2-aN-ThZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gU5-eA-L5L">
-                        <rect key="frame" x="0.0" y="0.0" width="80" height="180"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OD4-Jf-MY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="CMFrameBlueBorder2x" width="750" height="1050"/>
@@ -879,9 +748,8 @@
         <image name="camera" width="256" height="256"/>
         <image name="frametrans" width="340" height="448"/>
         <image name="frontpage" width="249" height="202"/>
-        <image name="lighthouseFrame" width="350" height="450"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qhf-E0-htY"/>
+        <segue reference="43f-f9-ToT"/>
     </inferredMetricsTieBreakers>
 </document>
