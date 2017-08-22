@@ -72,13 +72,6 @@ class BackViewController: UIViewController {
         let bats = batsTextField.text
         let throwingHand = throwsTextField.text
         let info = infoTextView.text
-
-        let photo = card?.photo
-        let frame = card?.frame
-        let pngImage = card?.pngImage
-        
-        card = Card(team: team!, name: name!, photo: photo!, frame: frame!, pngImage: pngImage!)
-
         
         self.card?.name = name
         self.card?.team = team
@@ -91,9 +84,9 @@ class BackViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let createCardViewController = segue.destination as? CreateCardViewController {
-        createCardViewController.card = self.card
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let createCardViewController = segue.destination as? CreateCardViewController {
+//        createCardViewController.card = self.card
+//        }
+//    }
 }
