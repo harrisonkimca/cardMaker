@@ -26,7 +26,7 @@ class DetailedCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        8
+        
         frontImage = card?.pngImage
         frontImageView.image = frontImage
         backImage = card?.backpngImage
