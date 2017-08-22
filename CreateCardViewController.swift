@@ -1,5 +1,5 @@
 //
-//  CardViewController.swift
+//  CreateCardViewController.swift
 //  cardMaker
 //
 //  Created by Seantastic31 on 09/08/2017.
@@ -41,7 +41,6 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
     //MARK Generate Frame Data
     var seedData: SeedData!
     
-
     var card: Card?
     
     // MARK: Button for the ImagePicker
@@ -240,14 +239,17 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         let frame = frameImage.image
         let pngImage = UIImage.init(view: pngView)
 
-        
-            
+
         card = Card(team: team, name: name, photo: photo, frame: frame, pngImage: pngImage)
         }
         
+        if segue.identifier == "backCardEntry" {
+            let backCardVC = segue.destination as! BackViewController
+            backCardVC.card = self.card
+        }
         
-        
-        super.prepare(for: segue, sender: sender)
+//        super.prepare(for: segue, sender: sender)
+
         
     }
     
