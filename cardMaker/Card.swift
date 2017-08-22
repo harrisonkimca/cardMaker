@@ -62,6 +62,14 @@ class Card: NSObject, NSCoding {
         aCoder.encode(photo, forKey: PropertyKey.photo)
         aCoder.encode(frame, forKey: PropertyKey.frame)
         aCoder.encode(pngImage, forKey: PropertyKey.pngImage)
+       
+         aCoder.encode(backpngImage, forKey: PropertyKey.backpngImage)
+         aCoder.encode(position, forKey: PropertyKey.position)
+         aCoder.encode(battingDirection, forKey: PropertyKey.battingDirection)
+         aCoder.encode(additionalInfo, forKey: PropertyKey.additionalInfo)
+        
+        
+        
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
