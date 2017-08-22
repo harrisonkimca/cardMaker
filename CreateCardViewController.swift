@@ -1,5 +1,5 @@
 //
-//  CardViewController.swift
+//  CreateCardViewController.swift
 //  cardMaker
 //
 //  Created by Seantastic31 on 09/08/2017.
@@ -247,7 +247,7 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
             backCardVC.card = self.card
         }
         
-        super.prepare(for: segue, sender: sender)
+//        super.prepare(for: segue, sender: sender)
         
     }
     

@@ -16,6 +16,7 @@ class BackViewController: UIViewController {
     @IBOutlet weak var batsTextField: UITextField!
     @IBOutlet weak var throwsTextField: UITextField!
     @IBOutlet weak var infoTextView: UITextView!
+    @IBOutlet weak var cardBackView: UIView!
     
     var card: Card?
     
@@ -75,18 +76,15 @@ class BackViewController: UIViewController {
         self.card?.battingDirection = bats
         self.card?.throwingHand = throwingHand
         self.card?.additionalInfo = info
+        self.card?.backpngImage = UIImage.init(view:cardBackView)
         
         self.dismiss(animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        guard let createCardViewController = segue.destination as? CreateCardViewController else {
-            fatalError("unexpeted destination")
-        }
-        
+        if let createCardViewController = segue.destination as? CreateCardViewController {
         createCardViewController.card = self.card
-        
+        }
     }
     
     
