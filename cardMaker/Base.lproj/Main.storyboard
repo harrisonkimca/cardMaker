@@ -213,14 +213,29 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="kLg-L9-idJ"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIu-mn-ESI">
+                                <rect key="frame" x="297" y="419" width="53" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="EgO-PR-SCc"/>
+                                    <constraint firstAttribute="width" constant="53" id="VMy-wx-iGM"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="camera"/>
+                                <connections>
+                                    <action selector="cameraButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HF0-4p-5jk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.70247477293014526" green="0.79231172800064087" blue="0.8938523530960083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.24144760361894571" green="0.82431789340101524" blue="0.27966093115065471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XSe-Uy-iI8" secondAttribute="bottom" constant="25" id="6jP-Jo-bBO"/>
+                            <constraint firstItem="XSe-Uy-iI8" firstAttribute="top" secondItem="WIu-mn-ESI" secondAttribute="bottom" constant="23" id="7w7-dT-1gL"/>
                             <constraint firstItem="Qda-x9-jRB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8D1-UF-LMb"/>
                             <constraint firstItem="XSe-Uy-iI8" firstAttribute="leading" secondItem="Qda-x9-jRB" secondAttribute="leading" id="EHM-BX-FM4"/>
                             <constraint firstItem="XSe-Uy-iI8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R0K-RC-8C5"/>
+                            <constraint firstItem="WIu-mn-ESI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="281" id="UVp-OX-vkA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WIu-mn-ESI" secondAttribute="trailing" constant="9" id="sbH-1Q-q1U"/>
+                            <constraint firstItem="WIu-mn-ESI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="419" id="sjq-XL-ChZ"/>
                             <constraint firstItem="Qda-x9-jRB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="zPT-zF-QcW"/>
                             <constraint firstItem="XSe-Uy-iI8" firstAttribute="trailing" secondItem="Qda-x9-jRB" secondAttribute="trailing" id="zRK-Bn-Re1"/>
                         </constraints>
