@@ -57,6 +57,12 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
         newCardWasAdded()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        saveCards()
+        
+    }
+    
+    
     
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -136,7 +142,7 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
     //MARK: UNwind to CardList gets index path if card has been editied so it can replace the old version in the array
     @IBAction func unwindToCardList(sender: UIStoryboardSegue) {
         
-        //If sender is cardViewcontroller
+        //replace edited card, or add new card to index 0 If sender is cardViewcontroller
         if let sourceViewController = sender.source as?
             CreateCardViewController, let card = sourceViewController.card {
             if let index = cards.index(of: card){ cards[index] = card
@@ -146,16 +152,16 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
             collectionView?.reloadData()
             
             
-            saveCards()
+//            saveCards()
             
         }
-        //if sender is detailedCardViewController
+        //remove deleted cardsnif sender is detailedCardViewController
         if let sourceViewController = sender.source as?
             DetailedCardViewController, let card = sourceViewController.card {
             let indexToRemove = cards.index(of: card)
             cards.remove(at: indexToRemove!)
             collectionView?.reloadData()
-            saveCards()
+//            saveCards()
         }
     }
     
@@ -170,12 +176,15 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
         else {
             os_log("Failed to save cards...", log: OSLog.default, type: .error)
         }
+        print("cards array saved")
     }
     
     private func loadCards() -> [Card]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Card.ArchiveURL.path) as?
             [Card]
     }
+    
+    
     
     @IBAction func moveUP(_ sender: AnyObject) {
         moveCardUp()
