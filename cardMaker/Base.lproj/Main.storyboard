@@ -14,7 +14,7 @@
         <scene sceneID="Uli-It-9W1">
             <objects>
                 <collectionViewController id="aPZ-Og-hnh" customClass="CardCollectionViewController" customModule="cardMaker" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" id="nof-w3-hSS">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" dataMode="prototypes" id="nof-w3-hSS">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.91550356149673462" green="0.95379704236984253" blue="0.97492867708206177" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -525,33 +525,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frontpage" translatesAutoresizingMaskIntoConstraints="NO" id="Msf-Ur-gpj">
-                                <rect key="frame" x="63" y="143" width="249" height="202"/>
+                                <rect key="frame" x="63" y="143" width="249" height="221"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPg-ib-fNu">
-                                <rect key="frame" x="63" y="368" width="249" height="171"/>
+                                <rect key="frame" x="63" y="387" width="249" height="152"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M29-ky-pbt">
-                                        <rect key="frame" x="8" y="8" width="233" height="155"/>
+                                        <rect key="frame" x="8" y="8" width="233" height="136"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06z-Xa-3NB">
-                                                <rect key="frame" x="55" y="33" width="123" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xr-rG-XDQ">
+                                                <rect key="frame" x="21" y="20" width="190" height="96"/>
                                                 <color key="backgroundColor" red="0.91550356149673462" green="0.95379704236984253" blue="0.97492867708206177" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="AsQ-Og-Svr"/>
-                                                </constraints>
-                                                <state key="normal" title="Add New Card">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="NewCard" id="hRo-Ew-Vdw"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xr-rG-XDQ">
-                                                <rect key="frame" x="55" y="92" width="123" height="30"/>
-                                                <color key="backgroundColor" red="0.91550356149673462" green="0.95379704236984253" blue="0.97492867708206177" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="eqH-I9-Zqs"/>
-                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <state key="normal" title="View Cards">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -561,14 +546,10 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="0Xr-rG-XDQ" firstAttribute="leading" secondItem="M29-ky-pbt" secondAttribute="leading" constant="55" id="13u-3X-1XK"/>
-                                            <constraint firstAttribute="bottom" secondItem="0Xr-rG-XDQ" secondAttribute="bottom" constant="33" id="1Yw-8g-1MI"/>
-                                            <constraint firstItem="06z-Xa-3NB" firstAttribute="leading" secondItem="M29-ky-pbt" secondAttribute="leading" constant="55" id="CAc-ru-jeg"/>
-                                            <constraint firstItem="06z-Xa-3NB" firstAttribute="top" secondItem="M29-ky-pbt" secondAttribute="top" constant="33" id="GSE-SQ-mNC"/>
-                                            <constraint firstItem="0Xr-rG-XDQ" firstAttribute="top" secondItem="06z-Xa-3NB" secondAttribute="bottom" constant="29" id="UQR-EX-xSZ"/>
-                                            <constraint firstItem="0Xr-rG-XDQ" firstAttribute="top" secondItem="06z-Xa-3NB" secondAttribute="bottom" constant="29" id="WBe-sj-mjz"/>
-                                            <constraint firstAttribute="trailing" secondItem="06z-Xa-3NB" secondAttribute="trailing" constant="55" id="dDk-UN-Tmj"/>
-                                            <constraint firstAttribute="trailing" secondItem="0Xr-rG-XDQ" secondAttribute="trailing" constant="55" id="xfU-e1-eHy"/>
+                                            <constraint firstItem="0Xr-rG-XDQ" firstAttribute="leading" secondItem="M29-ky-pbt" secondAttribute="leading" constant="21" id="GXs-In-Lve"/>
+                                            <constraint firstAttribute="trailing" secondItem="0Xr-rG-XDQ" secondAttribute="trailing" constant="22" id="f3F-m9-sxF"/>
+                                            <constraint firstAttribute="bottom" secondItem="0Xr-rG-XDQ" secondAttribute="bottom" constant="20" id="meh-Lc-GTd"/>
+                                            <constraint firstItem="0Xr-rG-XDQ" firstAttribute="top" secondItem="M29-ky-pbt" secondAttribute="top" constant="20" id="thZ-Sz-rFV"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -581,7 +562,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Maker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdI-lM-Ms5">
-                                <rect key="frame" x="79" y="307" width="220" height="29"/>
+                                <rect key="frame" x="79" y="307" width="220" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="0.095477811992168427" green="0.09596850723028183" blue="0.57220560312271118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -604,14 +585,13 @@
                     <navigationItem key="navigationItem" id="uYC-Y1-rDE"/>
                     <connections>
                         <outlet property="MyView" destination="M29-ky-pbt" id="WL9-S0-Cn5"/>
-                        <outlet property="addNewCardButton" destination="06z-Xa-3NB" id="RNZ-ew-csI"/>
                         <outlet property="shadowView" destination="bPg-ib-fNu" id="U8e-q5-69k"/>
                         <outlet property="viewCardsButton" destination="0Xr-rG-XDQ" id="v41-AE-5JQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCC-PM-8UV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-842" y="-224"/>
+            <point key="canvasLocation" x="-842.39999999999998" y="-224.4377811094453"/>
         </scene>
         <!--Detailed Card View Controller-->
         <scene sceneID="VIR-wp-VLI">

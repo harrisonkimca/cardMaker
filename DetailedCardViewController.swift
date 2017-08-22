@@ -21,7 +21,7 @@ class DetailedCardViewController: UIViewController {
     var frontImage : UIImage?
     var backImage : UIImage?
     var currentCard: Card? = nil
-    
+
     
     
     override func viewDidLoad() {
@@ -120,14 +120,26 @@ class DetailedCardViewController: UIViewController {
     @IBAction func deleteButton(_ sender: UIButton) {
         
         // Create the alert
-        let alert = UIAlertController(title: "Delete Card", message: "Are you sure you want to delete this card? ", preferredStyle: UIAlertControllerStyle.alert)
+//        let alert = UIAlertController(title: "Delete Card", message: "Are you sure you want to delete this card? ", preferredStyle: UIAlertControllerStyle.alert)
+//        
+//        // add the actions (buttons)
+//        alert.addAction(UIAlertAction(title: "Delete", style: UIAlertActionStyle.default, handler: { action in self.performSegue(withIdentifier: "unwindToCardListWithSender", sender: self)} ))
+//        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+//        
+//        // Show the alert
+//        self.present(alert, animated: true, completion: nil)
         
-        // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "Delete", style: UIAlertActionStyle.default, handler: { action in self.performSegue(withIdentifier: "unwindToCardListWithSender", sender: self)} ))
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
-        
-        // Show the alert
-        self.present(alert, animated: true, completion: nil)
+        _ = SweetAlert().showAlert("Are you sure?", subTitle: "Your card will permanently delete!", style: AlertStyle.warning, buttonTitle:"No, cancel plx!", buttonColor:UIColor.colorFromRGB(0xD0D0D0) , otherButtonTitle:  "Yes, delete it!", otherButtonColor: UIColor.colorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
+            if isOtherButton == true {
+                
+                _ = SweetAlert().showAlert("Cancelled!", subTitle: "Your card is safe", style: AlertStyle.error)
+            }
+            else {
+                _ = SweetAlert().showAlert("Deleted!", subTitle: "Your card has been deleted!", style: AlertStyle.success)
+                self.performSegue(withIdentifier: "unwindToCardListWithSender", sender: self)
+            }
+        }
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
