@@ -29,6 +29,8 @@ class DetailedCardViewController: UIViewController {
         
         frontImage = card?.pngImage
         frontImageView.image = frontImage
+        backImage = card?.backpngImage
+
         
         //backImage = card?.
         
