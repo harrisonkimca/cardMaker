@@ -7,6 +7,7 @@ target 'cardMaker' do
 
   # Pods for cardMaker
 pod 'ImagePicker'
+pod 'IQKeyboardManagerSwift'
 
   target 'cardMakerTests' do
     inherit! :search_paths

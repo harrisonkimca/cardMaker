@@ -12,7 +12,7 @@ class FrontViewController: UIViewController {
 
 
 
-    @IBOutlet weak var addNewCardButton: UIButton!
+    //@IBOutlet weak var addNewCardButton: UIButton!
     @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var MyView: UIView!
     @IBOutlet weak var viewCardsButton: UIButton!
@@ -20,14 +20,15 @@ class FrontViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        addNewCardButton.layer.cornerRadius = 5
-        addNewCardButton.layer.borderWidth = 1
-        addNewCardButton.layer.borderColor = UIColor.white.cgColor
+//        addNewCardButton.layer.cornerRadius = 5
+//        addNewCardButton.layer.borderWidth = 1
+//        addNewCardButton.layer.borderColor = UIColor.white.cgColor
         
         viewCardsButton.layer.cornerRadius = 5
         viewCardsButton.layer.borderWidth = 1
         viewCardsButton.layer.borderColor = UIColor.white.cgColor
-        
+        viewCardsButton.setBackgroundImage(UIImage(named: "images.png"), for: .normal)
+            
         shadowView.layer.shadowColor = UIColor.black.cgColor
         //shadowView.layer.shadowOffset = CGSizeZero
         shadowView.layer.shadowOpacity = 0.5
