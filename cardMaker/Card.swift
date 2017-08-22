@@ -20,6 +20,8 @@ class Card: NSObject, NSCoding {
     var battingDirection: String?
     var throwingHand: String?
     var additionalInfo: String?
+    var zoomScale: Float?
+    var zoomOffSet: Float?
     
     //MARK: Archiving Paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -32,22 +34,14 @@ class Card: NSObject, NSCoding {
         static let photo = "photo"
         static let frame = "frame"
         static let pngImage = "pngImage"
+        static let backpngImage = "backpngImage"
+        static let position = "position"
+        static let battingDirection = "battingDirection"
+        static let throwingHand = "throwingHand"
+        static let additionalInfo = "additionalInfo"
     }
 
     init?(team: String, name: String, photo: UIImage?, frame: UIImage?, pngImage: UIImage?) {
-        
-//        if name.isEmpty || team.isEmpty {
-//            return nil
-//        }
-
-//        guard !name.isEmpty else {
-//            return nil
-//        }
-//        
-//        guard !team.isEmpty else {
-//            return nil
-//        }
-        
         self.team = team
         self.name = name
         self.photo = photo
@@ -56,21 +50,6 @@ class Card: NSObject, NSCoding {
     }
     
     
-//    init(with card: Card) {
-//        
-//        self.team = card.team
-//        name: String?
-//        photo: UIImage?
-//        frame: UIImage?
-//        pngImage: UIImage?
-//        backpngImage: UIImage?
-//        position: String?
-//        battingDirection: String?
-//        throwingHand: String?
-//        additionalInfo: String?
-//        
-//                
-//   }
     
     
     
