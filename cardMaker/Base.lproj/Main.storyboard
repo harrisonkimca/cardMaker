@@ -745,6 +745,8 @@
         <image name="CMFrameBlueBorder2x" width="750" height="1050"/>
         <image name="IMG_6751" width="960" height="1280"/>
         <image name="LighthouseFrame2" width="350" height="450"/>
+        <image name="camera" width="256" height="256"/>
+        <image name="frametrans" width="340" height="448"/>
         <image name="frontpage" width="249" height="202"/>
     </resources>
     <inferredMetricsTieBreakers>
