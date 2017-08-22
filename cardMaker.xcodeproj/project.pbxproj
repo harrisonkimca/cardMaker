@@ -69,7 +69,7 @@
 		A0B9DB3379965D4AA0E80507 /* Pods_cardMakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cardMakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3DA6C94A35E23E29E9F711F /* Pods-cardMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cardMaker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cardMaker/Pods-cardMaker.debug.xcconfig"; sourceTree = "<group>"; };
 		BBAD0F181F4B740C00BCF569 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
-		BBAD0F4D1F4CA42700BCF569 /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = images.png; sourceTree = "<group>"; };
+		BBAD0F4D1F4CA42700BCF569 /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = images.png; path = ../images.png; sourceTree = "<group>"; };
 		BBE551F91F436E960084A873 /* DetailedCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedCardViewController.swift; sourceTree = "<group>"; };
 		BBE5521A1F46338D0084A873 /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		BBEC1F691F3E508400C0692D /* TisprCardStackViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewCell.swift; sourceTree = "<group>"; };
@@ -138,7 +138,6 @@
 				BBE551F91F436E960084A873 /* DetailedCardViewController.swift */,
 				EDC0529C1F47B45000975E20 /* BackViewController.swift */,
 				BBE5521A1F46338D0084A873 /* FrontViewController.swift */,
-				BBAD0F4D1F4CA42700BCF569 /* images.png */,
 				BBE551FB1F449ED90084A873 /* TisprCard */,
 				EDE569841F42298E006D59C4 /* UIView+asImage.swift */,
 				EDE569861F423C7C006D59C4 /* UIImage+asImage2.swift */,
@@ -195,6 +194,7 @@
 				EDC052A21F4A2C8200975E20 /* CMFrameBlueBorder2x.png */,
 				EDC0529E1F4A187500975E20 /* CMFrameWhiteBorder.png */,
 				EDC052A41F4A315200975E20 /* CMFrameRedBorder2x.png */,
+				BBAD0F4D1F4CA42700BCF569 /* images.png */,
 				88CA28321F3BB629002D21DB /* Assets.xcassets */,
 				88CA28371F3BB629002D21DB /* Info.plist */,
 				88CA282F1F3BB629002D21DB /* cardMaker.xcdatamodeld */,
