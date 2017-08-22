@@ -239,6 +239,7 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         let frame = frameImage.image
         let pngImage = UIImage.init(view: pngView)
 
+
         card = Card(team: team, name: name, photo: photo, frame: frame, pngImage: pngImage)
         }
         
@@ -248,6 +249,7 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         }
         
 //        super.prepare(for: segue, sender: sender)
+
         
     }
     
