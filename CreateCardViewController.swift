@@ -44,7 +44,7 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
     var card: Card?
     
     // MARK: Button for the ImagePicker
-    lazy var button: UIButton = self.makeButton()
+    //lazy var button: UIButton = self.makeButton()
 
     
     override func viewDidLoad() {
@@ -66,20 +66,20 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         
         // MARK: Select Images Button (ImagePicker)
 //        view.backgroundColor = UIColor.white
-        view.addSubview(button)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addConstraint(
-            NSLayoutConstraint(item: button, attribute: .centerX,
-                               relatedBy: .equal, toItem: view,
-                               attribute: .centerX, multiplier: 1,
-                               constant: 0))
-        
-        view.addConstraint(
-            NSLayoutConstraint(item: button, attribute: .centerY,
-                               relatedBy: .equal, toItem: view,
-                               attribute: .centerY, multiplier: 1,
-                               constant: 0))
+//        view.addSubview(button)
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        view.addConstraint(
+//            NSLayoutConstraint(item: button, attribute: .centerX,
+//                               relatedBy: .equal, toItem: view,
+//                               attribute: .centerX, multiplier: 1,
+//                               constant: 0))
+//        
+//        view.addConstraint(
+//            NSLayoutConstraint(item: button, attribute: .centerY,
+//                               relatedBy: .equal, toItem: view,
+//                               attribute: .centerY, multiplier: 1,
+//                               constant: 0))
         
         
         
@@ -105,16 +105,17 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
     
     
     // MARK : Make a button for the ImagePicker
-    func makeButton() -> UIButton {
-        let button = UIButton()
-        button.setTitle("Select a picture", for: .normal)
-        button.setTitleColor(UIColor.black, for: .normal)
-        button.addTarget(self, action: #selector(buttonTouched(button:)), for: .touchUpInside)
-        
-        return button
-    }
+//    func makeButton() -> UIButton {
+//        let button = UIButton()
+//        button.setTitle("Select a picture", for: .normal)
+//        button.setTitleColor(UIColor.black, for: .normal)
+//        button.addTarget(self, action: #selector(buttonTouched(button:)), for: .touchUpInside)
+//        
+//        return button
+//    }
     
-    func buttonTouched(button: UIButton) {
+
+    @IBAction func cameraButtonTapped(_ sender: Any) {
         var config = Configuration()
         config.doneButtonTitle = "Finish"
         config.noImagesTitle = "Sorry! There are no images here!"
@@ -128,7 +129,7 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         
         present(imagePicker, animated: true, completion: nil)
     }
-    
+
     
     // MARK: - ImagePickerDelegate
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {

@@ -32,8 +32,6 @@ class DetailedCardViewController: UIViewController {
         backImage = card?.backpngImage
 
         
-        //backImage = card?.
-        
         deleteButton.layer.cornerRadius = 5
         deleteButton.layer.borderWidth = 1
         deleteButton.layer.borderColor = UIColor.white.cgColor
@@ -98,9 +96,9 @@ class DetailedCardViewController: UIViewController {
     @IBAction func ActionButtonTapped(_ sender: UIButton) {
         // image to share
         
-        currentCard = card
+       // currentCard = card
         
-        let image: UIImage = currentCard!.pngImage!
+        let image: UIImage = frontImageView.image!
         
         // set up activity view controller
         let imageToShare = [ image ]
