@@ -245,7 +245,7 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         
         if segue.identifier == "backCardEntry" {
             let backCardVC = segue.destination as! BackViewController
-            backCardVC.card = self.card
+            backCardVC.card = self.card!
         }
         
 //        super.prepare(for: segue, sender: sender)
