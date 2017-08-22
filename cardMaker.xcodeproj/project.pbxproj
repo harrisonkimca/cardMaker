@@ -19,6 +19,7 @@
 		88CA28411F3BB629002D21DB /* cardMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CA28401F3BB629002D21DB /* cardMakerTests.swift */; };
 		BACC09FBF214BB1C00534486 /* Pods_cardMakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B9DB3379965D4AA0E80507 /* Pods_cardMakerTests.framework */; };
 		BBAD0F191F4B740C00BCF569 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD0F181F4B740C00BCF569 /* SweetAlert.swift */; };
+		BBAD0F4E1F4CA42700BCF569 /* images.png in Resources */ = {isa = PBXBuildFile; fileRef = BBAD0F4D1F4CA42700BCF569 /* images.png */; };
 		BBE551FA1F436E960084A873 /* DetailedCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE551F91F436E960084A873 /* DetailedCardViewController.swift */; };
 		BBE5521B1F46338D0084A873 /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE5521A1F46338D0084A873 /* FrontViewController.swift */; };
 		BBEC1F6C1F3E508400C0692D /* TisprCardStackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC1F691F3E508400C0692D /* TisprCardStackViewCell.swift */; };
@@ -68,6 +69,7 @@
 		A0B9DB3379965D4AA0E80507 /* Pods_cardMakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cardMakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3DA6C94A35E23E29E9F711F /* Pods-cardMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cardMaker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cardMaker/Pods-cardMaker.debug.xcconfig"; sourceTree = "<group>"; };
 		BBAD0F181F4B740C00BCF569 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
+		BBAD0F4D1F4CA42700BCF569 /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = images.png; sourceTree = "<group>"; };
 		BBE551F91F436E960084A873 /* DetailedCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedCardViewController.swift; sourceTree = "<group>"; };
 		BBE5521A1F46338D0084A873 /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		BBEC1F691F3E508400C0692D /* TisprCardStackViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewCell.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				BBE551F91F436E960084A873 /* DetailedCardViewController.swift */,
 				EDC0529C1F47B45000975E20 /* BackViewController.swift */,
 				BBE5521A1F46338D0084A873 /* FrontViewController.swift */,
+				BBAD0F4D1F4CA42700BCF569 /* images.png */,
 				BBE551FB1F449ED90084A873 /* TisprCard */,
 				EDE569841F42298E006D59C4 /* UIView+asImage.swift */,
 				EDE569861F423C7C006D59C4 /* UIImage+asImage2.swift */,
@@ -298,7 +301,7 @@
 				TargetAttributes = {
 					88CA28241F3BB628002D21DB = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 294FN9LFDB;
+						DevelopmentTeam = Q73EE3MLSY;
 						ProvisioningStyle = Automatic;
 					};
 					88CA283B1F3BB629002D21DB = {
@@ -335,6 +338,7 @@
 				88CA28361F3BB629002D21DB /* LaunchScreen.storyboard in Resources */,
 				88CA28331F3BB629002D21DB /* Assets.xcassets in Resources */,
 				88CA282E1F3BB629002D21DB /* Main.storyboard in Resources */,
+				BBAD0F4E1F4CA42700BCF569 /* images.png in Resources */,
 				EDC0529F1F4A187500975E20 /* CMFrameWhiteBorder.png in Resources */,
 				EDC052A11F4A294D00975E20 /* CMFrameBlueBorder3x.jpg in Resources */,
 				EDC052A31F4A2C8200975E20 /* CMFrameBlueBorder2x.png in Resources */,
@@ -425,13 +429,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-cardMaker/Pods-cardMaker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
-				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -623,8 +627,9 @@
 			baseConfigurationReference = B3DA6C94A35E23E29E9F711F /* Pods-cardMaker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 294FN9LFDB;
+				DEVELOPMENT_TEAM = Q73EE3MLSY;
 				INFOPLIST_FILE = cardMaker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Lighthouse-Lab.cardMaker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -637,8 +642,9 @@
 			baseConfigurationReference = C93E0C2C6F3F3C869CF7FC11 /* Pods-cardMaker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 294FN9LFDB;
+				DEVELOPMENT_TEAM = Q73EE3MLSY;
 				INFOPLIST_FILE = cardMaker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Lighthouse-Lab.cardMaker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
