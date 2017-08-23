@@ -42,11 +42,7 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
     var seedData: SeedData!
     
     var card: Card?
-    
-    // MARK: Button for the ImagePicker
-    //lazy var button: UIButton = self.makeButton()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,26 +58,6 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         
         //MARK: Frame Collection Data
         seedData = SeedData()
-        
-        
-        // MARK: Select Images Button (ImagePicker)
-//        view.backgroundColor = UIColor.white
-//        view.addSubview(button)
-//        button.translatesAutoresizingMaskIntoConstraints = false
-//        
-//        view.addConstraint(
-//            NSLayoutConstraint(item: button, attribute: .centerX,
-//                               relatedBy: .equal, toItem: view,
-//                               attribute: .centerX, multiplier: 1,
-//                               constant: 0))
-//        
-//        view.addConstraint(
-//            NSLayoutConstraint(item: button, attribute: .centerY,
-//                               relatedBy: .equal, toItem: view,
-//                               attribute: .centerY, multiplier: 1,
-//                               constant: 0))
-        
-        
         
         updateSaveButtonState()
     }
@@ -103,16 +79,6 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         scrollView.zoomScale = minScale
     }
     
-    
-    // MARK : Make a button for the ImagePicker
-//    func makeButton() -> UIButton {
-//        let button = UIButton()
-//        button.setTitle("Select a picture", for: .normal)
-//        button.setTitleColor(UIColor.black, for: .normal)
-//        button.addTarget(self, action: #selector(buttonTouched(button:)), for: .touchUpInside)
-//        
-//        return button
-//    }
     
 
     @IBAction func cameraButtonTapped(_ sender: Any) {

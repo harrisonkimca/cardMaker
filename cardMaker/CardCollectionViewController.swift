@@ -32,10 +32,7 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
         if let savedCards = loadCards() {
             cards += savedCards
         }
-        //        else {
-        //            loadSampleCards()
-        //        }
-        
+
         //set animation speed
         setAnimationSpeed(0.85)
         
@@ -53,7 +50,6 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
     
     //method to add new card
     @IBAction func addNewCards(_ sender: AnyObject) {
-        //countOfCards += 1
         newCardWasAdded()
     }
     
