@@ -260,7 +260,7 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         //    scrollView.setContentOffset(card.imgOffSet, animated: false)
         scrollView.minimumZoomScale = 0.15
         scrollView.maximumZoomScale = 1
-        scrollView.zoomScale = 0.25
+        scrollView.zoomScale = 0.35
         scrollView.contentOffset = CGPoint(x: 0, y: 0)
         if (card != nil) {
             scrollView.setContentOffset(card.imgOffSet, animated: false)
