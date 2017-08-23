@@ -12,7 +12,7 @@ class SeedData: NSObject {
 
     var frames:[Frame] = []
     let myImage = UIImage(named: "CMFrameRedBorder2x")
-    let myImage2 = UIImage(named: "CMFrameRedBorder2x")
+    let myImage2 = UIImage(named: "CMFrameBlueBorder2x")
     let myImage3 = UIImage(named: "CMFrameRedBorder2x")
     let myImage4 = UIImage(named: "CMFrameRedBorder2x")
     

@@ -58,7 +58,16 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        saveCards()
+        if (cards.count > 0){
+            DispatchQueue.global(qos: .background).async {
+                print("This is run on the background queue")
+                self.saveCards()
+                DispatchQueue.main.async {
+                    print("This is run on the main queue, after the previous code in outer block")
+                }
+            }
+        }
+        
         
     }
     
@@ -123,16 +132,16 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
             }
             
             guard let sourceViewController = sender as?
-            CreateCardViewController else {
-                fatalError("Unexpected destination: \(segue.destination)")
+                CreateCardViewController else {
+                    fatalError("Unexpected destination: \(segue.destination)")
             }
             
-// Not sure this is necesary: (discovered when changing Card's optional in backview controller
+            // Not sure this is necesary: (discovered when changing Card's optional in backview controller
             
-  backViewController.card = Card.init(team: (sourceViewController.card?.team)!, name: (sourceViewController.card?.name)!, photo: sourceViewController.card?.photo, frame: sourceViewController.card?.frame, pngImage: sourceViewController.card?.pngImage)
+            backViewController.card = Card.init(team: (sourceViewController.card?.team)!, name: (sourceViewController.card?.name)!, photo: sourceViewController.card?.photo, frame: sourceViewController.card?.frame, pngImage: sourceViewController.card?.pngImage)
             
-// Replaced it with this item:
-//            backViewController.card = sourceViewController.card!
+            // Replaced it with this item:
+            //            backViewController.card = sourceViewController.card!
             
         default:
             fatalError("Unexpected segue identifier; \(String(describing: segue.identifier))")
@@ -152,7 +161,7 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
             collectionView?.reloadData()
             
             
-//            saveCards()
+            //            saveCards()
             
         }
         //remove deleted cardsnif sender is detailedCardViewController
@@ -161,7 +170,7 @@ class CardCollectionViewController:  TisprCardStackViewController, TisprCardStac
             let indexToRemove = cards.index(of: card)
             cards.remove(at: indexToRemove!)
             collectionView?.reloadData()
-//            saveCards()
+            //            saveCards()
         }
     }
     

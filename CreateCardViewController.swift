@@ -12,7 +12,7 @@ import ImagePicker
 
 // rename this class
 
-class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePickerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePickerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate {
     
     
     // MARK: Card Detail View Properties
@@ -41,23 +41,26 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
     //MARK Generate Frame Data
     var seedData: SeedData!
     
-    var card: Card?
+    var card: Card!
     
     // MARK: Button for the ImagePicker
     //lazy var button: UIButton = self.makeButton()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         teamTextField.delegate = self
         nameTextField.delegate = self
         
-        if let card = card {
+        if (card != nil) {
             navigationItem.title = card.name
             teamTextField.text = card.team
             nameTextField.text = card.name
             basePhoto.image = card.photo
+            frameImage.image = card.frame
+            print("card.imgOffset:\(card.imgOffSet)")
+            print("card.imgScale:\(card.imgScale)")
+            print("scrollview.imgOffset:\(scrollView.contentOffset)")
         }
         
         //MARK: Frame Collection Data
@@ -65,56 +68,42 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         
         
         // MARK: Select Images Button (ImagePicker)
-//        view.backgroundColor = UIColor.white
-//        view.addSubview(button)
-//        button.translatesAutoresizingMaskIntoConstraints = false
-//        
-//        view.addConstraint(
-//            NSLayoutConstraint(item: button, attribute: .centerX,
-//                               relatedBy: .equal, toItem: view,
-//                               attribute: .centerX, multiplier: 1,
-//                               constant: 0))
-//        
-//        view.addConstraint(
-//            NSLayoutConstraint(item: button, attribute: .centerY,
-//                               relatedBy: .equal, toItem: view,
-//                               attribute: .centerY, multiplier: 1,
-//                               constant: 0))
+        //        view.backgroundColor = UIColor.white
+        //        view.addSubview(button)
+        //        button.translatesAutoresizingMaskIntoConstraints = false
+        //
+        //        view.addConstraint(
+        //            NSLayoutConstraint(item: button, attribute: .centerX,
+        //                               relatedBy: .equal, toItem: view,
+        //                               attribute: .centerX, multiplier: 1,
+        //                               constant: 0))
+        //
+        //        view.addConstraint(
+        //            NSLayoutConstraint(item: button, attribute: .centerY,
+        //                               relatedBy: .equal, toItem: view,
+        //                               attribute: .centerY, multiplier: 1,
+        //                               constant: 0))
         
         
         
         updateSaveButtonState()
     }
     
-
     
-    // MARK: Calculate Zoom Scale for baseImage
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        updateMinZoomScaleForSize(view.bounds.size)
-    }
     
-    fileprivate func updateMinZoomScaleForSize(_ size: CGSize) {
-        let widthScale = scrollView.frame.size.width / basePhoto.bounds.width
-        let heightScale = scrollView.frame.height / basePhoto.bounds.height
-        let minScale = min(widthScale, heightScale)
-        
-        scrollView.minimumZoomScale = minScale
-        scrollView.zoomScale = minScale
-    }
     
     
     // MARK : Make a button for the ImagePicker
-//    func makeButton() -> UIButton {
-//        let button = UIButton()
-//        button.setTitle("Select a picture", for: .normal)
-//        button.setTitleColor(UIColor.black, for: .normal)
-//        button.addTarget(self, action: #selector(buttonTouched(button:)), for: .touchUpInside)
-//        
-//        return button
-//    }
+    //    func makeButton() -> UIButton {
+    //        let button = UIButton()
+    //        button.setTitle("Select a picture", for: .normal)
+    //        button.setTitleColor(UIColor.black, for: .normal)
+    //        button.addTarget(self, action: #selector(buttonTouched(button:)), for: .touchUpInside)
+    //
+    //        return button
+    //    }
     
-
+    
     @IBAction func cameraButtonTapped(_ sender: Any) {
         var config = Configuration()
         config.doneButtonTitle = "Finish"
@@ -129,7 +118,7 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
         
         present(imagePicker, animated: true, completion: nil)
     }
-
+    
     
     // MARK: - ImagePickerDelegate
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
@@ -143,10 +132,10 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         imagePicker.dismiss(animated: true, completion: nil)
         guard images.count > 0 else { return }
-
+        
         basePhoto.image = images[0]
     }
-
+    
     // MARK: Frame CollectionView Data Source
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return seedData.frames.count
@@ -220,13 +209,13 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
             fatalError("The CardViewController is not inside a navigation controller")
         }
     }
-
+    
     // MARK: Prepare for segue & save data
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // This prevents default text from being printed on a card
         if (teamTextField.text?.isEmpty)! { teamTextField.text = " " }
         if (nameTextField.text?.isEmpty)! { nameTextField.text = " " }
-
+        
         if (self.card != nil) {
             self.card?.team = teamTextField.text ?? ""
             self.card?.name = nameTextField.text ?? ""
@@ -234,14 +223,13 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
             self.card?.frame = frameImage.image
             self.card?.pngImage = UIImage.init(view: pngView)
         } else {
-        let team = teamTextField.text ?? ""
-        let name = nameTextField.text ?? ""
-        let photo = basePhoto.image
-        let frame = frameImage.image
-        let pngImage = UIImage.init(view: pngView)
-
-
-        card = Card(team: team, name: name, photo: photo, frame: frame, pngImage: pngImage)
+            let team = teamTextField.text ?? ""
+            let name = nameTextField.text ?? ""
+            let photo = basePhoto.image
+            let frame = frameImage.image
+            let pngImage = UIImage.init(view: pngView)
+            
+            card = Card(team: team, name: name, photo: photo, frame: frame, pngImage: pngImage)
         }
         
         if segue.identifier == "backCardEntry" {
@@ -249,54 +237,71 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
             backCardVC.card = self.card!
         }
         
-//        super.prepare(for: segue, sender: sender)
-
+        //        super.prepare(for: segue, sender: sender)
+        
         
     }
     
     
     
-    
-    
-    
-    
-    
-
     //MARK: Private Methods
     private func updateSaveButtonState() {
         //        Disable the Save button if any of the texts fields are empty
-//        let teamText = teamTextField.text ?? ""
-//        let nameText = nameTextField.text ?? ""
+        //        let teamText = teamTextField.text ?? ""
+        //        let nameText = nameTextField.text ?? ""
         saveButton.isEnabled = true
     }
-
     
-}
-
-
-//MARK: PhotoZoom Extension for basePhoto
-extension CreateCardViewController: UIScrollViewDelegate {
+    
+    
+    // MARK: Calculate Zoom Scale for baseImage
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        //    scrollView.setContentOffset(card.imgOffSet, animated: false)
+        scrollView.minimumZoomScale = 0.15
+        scrollView.maximumZoomScale = 1
+        scrollView.zoomScale = 0.25
+        scrollView.contentOffset = CGPoint(x: 0, y: 0)
+        if (card != nil) {
+            scrollView.setContentOffset(card.imgOffSet, animated: false)
+            scrollView.zoomScale = card.imgScale
+            scrollView.setZoomScale(card.imgScale, animated: false)
+            print("scrollView.minimumZoomScale: \(scrollView.minimumZoomScale)")
+            print("scrollView.MaxzoomScale:\(scrollView.maximumZoomScale)")
+            print("scrollView.contentOffset: \(scrollView.contentOffset)")
+            print("scrollView.zoomScale:\(scrollView.zoomScale)")
+        }
+        
+        //    updateMinZoomScaleForSize(view.bounds.size)
+    }
+    
+    fileprivate func updateMinZoomScaleForSize(_ size: CGSize) {
+        let widthScale = size.width / basePhoto.bounds.width
+        let heightScale = size.height / basePhoto.bounds.height
+        let minScale = min(widthScale, heightScale)
+        scrollView.minimumZoomScale = minScale
+        //    scrollView.zoomScale = card.imgScale
+    }
+    
+    
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        if (self.card != nil) {
+            card.imgScale = scrollView.zoomScale
+            //      card.imgOffSet = scrollView.contentOffset
+            print("\(String(describing: card.imgScale)) \(card.imgOffSet.debugDescription)")
+        }
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        self.card.imgOffSet = scrollView.contentOffset
+        print("\(card.imgOffSet.debugDescription)")
+        
+    }
+    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return basePhoto
     }
     
-//    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-//        updateConstraintsForSize(view.bounds.size)
-//    }
-//    
-//    fileprivate func updateConstraintsForSize(_ size: CGSize) {
-//        
-//        let yOffset = max(0, (size.height - basePhoto.frame.height) / 2 - 100)
-//        imageViewTopConstraint.constant = yOffset
-//        imageViewBottomConstraint.constant = yOffset
-//        
-//        let xOffset = max(0, (size.width - basePhoto.frame.width) / 2)
-//        imageViewLeadingConstraint.constant = xOffset
-//        imageViewTrailingConstraint.constant = xOffset
-//        
-//        view.layoutIfNeeded()
-//    }
-
     
-
 }
+

@@ -20,8 +20,8 @@ class Card: NSObject, NSCoding {
     var battingDirection: String?
     var throwingHand: String?
     var additionalInfo: String?
-    var zoomScale: Float?
-    var zoomOffSet: Float?
+    var imgScale: CGFloat = 0.5
+    var imgOffSet: CGPoint = CGPoint(x: 0, y: 0)
     
     //MARK: Archiving Paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -39,6 +39,8 @@ class Card: NSObject, NSCoding {
         static let battingDirection = "battingDirection"
         static let throwingHand = "throwingHand"
         static let additionalInfo = "additionalInfo"
+        static let zoomScale = "zoomScale"
+        static let zoomOffSet = "zoomOffSet"
     }
     
     init?(team: String, name: String, photo: UIImage?, frame: UIImage?, pngImage: UIImage?) {
@@ -49,14 +51,8 @@ class Card: NSObject, NSCoding {
         self.pngImage = pngImage
     }
     
-    
-    
-    
-    
-    
     //MARK: NSCoding
     func encode(with aCoder: NSCoder) {
-        
         aCoder.encode(team, forKey: PropertyKey.team)
         aCoder.encode(name, forKey: PropertyKey.name)
         aCoder.encode(photo, forKey: PropertyKey.photo)
@@ -66,9 +62,8 @@ class Card: NSObject, NSCoding {
         aCoder.encode(position, forKey: PropertyKey.position)
         aCoder.encode(battingDirection, forKey: PropertyKey.battingDirection)
         aCoder.encode(additionalInfo, forKey: PropertyKey.additionalInfo)
-        
-        
-        
+        aCoder.encode(imgScale, forKey: PropertyKey.zoomScale)
+        aCoder.encode(imgOffSet, forKey: PropertyKey.zoomOffSet)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
