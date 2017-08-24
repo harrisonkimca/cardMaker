@@ -13,9 +13,12 @@ class SeedData: NSObject {
     var frames:[Frame] = []
     let myImage = UIImage(named: "CMFrameRedBorder2x")
     let myImage2 = UIImage(named: "CMFrameBlueBorder2x")
-    let myImage3 = UIImage(named: "CMFrameRedBorder2x")
-    let myImage4 = UIImage(named: "CMFrameRedBorder2x")
-    
+    let myImage3 = UIImage(named: "CMFrameBlackBorder2x")
+    let myImage4 = UIImage(named: "Allblack")
+    let myImage5 = UIImage(named: "StartBorder")
+    let myImage6 = UIImage(named: "lighhouse")
+    let myImage7 = UIImage(named: "TorontoFrame")
+
     override init() {
 //        self.frames = [Frame]()
         super.init()
@@ -26,13 +29,12 @@ class SeedData: NSObject {
     
     private func setUpOverlays() {
         let frame1 = Frame("frame1", myImage!)
-        let frame2 = Frame("frame2", myImage4!)
+        let frame2 = Frame("frame2", myImage3!)
         let frame3 = Frame("frame3", myImage2!)
         let frame4 = Frame("frame4", myImage4!)
-        let frame5 = Frame("frame5", myImage!)
-        let frame6 = Frame("frame5", myImage4!)
-        let frame7 = Frame("frame5", myImage!)
-        let frame8 = Frame("frame5", myImage4!)
+        let frame5 = Frame("frame5", myImage5!)
+        let frame6 = Frame("frame5", myImage6!)
+        let frame7 = Frame("frame5", myImage7!)
         
         
         frames.append(frame1)
@@ -42,7 +44,6 @@ class SeedData: NSObject {
         frames.append(frame5)
         frames.append(frame6)
         frames.append(frame7)
-        frames.append(frame8)
         
     }
 

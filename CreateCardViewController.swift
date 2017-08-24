@@ -12,7 +12,7 @@ import ImagePicker
 
 // rename this class
 
-class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePickerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate {
+class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePickerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate  {
     
     
     // MARK: Card Detail View Properties
@@ -45,10 +45,14 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
     
     // MARK: Button for the ImagePicker
     //lazy var button: UIButton = self.makeButton()
+ //   weak var delegate:UIScrollViewDelegate?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView.delegate = self
+        
         teamTextField.delegate = self
         nameTextField.delegate = self
         
@@ -58,9 +62,15 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
             nameTextField.text = card.name
             basePhoto.image = card.photo
             frameImage.image = card.frame
+            scrollView.contentOffset = card.imgOffSet
+            scrollView.frame.origin = card.imgOrigin
+
             print("card.imgOffset:\(card.imgOffSet)")
             print("card.imgScale:\(card.imgScale)")
             print("scrollview.imgOffset:\(scrollView.contentOffset)")
+            print("scrollView.frame.Origin:\(scrollView.frame.origin)")
+            
+            
         }
         
         //MARK: Frame Collection Data
@@ -254,51 +264,72 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate, ImagePick
     
     
     
-    // MARK: Calculate Zoom Scale for baseImage
+    // MARK: UIScrollViewDelegate Methods
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         //    scrollView.setContentOffset(card.imgOffSet, animated: false)
         scrollView.minimumZoomScale = 0.15
         scrollView.maximumZoomScale = 1
         scrollView.zoomScale = 0.35
         scrollView.contentOffset = CGPoint(x: 0, y: 0)
+        scrollView.frame.origin = CGPoint(x: 0, y: 0)
+        
         if (card != nil) {
             scrollView.setContentOffset(card.imgOffSet, animated: false)
             scrollView.zoomScale = card.imgScale
-            scrollView.setZoomScale(card.imgScale, animated: false)
+  //          scrollView.setZoomScale(card.imgScale, animated: false)
+   //         scrollView.frame.origin = card.imgOrigin
+            print("ViewDidLayoutSubviews Called")
             print("scrollView.minimumZoomScale: \(scrollView.minimumZoomScale)")
             print("scrollView.MaxzoomScale:\(scrollView.maximumZoomScale)")
-            print("scrollView.contentOffset: \(scrollView.contentOffset)")
+            print("ciew did layout scrollView.contentOffset: \(scrollView.contentOffset)")
             print("scrollView.zoomScale:\(scrollView.zoomScale)")
+            print("scrollView.frame.Origin:\(scrollView.frame.origin)")
+
         }
+//        scrollView.setContentOffset(card.imgOffSet, animated: false)
+        if (card.imgRect != nil) {
+        scrollView.zoom(to: card.imgRect!, animated: false)
+        }
+       //     updateMinZoomScaleForSize(view.bounds.size)
         
-        //    updateMinZoomScaleForSize(view.bounds.size)
+        
     }
     
-    fileprivate func updateMinZoomScaleForSize(_ size: CGSize) {
-        let widthScale = size.width / basePhoto.bounds.width
-        let heightScale = size.height / basePhoto.bounds.height
-        let minScale = min(widthScale, heightScale)
-        scrollView.minimumZoomScale = minScale
-        //    scrollView.zoomScale = card.imgScale
-    }
+//    fileprivate func updateMinZoomScaleForSize(_ size: CGSize) {
+//        let widthScale = size.width / basePhoto.bounds.width
+//        let heightScale = size.height / basePhoto.bounds.height
+//        let minScale = min(widthScale, heightScale)
+//        scrollView.minimumZoomScale = minScale
+//            scrollView.zoomScale = card.imgScale
+//    }
     
     
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         if (self.card != nil) {
             card.imgScale = scrollView.zoomScale
-            //      card.imgOffSet = scrollView.contentOffset
             print("\(String(describing: card.imgScale)) \(card.imgOffSet.debugDescription)")
+            card.imgRect = scrollView.frame
         }
     }
     
+    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         self.card.imgOffSet = scrollView.contentOffset
-        print("\(card.imgOffSet.debugDescription)")
-        
+        print("scrollViewDidEndFDragging \(card.imgOffSet.debugDescription)")
+        card.imgRect = scrollView.frame
+        card.imgOrigin = scrollView.frame.origin
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+//        print("ViewForZooming Called")
+//        print("scrollView.minimumZoomScale: \(scrollView.minimumZoomScale)")
+//        print("scrollView.MaxzoomScale:\(scrollView.maximumZoomScale)")
+//        print("scrollView.contentOffset: \(scrollView.contentOffset)")
+//        print("scrollView.zoomScale:\(scrollView.zoomScale)")
+ //       print("scrollView.contentOffset: \(scrollView.contentOffset), scrollView.zoomScale:\(scrollView.zoomScale)")
+
         return basePhoto
     }
     
